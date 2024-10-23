@@ -15,7 +15,7 @@ const Controls = () => {
       minPolarAngle={Math.PI * 0.3}
       maxAzimuthAngle={Math.PI * 0.25}
       minAzimuthAngle={-Math.PI * 0.25}
-      target={[0, 5, 0]}
+      target={[0, 0, 0]}
     />
   );
 };

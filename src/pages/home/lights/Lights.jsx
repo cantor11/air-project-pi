@@ -5,7 +5,7 @@
  */
 
 const Lights = () => {
-  return <ambientLight intensity={0.1} />
+  return <ambientLight intensity={0.4} />
 };
 
 export default Lights;

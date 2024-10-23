@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container p {
+  color: red;
+  font-size: 20px;
+}
