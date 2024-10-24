@@ -11,9 +11,17 @@
     margin: 0;       
 }
 
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    height: 100vh;
+  }
+
 .loading-text {
     font-size: medium;
-    color: #666;
+    color: #9d9d9d;
     text-align: center;
 }
 
@@ -34,5 +42,9 @@
     margin-top: 10px; 
     margin-bottom: 15px;
     color: #ddd; 
+}
+
+.button-login{
+    width: 200px;
 }
 

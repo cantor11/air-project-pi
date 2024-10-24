@@ -50,7 +50,11 @@ const Login = () => {
 
   // Display loading text while fetching authentication state
   if (loading) {
-    return <p className="loading-text">Cargando...</p>;  
+    return (
+      <div className="loading-container">
+        <p className="loading-text">Cargando...</p>
+      </div>
+    );  
   }
 
   // Render the login interface
