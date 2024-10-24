@@ -1,0 +1,111 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background-color: #217c61;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 54px;
+  height: auto;
+  border-radius: 10%;
+  margin-right: 20px; 
+  margin-top: 5px;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+  margin-right: 20px;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav ul li a:active {
+  color: #b3b3b3;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #001001e6;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.button-link:hover {
+  background-color: #083818f4;
+  text-decoration: none;
+}
+
+.button-link:active {
+  background-color: #0d502a; 
+}
+
+.button-link:focus,
+.button-link:active {
+  outline: none;
+  color: white;
+  text-decoration: none;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.button-logout {
+  background: none; 
+  border: none; 
+  padding: 0;
+  display: inline-flex;
+  width: auto;
+  height: auto;
+}
+
+.button-logout:focus,
+.button-logout:active {
+  outline: none;
+}
+
+.logout {
+  width: 35px;
+  height: auto; 
+  margin-left: 10px;
+}
+
+.login {
+  width: 35px;
+  height: auto; 
+  margin-left: 10px;
+  margin-top: 5px;
+}
