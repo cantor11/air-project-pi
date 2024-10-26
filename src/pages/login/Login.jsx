@@ -1,10 +1,11 @@
 import "./Login.css";
 import { useCallback, useEffect } from "react";
-import useAuthStore from "../../stores/use-auth-store";
-import UserDAO from "../../daos/UserDAO";
+//import useAuthStore from "../../stores/use-auth-store";
+//import UserDAO from "../../daos/UserDAO";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  /*
   // Destructure values from the authentication store
   const { user, loginGoogleWithPopUp, observeAuthState, loading } = useAuthStore();
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ const Login = () => {
     );  
   }
 
+  */
   // Render the login interface
   return (
     <div className="container-login">
@@ -65,7 +67,7 @@ const Login = () => {
       <p className="intro-text">
         Para continuar, inicia sesion con Google:
       </p>
-      <button onClick={handleLogin} className="button-login">Iniciar sesión</button>
+      <button className="button-login">Iniciar sesión</button>
     </div>
   );
 };

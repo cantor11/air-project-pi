@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
-import useAuthStore from "../../stores/use-auth-store";
+//import useAuthStore from "../../stores/use-auth-store";
 
 /**
  * Header Component
@@ -14,6 +14,7 @@ import useAuthStore from "../../stores/use-auth-store";
  */
 
 const Header = () => {
+  /*
   const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const Header = () => {
     logout();
     navigate("/login");
   }, [logout]);
+  */
 
   return (
     <header>
@@ -48,9 +50,10 @@ const Header = () => {
       </nav>
 
       <div className="right-section">
+        {/*
         {user ? (
 
-          <button onClick={handleLogout} className="button-logout">
+          <button className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
         ) : (
@@ -59,6 +62,13 @@ const Header = () => {
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
         )}
+        */}
+
+          {/* Esto no va */}
+          <Link to="/login">
+            <img src="/images/logout.webp" alt="Login" className="login" />
+          </Link>
+
       </div>
     </header>
   );
