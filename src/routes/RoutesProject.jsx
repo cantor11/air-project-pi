@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Page404 from "../pages/page-404/Page404";
+import Ozono from "../pages/capa-ozono/Ozono";
 
 /**
  * RoutesProject component sets up the routing for the application using React Router.
@@ -9,6 +10,7 @@ import Page404 from "../pages/page-404/Page404";
  * redirecting to the Login page.
  */
 
+/**
 const RoutesProject = () => {
   return (
     <BrowserRouter>
@@ -21,5 +23,15 @@ const RoutesProject = () => {
     </BrowserRouter>
   );
 }
-
+*/
+const RoutesProject = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Ozono />} />   
+        <Route path="*" element={<Page404/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 export default RoutesProject;
