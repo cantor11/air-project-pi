@@ -53,7 +53,7 @@ const Header = () => {
         {/*
         {user ? (
 
-          <button className="button-logout">
+          <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
         ) : (
