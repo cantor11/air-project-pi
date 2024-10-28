@@ -20,24 +20,24 @@ const MiniCity = (props) => {
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
             <group name="f24d49609aed4057bf28a9aa3eafbe31fbx" rotation={[Math.PI / 2, 0, 0]}>
               <group name="Object_2">
-                <group name="RootNode" castShadow>
+                <group name="RootNode">
                   <group
                     name="Building003"
                     position={[-1941.616, 0, -3233.158]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building003_DefaultMaterial_0"
                       geometry={nodes.Building003_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building003_DefaultMaterialEmission_0"
                       geometry={nodes.Building003_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
                   </group>
-                  <group
+                  <group castShadow
                     name="Building004"
                     position={[2011.175, 0, -1003.378]}
                     rotation={[-Math.PI / 2, 0, 0]}
@@ -47,7 +47,7 @@ const MiniCity = (props) => {
                       geometry={nodes.Building004_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building004_DefaultMaterialEmission_0"
                       geometry={nodes.Building004_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -58,39 +58,39 @@ const MiniCity = (props) => {
                     position={[-1678.787, 0, -578.744]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building005_DefaultMaterialEmission_0"
                       geometry={nodes.Building005_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building005_DefaultMaterial_0"
                       geometry={nodes.Building005_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
                   </group>
-                  <group
+                  <group 
                     name="Building015"
                     position={[2046.505, 0, -598.731]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building015_DefaultMaterialEmission_0"
                       geometry={nodes.Building015_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building015_DefaultMaterial_0"
                       geometry={nodes.Building015_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building015_SpecialMaterialEmission_0"
                       geometry={nodes.Building015_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
                     />
                   </group>
-                  <group
+                  <group castShadow
                     name="Building018"
                     position={[-1800.505, 0, 145.943]}
                     rotation={[-Math.PI / 2, 0, 0]}
@@ -100,23 +100,23 @@ const MiniCity = (props) => {
                       geometry={nodes.Building018_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building018_DefaultMaterial_0"
                       geometry={nodes.Building018_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
                   </group>
-                  <group
+                  <group 
                     name="Building019"
                     position={[1535.641, 1143.003, -2060.517]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building019_DefaultMaterial_0"
                       geometry={nodes.Building019_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building019_DefaultMaterialEmission_0"
                       geometry={nodes.Building019_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -127,12 +127,12 @@ const MiniCity = (props) => {
                     position={[2059.253, 1143.003, -1264.758]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building020_DefaultMaterialEmission_0"
                       geometry={nodes.Building020_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building020_DefaultMaterial_0"
                       geometry={nodes.Building020_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
@@ -143,12 +143,12 @@ const MiniCity = (props) => {
                     position={[-1788.263, 8.867, -2135.591]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building021_DefaultMaterial_0"
                       geometry={nodes.Building021_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building021_DefaultMaterialEmission_0"
                       geometry={nodes.Building021_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -159,12 +159,12 @@ const MiniCity = (props) => {
                     position={[1615.978, 0, -3013.862]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building022_DefaultMaterial_0"
                       geometry={nodes.Building022_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building022_DefaultMaterialEmission_0"
                       geometry={nodes.Building022_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -175,12 +175,12 @@ const MiniCity = (props) => {
                     position={[1685.915, 0, 449.949]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building024_DefaultMaterialEmission_0"
                       geometry={nodes.Building024_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building024_DefaultMaterial_0"
                       geometry={nodes.Building024_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
@@ -191,12 +191,12 @@ const MiniCity = (props) => {
                     position={[-1582.35, 1143.003, -3618.488]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building025_DefaultMaterialEmission_0"
                       geometry={nodes.Building025_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building025_DefaultMaterial_0"
                       geometry={nodes.Building025_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
@@ -207,12 +207,12 @@ const MiniCity = (props) => {
                     position={[371.969, 0, -3568.375]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building029_DefaultMaterial_0"
                       geometry={nodes.Building029_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building029_DefaultMaterialEmission_0"
                       geometry={nodes.Building029_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -223,12 +223,12 @@ const MiniCity = (props) => {
                     position={[-579.367, 0, -2089.543]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building030_DefaultMaterial_0"
                       geometry={nodes.Building030_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building030_DefaultMaterialEmission_0"
                       geometry={nodes.Building030_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -239,33 +239,33 @@ const MiniCity = (props) => {
                     position={[-341.169, 0, -3559.348]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow
                       name="Building031_DefaultMaterial_0"
                       geometry={nodes.Building031_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow
                       name="Building031_DefaultMaterialEmission_0"
                       geometry={nodes.Building031_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
                   </group>
-                  <group
+                  <group receiveShadow
                     name="Building_Skull000"
                     position={[-33.55, 0, -2663.884]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull000_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull000_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull000_DefaultMaterial_0"
                       geometry={nodes.Building_Skull000_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull000_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull000_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
@@ -276,17 +276,17 @@ const MiniCity = (props) => {
                     position={[0, 0, 433.912]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull001_DefaultMaterial_0"
                       geometry={nodes.Building_Skull001_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull001_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull001_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull001_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull001_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -297,17 +297,17 @@ const MiniCity = (props) => {
                     position={[0, 0, -194.512]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull002_DefaultMaterial_0"
                       geometry={nodes.Building_Skull002_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull002_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull002_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull002_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull002_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -318,12 +318,12 @@ const MiniCity = (props) => {
                     position={[0, 0, -345.606]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull003_DefaultMaterial_0"
                       geometry={nodes.Building_Skull003_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull003_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull003_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
@@ -334,17 +334,17 @@ const MiniCity = (props) => {
                     position={[0, 0, -957.599]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull004_DefaultMaterial_0"
                       geometry={nodes.Building_Skull004_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull004_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull004_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull004_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull004_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -355,17 +355,17 @@ const MiniCity = (props) => {
                     position={[0, 0, -1842.685]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull005_DefaultMaterial_0"
                       geometry={nodes.Building_Skull005_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull005_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull005_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull005_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull005_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
@@ -376,17 +376,17 @@ const MiniCity = (props) => {
                     position={[-72.381, 0, -993.171]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull006_DefaultMaterial_0"
                       geometry={nodes.Building_Skull006_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull006_DefaultMaterialEmission_0"
                       geometry={nodes.Building_Skull006_DefaultMaterialEmission_0.geometry}
                       material={materials.DefaultMaterialEmission}
                     />
-                    <mesh
+                    <mesh receiveShadow
                       name="Building_Skull006_SpecialMaterialEmission_0"
                       geometry={nodes.Building_Skull006_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
@@ -397,12 +397,12 @@ const MiniCity = (props) => {
                     position={[496.832, 0, 53.496]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh castShadow receiveShadow
                       name="Building_DefaultMaterial_0"
                       geometry={nodes.Building_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
                     />
-                    <mesh
+                    <mesh castShadow receiveShadow
                       name="Building_SpecialMaterialEmission_0"
                       geometry={nodes.Building_SpecialMaterialEmission_0.geometry}
                       material={materials.SpecialMaterialEmission}
@@ -467,7 +467,7 @@ const MiniCity = (props) => {
                     position={[0, 0, -1414.051]}
                     rotation={[-Math.PI / 2, 0, 0]}
                     scale={100}>
-                    <mesh
+                    <mesh receiveShadow
                       name="City_Ground_DefaultMaterial_0"
                       geometry={nodes.City_Ground_DefaultMaterial_0.geometry}
                       material={materials.DefaultMaterial}
