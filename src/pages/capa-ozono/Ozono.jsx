@@ -6,6 +6,7 @@ import Header from "../../components/header/Header";
 import "./Ozono.css"
 import { useMemo } from "react";
 import { KeyboardControls } from "@react-three/drei";
+import IntroductionText from "./world/IntroductionText";
 import { Loader } from "@react-three/drei";
 import { Suspense } from "react";
 import SmokeScenario from "./world/SmokeScenario";
@@ -28,11 +29,12 @@ const Ozono = () => {
     <Header />
       <div className="container">
         <KeyboardControls map={map}>
-         <Canvas camera={cameraSettings}>
+         <Canvas shadows camera={cameraSettings}>
            <Controls />
            <Lights />
            <Factory />
            <SmokeScenario/>
+           <IntroductionText/>
          </Canvas>
         </KeyboardControls>
       </div>

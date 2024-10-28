@@ -45,8 +45,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               <group name="Cloud_GN001_2">
                 <mesh
                   name="Object_4"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_4.geometry}
                   material={customMaterial}
                 />
@@ -54,8 +52,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               <group name="Cloud_GN002_3" rotation={[0, -0.016, 0]}>
                 <mesh
                   name="Object_6"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_6.geometry}
                   material={customMaterial}
                 />
@@ -63,8 +59,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
                 <mesh
                   name="Object_8"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_8.geometry}
                   material={customMaterial}
                 />
