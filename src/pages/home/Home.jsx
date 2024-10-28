@@ -3,7 +3,7 @@ import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Header from "../../components/header/Header";
 import { Loader } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useMemo } from "react";
 import HomeText from "./world/HomeText";
 import BuildingsScenario from "./world/BuildingsScenario";
 import SmokeScenario from "./world/SmokeScenario";
@@ -21,9 +21,11 @@ import SmokeScenario from "./world/SmokeScenario";
  */
 
 const Home = () => {
-  const cameraSettings = {
-    position: [0, 100, 100],
-  };
+  const cameraSettings = useMemo(() => (
+    {
+      position: [0, 100, 100],
+    }
+  ), []); 
 
   return (
     <>
