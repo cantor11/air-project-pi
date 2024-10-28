@@ -7,7 +7,7 @@ import { OrbitControls } from "@react-three/drei";
  * constraints for polar and azimuth angles, focusing on a specific target.
  */
 
-const Controls = () => {
+const SmogControls = () => {
   
   return (
     <OrbitControls    
@@ -15,9 +15,14 @@ const Controls = () => {
       minPolarAngle={Math.PI * 0.3}
       maxAzimuthAngle={Math.PI * 0.25}
       minAzimuthAngle={-Math.PI * 0.25}
+      enableDamping={true}
+      dampingFactor={0.2}
+      rotateSpeed={0.1}
+      maxDistance={650}
+      minDistance={550}
       target={[0, 0, 0]}
     />
   );
 };
 
-export default Controls;
+export default SmogControls;

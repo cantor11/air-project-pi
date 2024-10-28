@@ -4,8 +4,8 @@
  * It adds ambient light to the scene to provide basic illumination.
  */
 
-const Lights = () => {
-  return <ambientLight intensity={0.4} />
+const SmogLights = () => {
+  return <ambientLight intensity={0.3} />
 };
 
-export default Lights;
+export default SmogLights;
