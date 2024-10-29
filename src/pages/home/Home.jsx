@@ -3,7 +3,11 @@ import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Header from "../../components/header/Header";
 import { Loader } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useMemo } from "react";
+import HomeText from "./world/HomeText";
+import BuildingsScenario from "./world/BuildingsScenario";
+import SmokeScenario from "./world/SmokeScenario";
+
 //import { Perf } from "r3f-perf"; //performance stats
 
 /**
@@ -17,9 +21,11 @@ import { Suspense } from "react";
  */
 
 const Home = () => {
-  const cameraSettings = {
-    position: [0, 15, 10],
-  };
+  const cameraSettings = useMemo(() => (
+    {
+      position: [0, 100, 100],
+    }
+  ), []); 
 
   return (
     <>
@@ -29,13 +35,10 @@ const Home = () => {
           <Suspense fallback={null}>
             <Controls />
             <Lights />
-
-            <mesh>
-              <boxGeometry args={[1, 1, 1]} />
-              <meshStandardMaterial color="white" /> 
-            </mesh>
-
           </Suspense>
+          <BuildingsScenario />
+          <SmokeScenario />
+          <HomeText position={[0,0,0]} />
         </Canvas>
         <Loader />
       </div>
