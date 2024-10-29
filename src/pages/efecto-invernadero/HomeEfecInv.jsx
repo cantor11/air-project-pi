@@ -32,15 +32,19 @@ const HomeEfecInv = () => {
     <>
     <Header />
       <div className="container">
-        <Canvas camera={cameraSettings}>
+        <Canvas camera={cameraSettings} shadows>
           <Suspense fallback={null}>
             <Controls />
             <Lights />
           </Suspense>
           <Staging />
-          <EarthModel position={[-1000,-300,-300]} scale={100}/>
+          <EarthModel position={[-1000,-300,-300]} scale={100} receiveShadow/>
           <SunModel position={[460, 150, -50]} scale={30}/>
           <HomeText />
+          <mesh position={[-200, -60,-100]} castShadow>
+            <sphereGeometry args={[20, 32, 32]} />
+            <meshStandardMaterial color="gray" />
+          </mesh>
         </Canvas>
         <Loader />
       </div>
