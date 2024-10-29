@@ -1,0 +1,46 @@
+.canvas-container {
+  position: relative;
+}
+
+.transition-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 10;
+}
+
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: 'Arial Narrow';
+  src: url('/fonts/arial_narrow_7.ttf') format('truetype');
+}
+
+.intro-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
+  color: rgb(167, 173, 0);
+  font-size: 50px;
+  font-family: 'Arial Narrow', sans-serif;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

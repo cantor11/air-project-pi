@@ -31,7 +31,6 @@ const Header = () => {
           <img src="/images/logo.webp" alt="Inicio" className="logo-image" />
         </Link>
       </div>
-
       <nav>
         <ul>
           <li>
@@ -48,12 +47,11 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-
       <div className="right-section">
         {/*
         {user ? (
 
-          <button className="button-logout">
+          <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
         ) : (
@@ -68,7 +66,6 @@ const Header = () => {
           <Link to="/login">
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
-
       </div>
     </header>
   );

@@ -8,7 +8,6 @@ import { OrbitControls } from "@react-three/drei";
  */
 
 const Controls = () => {
-  
   return (
     <OrbitControls    
       maxPolarAngle={Math.PI * 0.4}

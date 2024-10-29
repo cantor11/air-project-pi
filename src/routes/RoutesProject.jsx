@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Page404 from "../pages/page-404/Page404";
+import Smog from "../pages/smog/Smog";
 import Ozono from "../pages/capa-ozono/Ozono";
 import HomeEfecInv from "../pages/efecto-invernadero/HomeEfecInv";
 
@@ -19,6 +20,7 @@ const RoutesProject = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/efecto-invernadero" element={<HomeEfecInv />} />
         <Route path="/" element={<Login />} />
+        <Route path="/smog" element={<Smog/>}/>
         <Route path="/capa-ozono" element={<Ozono />} />
         <Route path="*" element={<Page404/>}/>
       </Routes>
