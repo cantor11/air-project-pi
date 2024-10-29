@@ -1,10 +1,11 @@
 import "./Login.css";
 import { useCallback, useEffect } from "react";
-import useAuthStore from "../../stores/use-auth-store";
-import UserDAO from "../../daos/UserDAO";
+//import useAuthStore from "../../stores/use-auth-store";
+//import UserDAO from "../../daos/UserDAO";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  /*
   // Destructure values from the authentication store
   const { user, loginGoogleWithPopUp, observeAuthState, loading } = useAuthStore();
   const navigate = useNavigate();
@@ -57,15 +58,18 @@ const Login = () => {
     );  
   }
 
+  */
+ 
   // Render the login interface
   return (
-    <div className="container-login">
-      <h1 className="title-login">SKYSHIELD</h1>
-      <h3 className="subtitle-login">Visualizando el aire que respiramos</h3>
-      <p className="intro-text">
-        Para continuar, inicia sesion con Google:
-      </p>
-      <button onClick={handleLogin} className="button-login">Iniciar sesión</button>
+    <div className="background">
+      <div className="container-login">
+        <h1 className="title-login">SKYSHIELD</h1>
+        <img src="/images/logo.webp" alt="Logo" className="logo" />
+        <h3 className="subtitle-login">Visualizando el aire que respiramos</h3>
+        <p className="login-text">Para continuar, inicia sesión con Google:</p>
+        <button className="button-login">Iniciar sesión</button>
+      </div>
     </div>
   );
 };

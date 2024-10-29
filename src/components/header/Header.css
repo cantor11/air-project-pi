@@ -4,7 +4,7 @@ header {
   align-items: center;
   padding: 0 20px;
   height: 60px;
-  background-color: #217c61;
+  background-color: #242424;
 }
 
 .left-section {
@@ -13,7 +13,7 @@ header {
 }
 
 .logo-image {
-  width: 54px;
+  width: 53px;
   height: auto;
   border-radius: 10%;
   margin-right: 20px; 
@@ -54,7 +54,7 @@ nav ul li a:active {
 .button-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #001001e6;
+  background-color: #000000e6;
   color: white;
   border-radius: 5px;
   font-weight: bold;
@@ -63,12 +63,12 @@ nav ul li a:active {
 }
 
 .button-link:hover {
-  background-color: #083818f4;
+  background-color: #2c2c2cf4;
   text-decoration: none;
 }
 
 .button-link:active {
-  background-color: #0d502a; 
+  background-color: #474747; 
 }
 
 .button-link:focus,
