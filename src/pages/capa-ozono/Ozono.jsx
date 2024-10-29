@@ -10,6 +10,7 @@ import IntroductionText from "./world/IntroductionText";
 import { Loader } from "@react-three/drei";
 import { Suspense } from "react";
 import SmokeScenario from "./world/SmokeScenario";
+import Staging from "./world/Staging";
 
 const Ozono = () => {
   const cameraSettings = {
@@ -30,12 +31,16 @@ const Ozono = () => {
       <div className="container">
         <KeyboardControls map={map}>
          <Canvas shadows camera={cameraSettings}>
-           <Controls />
-           <Lights />
+         <Suspense fallback={null}>
+            <Controls />
+            <Lights />
+          </Suspense>
            <Factory />
            <SmokeScenario/>
            <IntroductionText/>
+           <Staging />
          </Canvas>
+         <Loader />
         </KeyboardControls>
       </div>
     </>

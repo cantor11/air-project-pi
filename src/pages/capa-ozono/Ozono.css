@@ -1,4 +1,3 @@
 body {
-  background-color: lightblue; /* Cambia el color de fondo a azul claro */
-  filter: saturate(50%);
+  filter: saturate(40%);
 }

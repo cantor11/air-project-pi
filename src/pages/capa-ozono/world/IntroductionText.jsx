@@ -1,4 +1,3 @@
-import { Html } from "@react-three/drei"
 import { Text } from "@react-three/drei";
 import { MathUtils } from "three";
 
@@ -13,7 +12,7 @@ const IntroductionText = () => {
                 font="/fonts/blue-ocean.ttf"
                 textAlign="center"
 
-            > Introduccón al agotamiento de la capa de ozono </Text>
+            > Agotamiento de la capa de ozono... </Text>
             <Text 
                 position={[-7, 2.3, 1.2]}
                 rotation={[0, MathUtils.degToRad(-90), 0]}

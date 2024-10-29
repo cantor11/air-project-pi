@@ -28,7 +28,7 @@ export function SmokeRing({ opacity = 1, ...props }) {
     const action = actions['Animation']
     if (action) {
       action.reset().play()  // Start animation
-      action.timeScale = 0.3 // Adjust animation speed
+      action.timeScale = 0.2 // Adjust animation speed
     }
 
     return () => {
@@ -46,20 +46,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
                 <mesh
                   name="Object_4"
                   geometry={nodes.Object_4.geometry}
-                  material={customMaterial}
-                />
-              </group>
-              <group name="Cloud_GN002_3" rotation={[0, -0.016, 0]}>
-                <mesh
-                  name="Object_6"
-                  geometry={nodes.Object_6.geometry}
-                  material={customMaterial}
-                />
-              </group>
-              <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
-                <mesh
-                  name="Object_8"
-                  geometry={nodes.Object_8.geometry}
                   material={customMaterial}
                 />
               </group>

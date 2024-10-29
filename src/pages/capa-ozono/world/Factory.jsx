@@ -19,57 +19,53 @@ export default function Factory(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        
+        castShadow
         geometry={nodes.Cube011_Cube036.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Cube013_Cube038.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Cube014_Cube025.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Cube016_Cube040.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Cube018_Cube042.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Cube020_Cube044.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
         geometry={nodes.Cube032_Cube066.geometry}
         material={materials.None}
       />
       <mesh
-        
         geometry={nodes.Cube033_Cube067.geometry}
         material={materials.None}
       />
       <mesh
-        
         geometry={nodes.Cube038_Cube065.geometry}
         material={materials.None}
       />
       <mesh
-        
         geometry={nodes.Plane002_Plane004_1.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        
+        castShadow
         geometry={nodes.Plane002_Plane004_2.geometry}
         material={materials['Material.006']}
       />
@@ -117,6 +113,14 @@ export default function Factory(props) {
           roughnessMap={floorTexture.roughnessMap}
           ambientOcclusionMap={floorTexture.ambientOcclusionMap}
         />
+      </mesh>
+      <mesh receiveShadow rotation-x={Math.PI * 1.5} position={[0, 0.39, 0]}>
+        <planeGeometry args={[30, 30]} />  
+        <shadowMaterial opacity={0.5}/>
+      </mesh>
+      <mesh rotation-x={Math.PI * 1.5} position={[0, 0.2, 0]}>
+        <planeGeometry args={[100, 100]} />  
+        <meshStandardMaterial color={"black"}/>
       </mesh>
     </group>
   )
