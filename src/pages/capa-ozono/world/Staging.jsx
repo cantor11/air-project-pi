@@ -1,19 +1,24 @@
 import { Sky } from "@react-three/drei";
-  
-  
-  
-  const Staging = () => {
-    return (
-      <>
+
+/**
+ * This component defines the sky settings for the 3D scene, simulating a nighttime environment
+ * as part of a larger scene focused on air pollution and smog. 
+ * It uses the `Sky` component from `@react-three/drei` to adjust lighting, 
+ * color, and atmosphere settings to reflect low-light conditions.
+ */
+
+const Staging = () => {
+  return (
+    <>
       <Sky
-        distance={450000} // Distancia para alejar el cielo
-        sunPosition={[0, -1, 0]} // Posición del "sol" por debajo del horizonte
-        inclination={0.6} // Inclinación baja para simular un ambiente nocturno
-        azimuth={0.25} // Dirección del "sol"
-        turbidity={10} // Aumenta para reducir la claridad del cielo
+        distance={450000} // Controls the distance of the sky dome for perspective depth
+        sunPosition={[0, -1, 0]} // Positions the sun below the horizon for a darker sky
+        inclination={0.6} // Adjusts the angle of the light source to simulate nightfall
+        azimuth={0.25} // Determines the direction of the light relative to the scene
+        turbidity={10} // Increases atmospheric particles for a hazier look
       />
-      </>
-    );
-  };
-  
-  export default Staging;
+    </>
+  );
+};
+
+export default Staging;

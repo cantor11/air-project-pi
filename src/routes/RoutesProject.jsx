@@ -10,28 +10,18 @@ import Ozono from "../pages/capa-ozono/Ozono";
  * redirecting to the Login page.
  */
 
-/**
 const RoutesProject = () => {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path="/login" element={<Login />} />  
-        <Route path="/home" element={<Home />} />   
+      <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/" element={<Login />} />
+        <Route path="/capa-ozono" element={<Ozono />} />
         <Route path="*" element={<Page404/>}/>
       </Routes>
     </BrowserRouter>
   );
 }
-*/
-const RoutesProject = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Ozono />} />   
-        <Route path="*" element={<Page404/>}/>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+
 export default RoutesProject;

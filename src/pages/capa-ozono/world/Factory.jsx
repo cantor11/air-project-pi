@@ -1,6 +1,15 @@
 import React, { useRef, useMemo } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 
+/**
+ * Factory Component
+ * This component renders a 3D factory model using a GLTF file. 
+ * It utilizes various textures to enhance the realism of the factory's floor and other elements.
+ * The component consists of multiple meshes that represent different parts of the factory,
+ * each with specific materials and textures applied to them. Additionally, shadow casting and receiving
+ * are set up for realistic lighting effects within the scene.
+ */
+
 export default function Factory(props) {
   const { nodes, materials } = useGLTF('/models-3d/factory.glb')
 

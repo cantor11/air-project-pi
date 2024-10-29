@@ -1,10 +1,12 @@
 import { PointerLockControls  } from "@react-three/drei";
 
 /**
- * Controls component provides orbit controls for a 3D scene using 
- * the FirstPersonControls from the Drei library. It allows users to 
- * interactively rotate, zoom, and pan the camera within the specified 
- * constraints for polar and azimuth angles, focusing on a specific target.
+ * Controls Component
+ * This component integrates Pointer Lock controls into the 3D scene,
+ * allowing users to navigate through the environment using their mouse
+ * while hiding the cursor. This is particularly useful for immersive
+ * experiences, such as walking through a 3D space without interface
+ * distractions.
  */
 
 const Controls = () => {
