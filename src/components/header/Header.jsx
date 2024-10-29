@@ -44,7 +44,7 @@ const Header = () => {
             <Link to="/smog">Smog</Link>
           </li>
           <li>
-            <Link to="/agotamiento-capa-ozono">Agotamiento de la capa de ozono</Link>
+            <Link to="/capa-ozono">Agotamiento de la capa de ozono</Link>
           </li>
         </ul>
       </nav>
