@@ -5,7 +5,7 @@ import Header from "../../components/header/Header";
 import { Loader } from "@react-three/drei";
 import { Suspense, useMemo } from "react";
 import HomeText from "./world/HomeText";
-import { EarthModel } from "./world/earthModel";
+import { EarthModel } from "./world/EarthModel";
 import { SunModel } from "./world/SunModel";
 import Staging from "./staging/Staging";
 
