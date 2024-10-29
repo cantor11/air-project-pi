@@ -1,4 +1,4 @@
-import { BuildingSet } from "./buildingsSet";
+import { BuildingSet } from "./BuildingsSet";
 
 /**
  * BuildingsScenario Component
