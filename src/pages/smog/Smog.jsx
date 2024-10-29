@@ -11,16 +11,26 @@ import SmogStaging from "./staging/SmogStaging";
 import IntroText from "./world/IntroText";
 import "./Smog.css";
 
+/**
+ * `MiniCityScene` Component
+ *
+ * This component defines and organizes the 3D elements of the smog scene, including
+ * a rotating `MiniCity`, a background `SkylineCity`, and the Moon. 
+ * 
+ * Both `miniCityRef` and `skylineRef` references are used to apply rotation to 
+ * the respective city components over time, creating a dynamic effect.
+ */
+
 const MiniCityScene = () => {
   const miniCityRef = useRef(null);
   const skylineRef = useRef(null);
 
   useFrame((state, delta) => {
-    miniCityRef.current.rotation.y += 0.03 * delta;
+    miniCityRef.current.rotation.y += 0.03 * delta; // Rotates the mini city on the y-axis
   });
 
   useFrame((state, delta) => {
-    skylineRef.current.rotation.y += 0.04 * delta;
+    skylineRef.current.rotation.y += 0.04 * delta; // Rotates the skyline city on the y-axis
   });
 
   return (
@@ -30,7 +40,7 @@ const MiniCityScene = () => {
         <mesh position={[0, 0, -50]} scale={[0.1, 0.1, 0.1]}>
           <MiniCity />
         </mesh>
-        <mesh  ref={skylineRef} position={[0, 0, -200]} scale={[25, 40, 25]}>
+        <mesh ref={skylineRef} position={[0, 0, -200]} scale={[25, 40, 25]}>
           <SkylineCity />
         </mesh>
       </Center>
@@ -46,6 +56,15 @@ const MiniCityScene = () => {
   );
 };
 
+/**
+ * `Smog` Component
+ *
+ * The main component for the smog 3D scene. It sets up the canvas, initializes
+ * camera settings, and includes various subcomponents for scene elements, lighting, 
+ * and controls. It also features a fade-in transition effect and a loading overlay.
+ *
+ * A delay in `isLoaded` is used to trigger a fade-out transition for smoother scene entry.
+ */
 const Smog = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const cameraSettings = {
@@ -56,7 +75,7 @@ const Smog = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 600);
+    setTimeout(() => setIsLoaded(true), 600); // Delays the fade-out effect
   }, [])
 
   return (

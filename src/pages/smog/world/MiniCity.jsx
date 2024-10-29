@@ -1,6 +1,20 @@
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
+/**
+ * `MiniCity` Component
+ *
+ * This component renders a 3D model of a city that serves as the base of the 3D scene 
+ * focused on air pollution and smog. The city model is loaded from a `.glb` file 
+ * and converted into JSX for easy integration within the React application.
+ *
+ * The component uses `@react-three/drei` to handle loading the GLTF model and animations.
+ * The model's main animation sequence, labeled "Scene," is started on component mount 
+ * and stopped on unmount.
+ *
+ * Props can be passed to customize the model's behavior or styling within the scene.
+ */
+
 const MiniCity = (props) => {
     const group = useRef()
     const { nodes, materials, animations } = useGLTF(
