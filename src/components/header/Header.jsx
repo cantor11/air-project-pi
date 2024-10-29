@@ -29,7 +29,6 @@ const Header = () => {
           <img src="/images/logo.webp" alt="Inicio" className="logo-image" />
         </Link>
       </div>
-
       <nav>
         <ul>
           <li>
@@ -42,11 +41,10 @@ const Header = () => {
             <Link to="/smog">Smog</Link>
           </li>
           <li>
-            <Link to="/agotamiento-capa-ozono">Agotamiento de la capa de ozono</Link>
+            <Link to="/capa-ozono">Agotamiento de la capa de ozono</Link>
           </li>
         </ul>
       </nav>
-
       <div className="right-section">
         {user ? (
 
