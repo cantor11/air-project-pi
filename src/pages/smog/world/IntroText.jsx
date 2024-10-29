@@ -7,7 +7,7 @@ const IntroText = () => {
       wrapperClass='intro-text'
       occlude
       center
-      distanceFactor={16}
+      distanceFactor={15}
       transform
       position={[0, 230, 420]}
       rotation={[-Math.PI / 6, 0, 0]}

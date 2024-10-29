@@ -26,7 +26,6 @@ const MiniCityScene = () => {
   return (
     <>
     <group>
-
       <Center ref={miniCityRef} position={[0, 160, 0]}>
         <mesh position={[0, 0, -50]} scale={[0.1, 0.1, 0.1]}>
           <MiniCity />
@@ -48,7 +47,6 @@ const MiniCityScene = () => {
 };
 
 const Smog = () => {
-
   const [isLoaded, setIsLoaded] = useState(false);
   const cameraSettings = {
     position: [0, 550, 0],

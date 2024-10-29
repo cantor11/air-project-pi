@@ -8,7 +8,6 @@ import { OrbitControls } from "@react-three/drei";
  */
 
 const SmogControls = () => {
-  
   return (
     <OrbitControls    
       maxPolarAngle={Math.PI * 0.35}

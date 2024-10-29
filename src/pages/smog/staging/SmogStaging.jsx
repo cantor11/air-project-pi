@@ -14,7 +14,6 @@ const SmogStaging = () => {
         speed={20}
         scale={450}
       />
-
       <Cloud
         seed={3}
         scale={22}
@@ -29,7 +28,6 @@ const SmogStaging = () => {
         speed={0.25}
         //concentrate={"inside"}
         />
-        
       <Stars
         radius={400}
         depth={500}

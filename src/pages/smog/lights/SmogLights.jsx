@@ -14,7 +14,6 @@ const SmogLights = () => {
   return (
     <>
     <ambientLight intensity={0.33} />
-
     <pointLight
     ref={pointLightRef}
     color="#ffffff" // White light for a moon-like glow
@@ -26,12 +25,8 @@ const SmogLights = () => {
     shadow-camera-far={50}
     castShadow
     />
-
-    
-
     </>
   )
-
 };
 
 export default SmogLights;
