@@ -18,7 +18,7 @@ const Moon = () => {
     moonTexture[key].repeat.set(4, 4);
   });
   
-  console.log(moonTexture);
+  //console.log(moonTexture);
   return (
     <mesh>
       <sphereGeometry args={[1.5, 32, 32]} />

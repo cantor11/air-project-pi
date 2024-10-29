@@ -13,13 +13,13 @@ const SmogControls = () => {
     <OrbitControls    
       maxPolarAngle={Math.PI * 0.35}
       minPolarAngle={Math.PI * 0.35}
-      maxAzimuthAngle={Math.PI * 0.1}
-      minAzimuthAngle={-Math.PI * 0.1}
+      maxAzimuthAngle={Math.PI * 0.03}
+      minAzimuthAngle={-Math.PI * 0.03}
       enableDamping={true}
       dampingFactor={0.2}
       rotateSpeed={0.1}
-      maxDistance={600}
-      minDistance={500}
+      maxDistance={580}
+      minDistance={520}
       enablePan={false}
       target={[0, 0, 0]}
     />

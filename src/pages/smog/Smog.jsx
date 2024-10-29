@@ -8,6 +8,7 @@ import MiniCity from "./world/MiniCity";
 import SkylineCity from "./world/SkylineCity";
 import Moon from "./world/Moon";
 import SmogStaging from "./staging/SmogStaging";
+import IntroText from "./world/IntroText";
 import "./Smog.css";
 
 const MiniCityScene = () => {
@@ -25,6 +26,7 @@ const MiniCityScene = () => {
   return (
     <>
     <group>
+
       <Center ref={miniCityRef} position={[0, 160, 0]}>
         <mesh position={[0, 0, -50]} scale={[0.1, 0.1, 0.1]}>
           <MiniCity />
@@ -36,9 +38,9 @@ const MiniCityScene = () => {
       <mesh position={[-550, 330, -320]} scale={[30, 30, 30]}>
         <Moon />
       </mesh>
-      <mesh receiveShadow position={[0, -10, 0]} scale={[110, 1, 110]}>
+      <mesh receiveShadow position={[0, -9.5, 0]} scale={[110, 1, 110]}>
         <cylinderGeometry args={[10, 10, 0.1, 32]} /> 
-        <meshStandardMaterial color="black" emissive="black" emissiveIntensity={1} roughness={100} metalness={0} />
+        <meshStandardMaterial color="black" receiveShadow  />
       </mesh>
     </group>
     </>
@@ -68,7 +70,8 @@ const Smog = () => {
           <Suspense fallback={null}>
             <SmogControls />
             <SmogLights />
-            <SmogStaging />
+            <SmogStaging />  
+            <IntroText />        
             <MiniCityScene />
           </Suspense>
         </Canvas>
