@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 /**
  * HomeText Component
  * 
- * This functional React component sets up a 3D object using `@react-three/fiber` 
+ * This functional React component sets up a text using `@react-three/fiber` 
  * to visualize text in the main view: the title and some buttons to let the user
  * see the summary of the problems or the introduction of the page.
  */
