@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
  * environment of the scene.
  */
 
-export default function BuildingSet(props) {
+export function BuildingSet(props) {
   const { nodes, materials } = useGLTF('/models-3d/buildingsSet.glb');
 
   return (
