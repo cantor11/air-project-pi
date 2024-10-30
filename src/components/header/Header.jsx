@@ -36,23 +36,33 @@ const Header = () => {
         <ul>
           <li>
             <NavLink
-              to="/efecto-invernadero" className="button-link" activeClassName="active"
+              to="/efecto-invernadero"
+              className={({ isActive }) => isActive ? "button-link active" : "button-link"}
             >
               Efecto invernadero
             </NavLink>
           </li>
           <li>
-            <NavLink to="/smog" className="button-link" activeClassName="active">
+            <NavLink
+              to="/smog"
+              className={({ isActive }) => isActive ? "button-link active" : "button-link"}
+            >
               Smog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/capa-ozono" className="button-link" activeClassName="active">
+            <NavLink
+              to="/capa-ozono"
+              className={({ isActive }) => isActive ? "button-link active" : "button-link"}
+            >
               Capa de ozono
             </NavLink>
           </li>
           <li>
-            <NavLink to="/quiz" className="button-link" activeClassName="active">
+            <NavLink
+              to="/quiz"
+              className={({ isActive }) => isActive ? "button-link active" : "button-link"}
+            >
               Quiz
             </NavLink>
           </li>
@@ -61,22 +71,20 @@ const Header = () => {
       <div className="right-section">
         {/*
         {user ? (
-
           <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
         ) : (
-
           <Link to="/login">
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
         )}
         */}
 
-          {/* Esto no va  en el codigo final*/}
-          <Link to="/login">
-            <img src="/images/logout.webp" alt="Login" className="login" />
-          </Link>
+        {/* Esto no va  en el codigo final*/}
+        <Link to="/login">
+          <img src="/images/logout.webp" alt="Login" className="login" />
+        </Link>
       </div>
     </header>
   );

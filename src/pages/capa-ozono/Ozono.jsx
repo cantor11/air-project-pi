@@ -41,7 +41,7 @@ const Ozono = () => {
   return (
     <>
       <Header /> {/* Renders the page header */}
-      <div className="container">
+      <div className="ozone-container">
         {/* Initializes keyboard controls for 3D navigation */}
         <KeyboardControls map={map}>
           {/* Canvas for the 3D scene with shadows and camera settings */}
