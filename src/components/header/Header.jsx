@@ -2,6 +2,7 @@ import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 //import useAuthStore from "../../stores/use-auth-store";
+import { NavLink } from "react-router-dom";
 
 /**
  * Header Component
@@ -34,16 +35,26 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/quiz" className="button-link">Quiz</Link>
+            <NavLink
+              to="/efecto-invernadero" className="button-link" activeClassName="active"
+            >
+              Efecto invernadero
+            </NavLink>
           </li>
           <li>
-            <Link to="/efecto-invernadero">Efecto invernadero</Link>
+            <NavLink to="/smog" className="button-link" activeClassName="active">
+              Smog
+            </NavLink>
           </li>
           <li>
-            <Link to="/smog">Smog</Link>
+            <NavLink to="/capa-ozono" className="button-link" activeClassName="active">
+              Capa de ozono
+            </NavLink>
           </li>
           <li>
-            <Link to="/capa-ozono">Agotamiento de la capa de ozono</Link>
+            <NavLink to="/quiz" className="button-link" activeClassName="active">
+              Quiz
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -62,7 +73,7 @@ const Header = () => {
         )}
         */}
 
-          {/* Esto no va */}
+          {/* Esto no va  en el codigo final*/}
           <Link to="/login">
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>

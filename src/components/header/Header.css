@@ -78,6 +78,11 @@ nav ul li a:active {
   text-decoration: none;
 }
 
+.button-link.active {
+  border: 2px solid rgb(165, 165, 165);
+  background-color: #000000e6;
+}
+
 .right-section {
   display: flex;
   align-items: center;
