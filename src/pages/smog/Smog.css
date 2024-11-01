@@ -39,7 +39,7 @@
 }
 
 .smog-container {
-  filter: saturate(200%);
+  filter: saturate(150%);
 }
 
 @keyframes fadeIn {

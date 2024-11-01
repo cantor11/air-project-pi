@@ -21,7 +21,7 @@ const IntroText = () => {
       wrapperClass='intro-text'    // CSS class for specific text styling
       occlude                      // Allows the text to occlude according to objects in the scene
       center                       // Centers the text in 3D space
-      distanceFactor={17}          // Scales the visual distance of the text
+      distanceFactor={18}          // Scales the visual distance of the text
       transform                    // Enables 3D transformations
       position={[0, 230, 420]}     // Positions the text within the 3D space
       rotation={[-Math.PI / 6, 0, 0]} // Rotates the text for optimal visualization in the scene
