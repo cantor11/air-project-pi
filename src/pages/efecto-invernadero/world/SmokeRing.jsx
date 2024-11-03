@@ -6,14 +6,13 @@ import { useGLTF, useAnimations } from '@react-three/drei'
  * 
  * This functional React component sets up a 3D object using `@react-three/fiber` 
  * to visualize an animated 3d object imported in this proyect.
- * This is a cloud ring which will be used as smoke, and its opacity can be
- * modified.
+ * This is a cloud ring which will be used as gas.
  */
 
-export function SmokeRing({ opacity = 1, ...props }) {
-  const smokeRingRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/cloud_ring.glb')
-  const { actions } = useAnimations(animations, smokeRingRef)
+export function SmokeRing(props) {
+  const smokeRingRef = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/cloud_ring.glb');
+  const { actions } = useAnimations(animations, smokeRingRef);
 
   // We clone the material for this instance
   const customMaterial = useMemo(
@@ -21,14 +20,14 @@ export function SmokeRing({ opacity = 1, ...props }) {
     , []
   )
 
-  customMaterial.transparent = true
-  customMaterial.opacity = opacity
+  customMaterial.transparent = true;
+  customMaterial.opacity = 0.07;
 
   useEffect(() => {
-    const action = actions['Animation']
+    const action = actions['Animation'];
     if (action) {
       action.reset().play()  // Start animation
-      action.timeScale = 0.3 // Adjust animation speed
+      action.timeScale = 0.1 // Adjust animation speed
     }
 
     return () => {
@@ -45,8 +44,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               {/* <group name="Cloud_GN001_2">
                 <mesh
                   name="Object_4"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_4.geometry}
                   material={customMaterial}
                 />
@@ -54,8 +51,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               <group name="Cloud_GN002_3" rotation={[0, -0.016, 0]}>
                 <mesh
                   name="Object_6"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_6.geometry}
                   material={customMaterial}
                 />
@@ -63,8 +58,6 @@ export function SmokeRing({ opacity = 1, ...props }) {
               <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
                 <mesh
                   name="Object_8"
-                  castShadow
-                  receiveShadow
                   geometry={nodes.Object_8.geometry}
                   material={customMaterial}
                 />

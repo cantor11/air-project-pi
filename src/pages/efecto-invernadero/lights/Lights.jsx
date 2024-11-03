@@ -17,8 +17,8 @@ const Lights = () => {
         color={"lightyellow"}
         position={[27, 8, 10]}
         intensity={5000000}
-        angle={Math.PI / 7}
-        distance={900}
+        angle={Math.PI / 6}
+        distance={1000}
       />
     </>
   )
