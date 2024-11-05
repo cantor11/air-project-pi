@@ -3,7 +3,7 @@
  * 
  * This functional React component sets up a 3D object using `@react-three/fiber` 
  * to visualize an 3d object made by hand.
- * This is sphere that will be used as a moon for the scene.
+ * This is a sphere that will be used as a moon for the scene.
  */
 
 const Moon = () => {

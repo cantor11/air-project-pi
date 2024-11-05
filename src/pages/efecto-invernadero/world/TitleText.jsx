@@ -1,18 +1,20 @@
-import { Center, Text } from "@react-three/drei";
 import { useCallback, useMemo, useState } from "react";
+import { Center, Text } from "@react-three/drei";
+import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 /**
  * TitleText Component
  * 
  * This functional React component sets up a text using `@react-three/drei` 
  * to visualize text in the main view: the title and a button to let the user
- * see the introduction of the topic.
+ * see the introduction of the topic. To know which view show and
+ * change it, it will use a store made with Zustand.
  */
 
 const TitleText = () => {
   const [hoveredIntroduction, setHoveredIntroduction] = useState(false)
   const [hoveredBack, setHoveredBack] = useState(false)
-  const [showTitleText, setShowTitleText] = useState(true)
+  const { view, setView } = useGreeenhouseStore(); // Information brought from store
 
   const texts = useMemo(() => (
     {
@@ -22,13 +24,17 @@ const TitleText = () => {
 
   // Handle the action 'clic' on the introduction 'button', to show that text
   const handleClickIntroduction = useCallback(() => {
-    setShowTitleText(false);
+    setView({
+      isTitleView: false,
+    });
     setHoveredIntroduction(false);
   }, []);
 
   // Handle the action 'clic' on the 'back button' to return to the title view
   const handleBack = useCallback(() => {
-    setShowTitleText(true);
+    setView({
+      isTitleView: true,
+    });
     setHoveredBack(false);
   }, []);
 
@@ -113,7 +119,7 @@ const TitleText = () => {
 
   return (
     <Center position={[0, 25, 50]} rotation-x={-Math.PI*0.2}>
-      {showTitleText ? ( // If user is seeing title or came back from introduction, then show this
+      {view.isTitleView ? ( // If user is seeing title or came back from introduction, then show this
         titleView()
       ) : ( // If user chooses to see the introduction, then show this
         introductionView()
