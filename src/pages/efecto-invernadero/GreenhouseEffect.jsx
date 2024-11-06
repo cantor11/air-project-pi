@@ -15,9 +15,9 @@ import Moon from "./world/Moon";
 import { SmokeRing } from "./world/SmokeRing";
 import { SunModel } from "./world/SunModel";
 import TitleText from "./world/TitleText";
-import FrostBall from "./world/FrostBall";
-import { SnowBallRocks } from "./world/SnowBallRocks";
+
 import KeyboardListeners from "./world/KeyboardListeners";
+import AwarenessAnimations from "./world/AwarenessAnimations";
 
 //import { Perf } from "r3f-perf"; //performance stats
 
@@ -97,7 +97,6 @@ const GreenhouseEffect = () => {
     () => [
       { name: "left", keys: ["ArrowLeft", "KeyA"] },
       { name: "right", keys: ["ArrowRight", "KeyD"] },
-      { name: "escape", keys: ["Escape"] },
     ],
     []
   );
@@ -120,8 +119,8 @@ const GreenhouseEffect = () => {
           <SmokeRing position={[-1000,-40,-300]} scale={90} />
           <SmokeRing position={[-1000,-300,-300]} scale={100} rotation-y={Math.PI/2}/>
           <SunModel position={[460, 150, -50]} scale={30}/>
-          <SnowBallRocks position={[-910,-750,-260]} scale={970}/>
-          <FrostBall />
+
+          <AwarenessAnimations />
           <Moon />
 
           <TitleText />

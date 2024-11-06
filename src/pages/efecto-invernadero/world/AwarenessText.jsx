@@ -14,6 +14,7 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
 const AwarenessText = () => {
   const { view, setView } = useGreeenhouseStore();
 
+  // Array that contains every line that will be shown on awareness section
   const textLines = useMemo(
     () => [
       "El Efecto Invernadero<br>es un fenómeno natural",
@@ -64,10 +65,10 @@ const AwarenessText = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <button style={{ position: 'absolute' , bottom: '10%', right: '17%'}} onClick={() => handleNextLine(false)}>
+      <button style={{ position: 'absolute' , bottom: '10%', right: '17%', backgroundColor: 'gray' }} onClick={() => handleNextLine(false)}>
         {'<'}
       </button>
-      <button style={{ position: 'absolute' , bottom: '10%', right: '10%'}} onClick={() => handleNextLine(true)}>
+      <button style={{ position: 'absolute' , bottom: '10%', right: '10%', backgroundColor: 'gray' }} onClick={() => handleNextLine(true)}>
         {'>'}
       </button>
     </>
