@@ -12,8 +12,8 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
  */
 
 const TitleText = () => {
-  const [hoveredIntroduction, setHoveredIntroduction] = useState(false)
-  const [hoveredBack, setHoveredBack] = useState(false)
+  const [hoveredIntroduction, setHoveredIntroduction] = useState(false);
+  const [hoveredBack, setHoveredBack] = useState(false);
   const { view, setView } = useGreeenhouseStore(); // Information brought from store
 
   const texts = useMemo(() => (

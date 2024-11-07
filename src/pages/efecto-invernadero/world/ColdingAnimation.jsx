@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SnowBallRocks } from "./SnowBallRocks";
-import FrostBall from "./FrostBall";
+import SnowLight from "./SnowLight";
 
 /**
  * AwarenessText Component
@@ -68,8 +68,8 @@ const ColdingAnimation = ({ isAnimating }) => {
   return (
     <>
       <SnowBallRocks position={[-910,-750,-260]} scale={970*value} />
-      <FrostBall scale={31*value} />
-      <FrostBall scale={34*value} />
+      <SnowLight scale={31*value} />
+      <SnowLight scale={34*value} />
     </>
   )
 }

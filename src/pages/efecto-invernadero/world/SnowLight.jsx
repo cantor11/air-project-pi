@@ -8,7 +8,7 @@
  */
 
 
-const FrostBall = ({scale = 1}) => {
+const SnowLight = ({scale = 1}) => {
   return (
     <mesh position={[-1000,-300,-300]} scale={scale}>
       <sphereGeometry args={[20, 32, 32]} />
@@ -17,4 +17,4 @@ const FrostBall = ({scale = 1}) => {
   )
 }
 
-export default FrostBall
+export default SnowLight

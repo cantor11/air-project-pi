@@ -4,6 +4,7 @@ import { create } from "zustand";
 const useGreenhouseStore = create((set) => ({
   view: {
     isTitleView: true,
+    isAwarenessSectionView: false,
     awarenessStep: 0,
   },
 
