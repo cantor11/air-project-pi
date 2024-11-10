@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
  * This is a model of a rock which will be used for the environment of the scene.
  */
 
-export function StoneSphere(props) {
+export function StoneSphereModel(props) {
   const { nodes, materials } = useGLTF('/models-3d/stone_sphere.glb')
 
   return (

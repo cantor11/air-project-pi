@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { StoneSphere } from "./StoneSphere";
+import { StoneSphereModel } from "./StoneSphereModel";
 
 /**
  * DroughtAnimation Component
@@ -72,7 +72,7 @@ const DroughtAnimation = ({ isAnimating }) => {
   });
 
   return (
-    <StoneSphere position={[-1000,-300,-300]} scale={540*value} rotation-y={angle} />
+    <StoneSphereModel position={[-1000,-300,-300]} scale={540*value} rotation-y={angle} />
   )
 }
 

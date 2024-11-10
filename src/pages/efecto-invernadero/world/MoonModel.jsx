@@ -6,7 +6,7 @@
  * This is a sphere that will be used as a moon for the scene.
  */
 
-const Moon = () => {
+const MoonModel = () => {
   return (
     <mesh position={[-200, -60, -100]} castShadow>
       <sphereGeometry args={[20, 32, 32]} />
@@ -15,4 +15,4 @@ const Moon = () => {
   )
 }
 
-export default Moon
+export default MoonModel

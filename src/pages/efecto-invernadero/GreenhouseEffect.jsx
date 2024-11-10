@@ -10,7 +10,7 @@ import Staging from "./staging/Staging";
 
 import AwarenessText from "./world/AwarenessText";
 import { EarthModel } from "./world/EarthModel";
-import Moon from "./world/Moon";
+import MoonModel from "./world/MoonModel";
 import { SmokeRing } from "./world/SmokeRing";
 import { SunModel } from "./world/SunModel";
 import TitleText from "./world/TitleText";
@@ -72,7 +72,7 @@ const GreenhouseEffect = () => {
             <SmokeRing position={[-1000,-40,-300]} scale={90} />
             <SmokeRing position={[-1000,-300,-300]} scale={100} rotation-y={Math.PI/2}/>
             <SunModel position={[460, 150, -50]} scale={30}/>
-            <Moon />
+            <MoonModel />
 
             {view.isAwarenessSectionView ? // If we are in Awareness section, activate Keyboard Events and Awareness animations
             <>
