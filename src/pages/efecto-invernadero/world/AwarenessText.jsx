@@ -9,10 +9,11 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
  * to visualize some lines of text one by one with smooth animations in the Awareness view,
  * and buttons to let the user see the next line of information or go back to the previous one.
  * To know the current line of information or to change it, we will use a store made from Zustand.
+ * Also, we will set the amount of lines we have using the store.
  */
 
 const AwarenessText = () => {
-  const { view, setView } = useGreeenhouseStore();
+  const { view, setView, setAwarenessSection } = useGreeenhouseStore();
 
   // Array that contains every line that will be shown on awareness section
   const textLines = useMemo(
@@ -23,22 +24,27 @@ const AwarenessText = () => {
       "Pero, el ser humano ha aumentado<br>la concentración de estos gases",
       "Ese exceso tampoco es bueno",
       "No solo provoca<br>temperaturas extremas",
-      "Sino otros problemas<br>como sequías, inundaciones<br>y tormentas más poderosas"
+      "Sino otros problemas<br>como sequías,",
+      "inundaciones<br>y tormentas más poderosas"
     ], []
   );
 
-  // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines in textLines array
+  // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines we have
   const handleNextLine = (isNext) => {
     isNext ?
-    setView({ awarenessStep: (view.awarenessStep + 1) % textLines.length })
-    : setView({ awarenessStep: (view.awarenessStep + 7 - 1) % textLines.length })
+    setView({ awarenessStep: (view.awarenessStep + 1) % setAwarenessSection.textQuantity })
+    : setView({ awarenessStep: (view.awarenessStep + 7 - 1) % setAwarenessSection.textQuantity })
   };
 
-  // Everytime user gets in this section, it will show the first line, so we set the current line with 0 using the store
+  // Everytime user gets in this section, it will show the first line, so we set the current line with 0 using the store, also we set in the store the amount of lines we have
   useEffect(() => {
     setView({
       awarenessStep: 0,
     });
+    setAwarenessSection({
+      textQuantity: textLines.length,
+    });
+
     return () => null;
   }, []);
 

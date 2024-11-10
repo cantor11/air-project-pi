@@ -1,21 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SnowBallRocks } from "./SnowBallRocks";
 import SnowLight from "./SnowLight";
+import { useFrame } from "@react-three/fiber";
 
 /**
- * AwarenessText Component
+ * ColdingAnimation Component
  * 
  * This functional React component sets up some 3D objects imported in this proyect
  * to use them to show an animation. The animation simulates the Earth getting frozen,
  * for the immersion in the page.
- * The animation uses a "value" and change it from 0 to 1 to scale the objects and let
+ * The animation uses a "value" and changes it from 0 to 1 to scale the objects and let
  * them be watched on screen, also, the animation uses a easeInOut effect, so at the
  * beggining it goes fast, and slow at the end.
+ * In addition, uses an "angle" and changes it from 0 to 2*PI to rotate the object continuosly.
  */
 
 const ColdingAnimation = ({ isAnimating }) => {
+  const [angle, setAngle] = useState(0); // Value of rotation for the object
   const [value, setValue] = useState(0); // Value of scale for the objects
-  const duration = 1200;
+  const duration = 1200; // Time used to appear on screen
   const animationRef = useRef(null);
 
   // Easing function
@@ -25,8 +28,7 @@ const ColdingAnimation = ({ isAnimating }) => {
     : 1 - Math.pow(-2 * t + 2, 2) / 2;
   }, []);
 
-  // Function to start the animation
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     const startTime = performance.now();
     
     const updateValue = (currentTime) => {
@@ -41,15 +43,15 @@ const ColdingAnimation = ({ isAnimating }) => {
     };
 
     animationRef.current = requestAnimationFrame(updateValue); // Start animation
-  };
+  }, []);
 
-  const stopAnimation = () => {
+  const stopAnimation = useCallback(() => {
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current); // Stops animation
       animationRef.current = null; // Clean reference
     }
     setValue(0); // Restarts value to 0
-  };
+  }, []);
 
   // Clean to cancel animation if component is not up
   useEffect(() => {
@@ -65,9 +67,14 @@ const ColdingAnimation = ({ isAnimating }) => {
     : stopAnimation()
   }, [isAnimating]);
 
+  // This executes every frame, increasing angle's value
+  useFrame(() => {
+    setAngle((prevAngle) => (prevAngle + 0.0005) % (Math.PI * 2)); // Rotates from 0 to 2*PI, a complete rotation
+  });
+
   return (
     <>
-      <SnowBallRocks position={[-910,-750,-260]} scale={970*value} />
+      <SnowBallRocks position={[-910,-750,-260]} scale={970*value} rotation-y={angle} />
       <SnowLight scale={31*value} />
       <SnowLight scale={34*value} />
     </>

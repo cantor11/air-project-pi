@@ -2,18 +2,20 @@ import { useKeyboardControls } from "@react-three/drei";
 
 import { useFrame } from "@react-three/fiber";
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 
 /**
  * KeyboardListeners component provides KeyboardControls from the Drei library.
  * It allows users to press some keys to go to the next or previous line of information
- * in the Awareness section. To change the current line it will use a function brought
- * from a store made with Zustand.
+ * in the Awareness section. To change the current line and to know how many lines we have
+ * it will use a function brought from a store made with Zustand.
  */
 
 const KeyboardListeners = () => {
   const [sub, get] = useKeyboardControls();
-  const { view, setView } = useGreeenhouseStore(); // information brought from store
+  const { view, setView, awarenessSection } = useGreeenhouseStore(); // information brought from store
+  const textQuantity = useMemo(
+    () => awarenessSection.textQuantity, []);
 
   // useRefs to track the key's status
   const isRightKeyHeldRef = useRef(false);
@@ -26,7 +28,7 @@ const KeyboardListeners = () => {
     if (right && !isRightKeyHeldRef.current) {
       isRightKeyHeldRef.current = true;
       setView({
-        awarenessStep: (view.awarenessStep + 1) % 7,
+        awarenessStep: (view.awarenessStep + 1) % textQuantity,
       });
     }
     if (!right && isRightKeyHeldRef.current) {
@@ -37,7 +39,7 @@ const KeyboardListeners = () => {
     if (left && !isLeftKeyHeldRef.current) {
       isLeftKeyHeldRef.current = true;
       setView({
-        awarenessStep: (view.awarenessStep + 7 - 1) % 7,
+        awarenessStep: (view.awarenessStep + textQuantity - 1) % textQuantity,
       });
     }
     if (!left && isLeftKeyHeldRef.current) {
