@@ -15,7 +15,6 @@ export function SnowBallRocks(props) {
     <group {...props} dispose={null}>
       <group scale={0.01}>
         <mesh
-          castShadow
           receiveShadow
           geometry={nodes.NodeMesh0__0.geometry}
           material={materials['Scene_-_Root']}
@@ -23,7 +22,6 @@ export function SnowBallRocks(props) {
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
-          castShadow
           receiveShadow
           geometry={nodes.NodeMesh1__0.geometry}
           material={materials['Scene_-_Root']}
