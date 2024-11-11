@@ -66,5 +66,8 @@
 .button-login{
     width: 200px;
     margin-bottom: 25px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
 }
 

@@ -10,6 +10,7 @@ import Moon from "./world/Moon";
 import SmogStaging from "./staging/SmogStaging";
 import IntroText from "./world/IntroText";
 import "./Smog.css";
+import { PI } from "three/webgpu";
 
 /**
  * `MiniCityScene` Component
@@ -68,8 +69,8 @@ const MiniCityScene = () => {
 const Smog = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const cameraSettings = {
-    position: [0, 550, 0],
-    rotation: [-Math.PI / 6, Math.PI / 4, 0],
+    position: [0, 350, 420],
+    rotation: [0, -Math.PI/6, 0],
     near: 0.1, 
     far: 2000,
   };

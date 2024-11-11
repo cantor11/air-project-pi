@@ -98,6 +98,7 @@ nav ul li a:active {
 
 .button-logout:focus,
 .button-logout:active {
+  filter: saturate(70%);
   outline: none;
 }
 

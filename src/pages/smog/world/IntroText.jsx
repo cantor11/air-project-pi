@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Html } from "@react-three/drei";
+import { useThree } from '@react-three/fiber';
+import { useSpring, animated } from '@react-spring/three';
 
 /**
  * `IntroText` Component
@@ -16,12 +18,29 @@ import { Html } from "@react-three/drei";
  */
 
 const IntroText = () => {
+  const { camera } = useThree();
+  const [clicked, setClicked] = useState(false);
+
+  // Animation Hook
+  const springProps = useSpring({
+    position: clicked ? [0, 000, 0] : [camera.position.x, camera.position.y, camera.position.z],
+    config: { tension: 30, friction: 70 },
+    onChange: ({ value }) => {
+      camera.position.set(...value.position);
+      camera.lookAt(0, 0, 0);
+    },
+  });
+
+  const handleClick = () => {
+    setClicked(true);
+  };
+
   return (
     <Html
       wrapperClass='intro-text'    // CSS class for specific text styling
       occlude                      // Allows the text to occlude according to objects in the scene
       center                       // Centers the text in 3D space
-      distanceFactor={18}          // Scales the visual distance of the text
+      distanceFactor={16}          // Scales the visual distance of the text
       transform                    // Enables 3D transformations
       position={[0, 230, 420]}     // Positions the text within the 3D space
       rotation={[-Math.PI / 6, 0, 0]} // Rotates the text for optimal visualization in the scene
@@ -37,6 +56,8 @@ const IntroText = () => {
         Para combatirlo, es esencial reducir las emisiones a través de energías limpias, 
         transporte público eficiente y políticas ambientales efectivas.
       </h2>
+      <br />
+      <button className="intro-button" onClick={handleClick}>Conoce más...</button>
     </Html>
   )
 }
