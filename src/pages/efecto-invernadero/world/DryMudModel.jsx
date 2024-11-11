@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 /**
  * DryMudModel Component
  * 
- * This functional React component sets up a 3D object using `@react-three/fiber` 
+ * This functional React component sets up a 3D object using `@react-three/drei` 
  * to visualize an 3d object imported in this proyect.
  * This is a model of a dry rock which will be used for the environment of the scene.
  */

@@ -1,5 +1,6 @@
 import ColdingAnimation from "./ColdingAnimation"
 import DroughtAnimation from "./DroughtAnimation";
+import RainAnimation from "./RainAnimation";
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 /**
@@ -21,6 +22,9 @@ const AwarenessAnimations = () => {
       : null}
       {view.awarenessStep === 6 ?
       <DroughtAnimation isAnimating={true} />
+      : null}
+      {view.awarenessStep === 7 ?
+      <RainAnimation isAnimating={true} />
       : null}
     </>
   )

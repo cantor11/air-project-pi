@@ -4,7 +4,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 /**
  * SmokeRing Component
  * 
- * This functional React component sets up a 3D object using `@react-three/fiber` 
+ * This functional React component sets up a 3D object using `@react-three/drei` 
  * to visualize an animated 3d object imported in this proyect.
  * This is a cloud ring which will be used as gas.
  */
