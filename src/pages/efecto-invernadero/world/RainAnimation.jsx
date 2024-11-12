@@ -120,35 +120,35 @@ const RainAnimation = ({ isAnimating }) => {
       <WaterWorldModel scale={25.5*value} />
       <group ref={rainCloud_1} position={[-1000, -300, -300]} rotation={[0,0,0]} scale={value}>
         <CloudModel position={[-550, 0, 0]} scale={20} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_2} position={[-1000, -300, -300]} rotation={[0,Math.PI*1/2,0]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_3} position={[-1000, -300, -300]} rotation={[0,-Math.PI,0]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350,0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_4} position={[-1000, -300, -300]} rotation={[0,-Math.PI*1/2,0]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_5} position={[-1000, -300, -300]} rotation={[0,0,0]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_6} position={[-1000, -300, -300]} rotation={[0,0,Math.PI*1/2]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_7} position={[-1000, -300, -300]} rotation={[0,0,-Math.PI]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
       <group ref={rainCloud_8} position={[-1000, -300, -300]} rotation={[0,0,-Math.PI*1/2]} scale={value}>
         <CloudModel position={[-550, 0, -70]} scale={20} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
-        <PurpleRainstormModel position={[-350, 50, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
+        <PurpleRainstormModel position={[-350, 0, 0]} scale={1} rotation-x={Math.PI*1/2} rotation-z={Math.PI*1/2} />
       </group>
     </>
   )
