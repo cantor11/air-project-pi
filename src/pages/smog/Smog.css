@@ -37,6 +37,10 @@
   animation: fadeIn 2s ease-in forwards;
 }
 
+.intro-smog {
+  width: 115%;       
+}
+
 .intro-button {
   display: inline-block;
   background: none; 
@@ -44,7 +48,7 @@
   box-shadow: none;
   outline: none; 
   padding: 0;
-  font-size: 85px;
+  font-size: 100px;
   font-family: 'Arial Narrow', sans-serif;
   color: rgb(215, 222, 0);  
   font-weight: bold;
@@ -60,11 +64,27 @@
   box-shadow: none;
 }
 
-.button-link:active,
-.button-link:focus {
+.intro_button:active,
+.intro-button:focus {
   color: rgb(255, 255, 165);
   outline: none;
   box-shadow: none;
+}
+
+.awareness-text1 {
+  text-align: right; 
+  width: 100%;       
+}
+
+.awareness-text2 {
+  text-align: left; 
+  width: 100%;       
+}
+
+.awareness-instruction {
+  overflow: hidden;
+  width: 530%;
+  text-shadow: 0 0 18px rgba(245, 225, 0, 0.849);
 }
 
 @keyframes fadeIn {

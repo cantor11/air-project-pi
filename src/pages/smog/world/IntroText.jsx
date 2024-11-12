@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Html } from "@react-three/drei";
 import { useThree } from '@react-three/fiber';
-import { useSpring, animated } from '@react-spring/three';
+import { useSpring } from '@react-spring/three';
 
 /**
  * `IntroText` Component
@@ -23,8 +23,8 @@ const IntroText = () => {
 
   // Animation Hook
   const springProps = useSpring({
-    position: clicked ? [0, 000, 0] : [camera.position.x, camera.position.y, camera.position.z],
-    config: { tension: 30, friction: 70 },
+    position: clicked ? [0, 660, 0] : [camera.position.x, camera.position.y, camera.position.z],
+    config: { tension: 10, friction: 30 },
     onChange: ({ value }) => {
       camera.position.set(...value.position);
       camera.lookAt(0, 0, 0);
@@ -42,22 +42,24 @@ const IntroText = () => {
       center                       // Centers the text in 3D space
       distanceFactor={16}          // Scales the visual distance of the text
       transform                    // Enables 3D transformations
-      position={[0, 230, 420]}     // Positions the text within the 3D space
+      position={[-5, 230, 420]}     // Positions the text within the 3D space
       rotation={[-Math.PI / 6, 0, 0]} // Rotates the text for optimal visualization in the scene
     >
+      <div className='intro-smog'>
       <h1>
         <b> 
           Hablemos sobre el smog... 
         </b> 
       </h1>
       <h2> 
-        Resultado de varias décadas de contaminación del aire por emisiones de vehículos y fábricas, 
+        Como resultado de varias décadas de contaminación del aire por emisiones de vehículos y fábricas, 
         perjudicial para la salud humana y el medio ambiente. Causando enfermedades respiratorias y afectando ecosistemas. 
         Para combatirlo, es esencial reducir las emisiones a través de energías limpias, 
         transporte público eficiente y políticas ambientales efectivas.
       </h2>
       <br />
       <button className="intro-button" onClick={handleClick}>Conoce más...</button>
+      </div>
     </Html>
   )
 }
