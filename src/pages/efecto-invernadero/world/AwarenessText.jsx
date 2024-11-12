@@ -101,14 +101,41 @@ const AwarenessText = () => {
 
       <PaginationDots total={textLines.length} currentIndex={view.awarenessStep} /> {/* Pagination for current line */}
 
-      <button style={{ position: 'absolute' , bottom: '10%', left: '10%'}} onClick={handleClickCameraAnimation}> Volver </button>
+      <div style={{ position: 'absolute', bottom: '10%', left: '10%' }}>
+        <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
+          textShadow: `
+            -1px -1px 0 #5037da,
+            1px -1px 0 #5037da,
+            -1px 1px 0 #5037da,
+            1px 1px 0 #5037da`
+        }}>
+          {'Usa Esc'}<br></br>
+          {'para salir'}
+        </p>
+        <button onClick={handleClickCameraAnimation}> Volver </button>
+      </div>
 
-      <button style={{ position: 'absolute' , bottom: '10%', right: '17%', backgroundColor: 'gray' }} onClick={() => handleNextLine(false)}>
-        {'<'}
-      </button>
-      <button style={{ position: 'absolute' , bottom: '10%', right: '10%', backgroundColor: 'gray' }} onClick={() => handleNextLine(true)}>
-        {'>'}
-      </button>
+      <div style={{ position: 'absolute', bottom: '10%', right: '10%', alignItems:'center' }}>
+        <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
+          textShadow: `
+            -1px -1px 0 #5037da,
+            1px -1px 0 #5037da,
+            -1px 1px 0 #5037da,
+            1px 1px 0 #5037da`
+        }}>
+          {'Usa las teclas <- -> | A D'}<br></br>
+          {'para cambiar de texto'}
+        </p>
+
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4vh' }}>
+          <button style={{ backgroundColor: 'gray' }} onClick={() => handleNextLine(false)}>
+            {'<'}
+          </button>
+          <button style={{ backgroundColor: 'gray' }} onClick={() => handleNextLine(true)}>
+            {'>'}
+          </button>
+        </div>
+      </div>
     </>
   );
 };

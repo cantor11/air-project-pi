@@ -21,7 +21,7 @@ const KeyboardListeners = () => {
   const isLeftKeyHeldRef = useRef(false);
 
   useFrame(() => {
-    const { right, left } = get(); // keys information
+    const { right, left, esc } = get(); // keys information
 
     // Logic for 'right' key
     if (right && !isRightKeyHeldRef.current) {
@@ -43,6 +43,13 @@ const KeyboardListeners = () => {
     }
     if (!left && isLeftKeyHeldRef.current) {
       isLeftKeyHeldRef.current = false; // When the key is up
+    }
+
+    // Logic for 'escape' key
+    if (esc) {
+      setView({
+        isAwarenessSectionView: false,
+      });
     }
   });
   

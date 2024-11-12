@@ -49,6 +49,7 @@ const GreenhouseEffect = () => {
     () => [
       { name: "left", keys: ["ArrowLeft", "KeyA"] },
       { name: "right", keys: ["ArrowRight", "KeyD"] },
+      { name: "esc", keys: ["Escape"] },
     ],
     []
   );
