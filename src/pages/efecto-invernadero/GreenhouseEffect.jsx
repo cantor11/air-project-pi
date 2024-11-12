@@ -11,7 +11,6 @@ import Staging from "./staging/Staging";
 import AwarenessText from "./world/AwarenessText";
 import { EarthModel } from "./world/EarthModel";
 import MoonModel from "./world/MoonModel";
-import { SmokeRing } from "./world/SmokeRing";
 import { SunModel } from "./world/SunModel";
 import TitleText from "./world/TitleText";
 import AwarenessAnimations from "./world/AwarenessAnimations";
@@ -60,7 +59,7 @@ const GreenhouseEffect = () => {
       <div className="container">
         <KeyboardControls map={map}>
           <Canvas shadows>
-            <CameraPositioning />
+            <CameraPositioning /> {/* Component to handle camera positioning from one section to another */}
             <Suspense fallback={null}>
               <Controls />
               <Lights />
@@ -68,9 +67,6 @@ const GreenhouseEffect = () => {
             <Staging />
 
             <EarthModel position={[-1000,-300,-300]} scale={100} receiveShadow/>
-            <SmokeRing position={[-1000,-220,-300]} scale={100} rotation-x={Math.PI}/>
-            <SmokeRing position={[-1000,-40,-300]} scale={90} />
-            <SmokeRing position={[-1000,-300,-300]} scale={100} rotation-y={Math.PI/2}/>
             <SunModel position={[460, 150, -50]} scale={30}/>
             <MoonModel />
 
@@ -87,7 +83,7 @@ const GreenhouseEffect = () => {
               </Html>
             </>}
           </Canvas>
-          {view.isAwarenessSectionView ? <AwarenessText /> : null}
+          {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
           <Loader />
         </KeyboardControls>
       </div>
