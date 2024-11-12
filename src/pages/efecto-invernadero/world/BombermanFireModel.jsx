@@ -24,13 +24,13 @@ export function BombermanFire(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]);  // Efect executed when available
 
   // We clone the material for this instance
   const customMaterial = useMemo(
     () => materials.Fire.clone()
     , []
-  )
+  );
 
   customMaterial.transparent = true;
   customMaterial.opacity = 0.3;
