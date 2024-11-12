@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
 import { SnowBallRocks } from "./SnowBallRocks";
 import SnowLight from "./SnowLight";
-import { useFrame } from "@react-three/fiber";
 
 /**
  * ColdingAnimation Component
@@ -81,4 +81,4 @@ const ColdingAnimation = ({ isAnimating }) => {
   )
 }
 
-export default ColdingAnimation
+export default ColdingAnimation;

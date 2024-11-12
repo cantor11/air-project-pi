@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { BombermanFire } from "./BombermanFireModel";
-import { FireModel } from "./FireModel";
 import BurningWorldModel from "./BurningWorldModel";
+import { FireModel } from "./FireModel";
 
 /**
  * BurningAnimation Component
@@ -83,4 +83,4 @@ const BurningAnimation = ({ isAnimating }) => {
   )
 }
 
-export default BurningAnimation
+export default BurningAnimation;

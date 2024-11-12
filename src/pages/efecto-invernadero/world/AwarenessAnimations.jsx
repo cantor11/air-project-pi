@@ -44,4 +44,4 @@ const AwarenessAnimations = () => {
   )
 }
 
-export default AwarenessAnimations
+export default AwarenessAnimations;

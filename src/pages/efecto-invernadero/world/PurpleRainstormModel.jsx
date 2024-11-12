@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 /**
@@ -11,12 +11,12 @@ import { useGLTF, useAnimations } from '@react-three/drei'
  */
 
 export function PurpleRainstormModel(props) {
-  const rainRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/purple_lightning_rainstorm.glb')
-  const { actions } = useAnimations(animations, rainRef)
+  const rainRef = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/purple_lightning_rainstorm.glb');
+  const { actions } = useAnimations(animations, rainRef);
 
   useEffect(() => {
-    const action = actions['Animation']
+    const action = actions['Animation'];
     if (action) {
       action.reset().play()  // Start animation
       action.timeScale = 4 // Adjust animation speed
@@ -27,7 +27,7 @@ export function PurpleRainstormModel(props) {
         action.stop()  // Stop animations when component is not up
       }
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]); // Efect executed when available
   
   return (
     <group ref={rainRef} {...props} dispose={null}>
@@ -1097,4 +1097,4 @@ export function PurpleRainstormModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/purple_lightning_rainstorm.glb')
+useGLTF.preload('/models-3d/purple_lightning_rainstorm.glb');

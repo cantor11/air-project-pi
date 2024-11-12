@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei';
 
 /**
  * CloudModel Component
@@ -16,7 +16,7 @@ export function CloudModel(props) {
   const customMaterial = useMemo(
     () => materials.Cloud.clone()
     , []
-  )
+  );
 
   customMaterial.transparent = true;
   customMaterial.opacity = 0.08;
@@ -31,4 +31,4 @@ export function CloudModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/cloud.glb')
+useGLTF.preload('/models-3d/cloud.glb');

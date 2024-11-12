@@ -17,4 +17,4 @@ const SnowLight = ({scale = 1}) => {
   )
 }
 
-export default SnowLight
+export default SnowLight;

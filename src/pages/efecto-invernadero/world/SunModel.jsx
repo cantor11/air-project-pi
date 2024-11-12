@@ -10,12 +10,12 @@ import { useGLTF, useAnimations } from '@react-three/drei'
  */
 
 export function SunModel(props) {
-  const sunRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/sun.glb')
-  const { actions } = useAnimations(animations, sunRef)
+  const sunRef = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/sun.glb');
+  const { actions } = useAnimations(animations, sunRef);
 
   useEffect(() => {
-    const action = actions['Take 001']
+    const action = actions['Take 001'];
     if (action) {
       action.reset().play()  // Start animation
       action.timeScale = 0.2 // Adjust animation speed
@@ -24,7 +24,7 @@ export function SunModel(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]); // Efect executed when available
 
   return (
     <group ref={sunRef} {...props} dispose={null}>
@@ -60,4 +60,4 @@ export function SunModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/sun.glb')
+useGLTF.preload('/models-3d/sun.glb');

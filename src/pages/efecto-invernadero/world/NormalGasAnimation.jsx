@@ -71,4 +71,4 @@ const NormalGasAnimation = ({ isAnimating }) => {
   )
 }
 
-export default NormalGasAnimation
+export default NormalGasAnimation;

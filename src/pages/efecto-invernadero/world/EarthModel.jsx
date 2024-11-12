@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useEffect, useRef } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
 /**
  * EarthModel Component
@@ -10,9 +10,9 @@ import { useGLTF, useAnimations } from '@react-three/drei'
  */
 
 export function EarthModel(props) {
-  const earthRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/earth.glb')
-  const { actions } = useAnimations(animations, earthRef)
+  const earthRef = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/earth.glb');
+  const { actions } = useAnimations(animations, earthRef);
 
   useEffect(() => {
     const action = actions['Take 001']
@@ -24,7 +24,7 @@ export function EarthModel(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]); // Efect executed when available
 
   return (
     <group ref={earthRef} {...props} dispose={null}>
@@ -60,4 +60,4 @@ export function EarthModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/earth.glb')
+useGLTF.preload('/models-3d/earth.glb');

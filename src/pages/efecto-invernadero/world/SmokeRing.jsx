@@ -18,7 +18,7 @@ export function SmokeRing(props) {
   const customMaterial = useMemo(
     () => materials.Cloud.clone()
     , []
-  )
+  );
 
   customMaterial.transparent = true;
   customMaterial.opacity = 0.07;
@@ -33,7 +33,7 @@ export function SmokeRing(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]); // Efect executed when available
 
   return (
     <group ref={smokeRingRef} {...props} dispose={null}>
@@ -70,4 +70,4 @@ export function SmokeRing(props) {
   )
 }
 
-useGLTF.preload('/models-3d/cloud_ring.glb')
+useGLTF.preload('/models-3d/cloud_ring.glb');

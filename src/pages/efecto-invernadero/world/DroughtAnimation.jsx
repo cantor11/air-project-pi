@@ -76,4 +76,4 @@ const DroughtAnimation = ({ isAnimating }) => {
   )
 }
 
-export default DroughtAnimation
+export default DroughtAnimation;

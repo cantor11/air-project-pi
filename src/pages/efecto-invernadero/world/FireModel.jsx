@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useEffect, useMemo, useRef } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
 /**
  * FireModel Component
@@ -24,13 +24,13 @@ export function FireModel(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]);  // Efect executed when available
 
   // We clone the material for this instance
   const customMaterial = useMemo(
     () => materials.fire3lambert1.clone()
     , []
-  )
+  );
 
   customMaterial.transparent = true;
   customMaterial.opacity = 0.3;
@@ -62,4 +62,4 @@ export function FireModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/fire.glb')
+useGLTF.preload('/models-3d/fire.glb');

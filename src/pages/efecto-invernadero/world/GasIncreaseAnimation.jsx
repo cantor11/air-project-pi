@@ -72,4 +72,4 @@ const GasIncreaseAnimation = ({ isAnimating }) => {
   )
 }
 
-export default GasIncreaseAnimation
+export default GasIncreaseAnimation;

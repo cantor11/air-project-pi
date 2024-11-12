@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { PurpleRainstormModel } from "./PurpleRainstormModel";
 import { CloudModel } from "./CloudModel";
+import { PurpleRainstormModel } from "./PurpleRainstormModel";
 import WaterWorldModel from "./WaterWorldModel";
 
 /**
@@ -154,4 +154,4 @@ const RainAnimation = ({ isAnimating }) => {
   )
 }
 
-export default RainAnimation
+export default RainAnimation;

@@ -17,4 +17,4 @@ const WaterWorldModel = ({scale = 1}) => {
   )
 }
 
-export default WaterWorldModel
+export default WaterWorldModel;

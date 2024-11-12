@@ -1,4 +1,4 @@
-import { useGLTF } from '@react-three/drei'
+import { useGLTF } from '@react-three/drei';
 
 /**
  * DryMudModel Component
@@ -9,7 +9,8 @@ import { useGLTF } from '@react-three/drei'
  */
 
 export function DryMudModel(props) {
-  const { nodes, materials } = useGLTF('/models-3d/dry_mud.glb')
+  const { nodes, materials } = useGLTF('/models-3d/dry_mud.glb');
+  
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
@@ -26,4 +27,4 @@ export function DryMudModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/dry_mud.glb')
+useGLTF.preload('/models-3d/dry_mud.glb');

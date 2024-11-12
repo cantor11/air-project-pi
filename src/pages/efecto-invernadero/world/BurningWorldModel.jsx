@@ -17,4 +17,4 @@ const BurningWorldModel = ({scale = 1}) => {
   )
 }
 
-export default BurningWorldModel
+export default BurningWorldModel;

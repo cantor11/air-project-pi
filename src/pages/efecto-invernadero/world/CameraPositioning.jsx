@@ -45,4 +45,4 @@ const CameraPositioning = () => {
   return null;
 };
 
-export default CameraPositioning
+export default CameraPositioning;

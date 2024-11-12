@@ -10,7 +10,8 @@ import { useGLTF } from '@react-three/drei'
  */
 
 export function SnowBallRocks(props) {
-  const { nodes, materials } = useGLTF('/models-3d/snow_ball_rocks.glb')
+  const { nodes, materials } = useGLTF('/models-3d/snow_ball_rocks.glb');
+
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
@@ -33,4 +34,4 @@ export function SnowBallRocks(props) {
   )
 }
 
-useGLTF.preload('/models-3d/snow_ball_rocks.glb')
+useGLTF.preload('/models-3d/snow_ball_rocks.glb');

@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useEffect, useMemo, useRef } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
 /**
  * BombermanFire Component
@@ -64,4 +64,4 @@ export function BombermanFire(props) {
   )
 }
 
-useGLTF.preload('/models-3d/bomberman_fire.glb')
+useGLTF.preload('/models-3d/bomberman_fire.glb');

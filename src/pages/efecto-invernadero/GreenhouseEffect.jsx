@@ -8,15 +8,15 @@ import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Staging from "./staging/Staging";
 
+import AwarenessAnimations from "./world/AwarenessAnimations";
 import AwarenessText from "./world/AwarenessText";
 import { EarthModel } from "./world/EarthModel";
 import MoonModel from "./world/MoonModel";
 import { SunModel } from "./world/SunModel";
 import TitleText from "./world/TitleText";
-import AwarenessAnimations from "./world/AwarenessAnimations";
 
-import KeyboardListeners from "./world/KeyboardListeners";
 import CameraPositioning from "./world/CameraPositioning";
+import KeyboardListeners from "./world/KeyboardListeners";
 
 //import { Perf } from "r3f-perf"; //performance stats
 

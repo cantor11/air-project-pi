@@ -15,4 +15,4 @@ const MoonModel = () => {
   )
 }
 
-export default MoonModel
+export default MoonModel;
