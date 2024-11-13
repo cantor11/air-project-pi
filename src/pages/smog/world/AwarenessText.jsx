@@ -139,7 +139,7 @@ const AwarenessText = () => {
           rotation={[-Math.PI / 2, 0, 0]}
         >
           <div className='image-smog-text'>
-            <img src="images/smog/pollution-city.png" alt="pulmon" width="1800" height="1800"/>
+            <img src="images/smog/pollution-city.png" alt="mundo" width="1800" height="1800"/>
           </div>
         </Html>
 
