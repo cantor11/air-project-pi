@@ -32,7 +32,16 @@ const SmogStaging = () => {
         radius={400}
         depth={500}
         count={5000}
-        factor={20}
+        factor={25}
+        saturation={5}
+        fade
+        speed={1}
+      />
+      <Stars
+        radius={400}
+        depth={500}
+        count={150}
+        factor={90}
         saturation={5}
         fade
         speed={1}
