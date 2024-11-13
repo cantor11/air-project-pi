@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useMemo } from "react";
+import { Suspense, useCallback, useEffect, useMemo } from "react";
 import { Canvas } from '@react-three/fiber';
 import { Html, KeyboardControls, Loader } from "@react-three/drei";
 import useGreeenhouseStore from "../../stores/greenhouse-store";
@@ -31,6 +31,10 @@ import KeyboardListeners from "./world/KeyboardListeners";
  * It incorporates a `Header` for navigation and utilizes * `Suspense` for lazy loading
  * of components like `Controls` and `Lights`.
  * The scene aims to enhance user engagement and understanding of this specific topic.
+ * In addition, this component uses a 'CameraPositioning' component which will let
+ * the user change the view to focus on different content in the page.
+ * Every time this component is shown, it will show the Title view first,
+ * to do that it will use a store made from Zustand
  */
 
 const GreenhouseEffect = () => {
@@ -53,6 +57,14 @@ const GreenhouseEffect = () => {
     ],
     []
   );
+
+  // When the component is shown, set it to show the Title view first
+  useEffect(() => {
+    setView({
+      isTitleView: true,
+      isAwarenessSectionView: false,
+    });
+  }, []);
 
   return (
     <>
