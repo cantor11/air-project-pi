@@ -40,7 +40,7 @@ const SensitizationText = () => {
                     exposición a estos rayos. Aunque el Protocolo de Montreal ha logrado reducir el uso de muchos de estos productos, 
                     la recuperación completa de la capa de ozono sigue en proceso y depende de nuestras acciones. A través de cambios 
                     en nuestro consumo y el apoyo a prácticas sostenibles, podemos ayudar a proteger este escudo y asegurar un planeta 
-                    habitable para el futuro.</h1>
+                    habitable para el futuro. Usa la plataforma o usa la flecha derecha para cambiar de escena.</h1>
             </Html>
             <Html 
                 occlude
@@ -67,7 +67,7 @@ const SensitizationText = () => {
                             
                         }}
                     >La imagen muestra la Tierra con un agujero en la atmósfera, simbolizando el agotamiento de la 
-                        capa de ozono y la vulnerabilidad del planeta a la radiación solar.</p>
+                        capa de ozono y la vulnerabilidad del planeta a la radiación solar. Haz click en la plataforma o usa la flecha derecha para cambiar de escena.</p>
                 </div>
             </Html>
         </>
