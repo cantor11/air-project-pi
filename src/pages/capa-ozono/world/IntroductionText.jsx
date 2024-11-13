@@ -43,7 +43,8 @@ const IntroductionText = () => {
                 La capa de ozono nos protege de la radiación ultravioleta dañina. Sin embargo, 
                 sustancias como los CFCs la han debilitado, aumentando los riesgos de cáncer de piel, 
                 daños oculares y afectando ecosistemas. Gracias al Protocolo de Montreal, su recuperación 
-                está en marcha, pero es vital continuar con prácticas sostenibles para protegerla.
+                está en marcha, pero es vital continuar con prácticas sostenibles para protegerla. Haz click 
+                en el arbusto o usa las flechas izquierda y derecha para cambiar de escena. 
             </Text>
         </>
     );
