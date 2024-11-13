@@ -1,19 +1,18 @@
-
-import { useEffect, useRef } from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
+import { useEffect, useRef } from 'react';
+import { useGLTF, useAnimations } from '@react-three/drei';
 
 /**
  * EarthModel Component
  * 
- * This functional React component sets up a 3D object using `@react-three/fiber` 
+ * This functional React component sets up a 3D object using `@react-three/drei` 
  * to visualize an 3d object imported in this proyect.
  * This is a model of the Earth which will be used for the environment of the scene.
  */
 
 export function EarthModel(props) {
-  const earthRef = useRef()
-  const { nodes, materials, animations } = useGLTF('/models-3d/earth.glb')
-  const { actions } = useAnimations(animations, earthRef)
+  const earthRef = useRef();
+  const { nodes, materials, animations } = useGLTF('/models-3d/earth.glb');
+  const { actions } = useAnimations(animations, earthRef);
 
   useEffect(() => {
     const action = actions['Take 001']
@@ -25,7 +24,7 @@ export function EarthModel(props) {
     return () => {
       if (action) action.stop()  // Stop animations when component is not up
     }
-  }, [actions])  // Efect executed when available
+  }, [actions]); // Efect executed when available
 
   return (
     <group ref={earthRef} {...props} dispose={null}>
@@ -61,4 +60,4 @@ export function EarthModel(props) {
   )
 }
 
-useGLTF.preload('/models-3d/earth.glb')
+useGLTF.preload('/models-3d/earth.glb');
