@@ -77,7 +77,6 @@ nav ul li a:active {
 .button-link.active {
   border: 2px solid rgb(165, 165, 165);
   background-color: #000000e6;
-  font-weight: bold;
 }
 
 .right-section {
