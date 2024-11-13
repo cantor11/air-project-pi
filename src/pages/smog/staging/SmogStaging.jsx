@@ -46,6 +46,16 @@ const SmogStaging = () => {
         fade
         speed={1}
       />
+      <Sky
+        distance={450000}  // Aumenta la distancia del cielo
+        sunPosition={[0, -10, 0]} // Posiciona el "sol" bajo el horizonte para simular la noche
+        inclination={0}   // Ajusta la inclinación del cielo
+        azimuth={0.1}      // Controla la dirección del cielo
+        turbidity={190}       // Añade una ligera neblina
+        rayleigh={0.1}
+        mieCoefficient={0.01}      // Coeficiente para oscurecer más
+        mieDirectionalG={0.9}       // Reduce el efecto de dispersión para oscurecer el cielo
+      />
   </>
   )
 }
