@@ -10,6 +10,7 @@ import Moon from "./world/Moon";
 import SmogStaging from "./staging/SmogStaging";
 import IntroText from "./world/IntroText";
 import "./Smog.css";
+import AwarenessText from "./world/AwarenessText";
 
 /**
  * `MiniCityScene` Component
@@ -68,10 +69,10 @@ const MiniCityScene = () => {
 const Smog = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const cameraSettings = {
-    position: [0, 550, 0],
-    rotation: [-Math.PI / 6, Math.PI / 4, 0],
+    position: [0, 250, 490],
+    rotation: [0, 0, 0],
     near: 0.1, 
-    far: 2000,
+    far: 2500,
   };
 
   useEffect(() => {
@@ -87,8 +88,9 @@ const Smog = () => {
           <Suspense fallback={null}>
             <SmogControls />
             <SmogLights />
-            <SmogStaging />  
-            <IntroText />        
+            <SmogStaging />
+            <IntroText />
+            <AwarenessText />      
             <MiniCityScene />
           </Suspense>
         </Canvas>

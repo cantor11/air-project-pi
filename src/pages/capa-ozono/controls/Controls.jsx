@@ -1,4 +1,5 @@
-import { PointerLockControls  } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+
 
 /**
  * Controls Component
@@ -7,11 +8,28 @@ import { PointerLockControls  } from "@react-three/drei";
  * while hiding the cursor. This is particularly useful for immersive
  * experiences, such as walking through a 3D space without interface
  * distractions.
- */
+
 
 const Controls = () => {
   return (
-    <PointerLockControls    
+    <FirstPersonControls   
+      lookSpeed={0.2}
+      lookVertical={false}
+      
+    />
+  );
+};
+ */
+
+const Controls = () => {
+  
+  return (
+    <OrbitControls
+      target={[1, 2, 0]}
+      maxPolarAngle={Math.PI / 2}  
+      minPolarAngle={0} 
+      minDistance={12}
+      OrbitControls maxDistance={20}
     />
   );
 };
