@@ -7,7 +7,7 @@ const SmogStaging = () => {
     <>
       <Sparkles
         position={[0, -30, 0]}
-        color={"yellow"}
+        color={"#737811"}
         count={400}
         size={110}
         fade={true}

@@ -42,7 +42,7 @@ export function SmokeRing({ opacity = 1, ...props }) {
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
-              <group name="Cloud_GN001_2">
+              {/* <group name="Cloud_GN001_2">
                 <mesh
                   name="Object_4"
                   castShadow
@@ -59,7 +59,7 @@ export function SmokeRing({ opacity = 1, ...props }) {
                   geometry={nodes.Object_6.geometry}
                   material={customMaterial}
                 />
-              </group>
+              </group> */}
               <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
                 <mesh
                   name="Object_8"

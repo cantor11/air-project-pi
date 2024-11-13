@@ -81,7 +81,7 @@ const Smog = () => {
   return (
     <>
       <Header />
-      <div className="canvas-container">
+      <div className="smog-container">
         <div className={`transition-overlay ${isLoaded ? "fade-out" : ""}`}></div>
         <Canvas shadows camera={cameraSettings}>
           <Suspense fallback={null}>
