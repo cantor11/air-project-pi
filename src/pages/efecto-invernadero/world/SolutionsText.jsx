@@ -3,43 +3,44 @@ import { motion, AnimatePresence  } from 'framer-motion';
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 /**
- * AwarenessText Component
+ * SolutionsText Component
  * 
  * This functional React component sets up a interactive space using 'framer-motion'
- * to visualize some lines of text one by one with smooth animations in the Awareness view,
+ * to visualize some lines of text one by one with smooth animations in the Solutions view,
  * and buttons to let the user see the next line of information or go back to the previous one.
  * To know the current line of information or to change it, we will use a store made from Zustand.
  * Also, we will set the amount of lines we have using the store.
  */
 
-const AwarenessText = () => {
-  const { setView, awarenessSection, setAwarenessSection } = useGreeenhouseStore();
+const SolutionsText = () => {
+  const { setView, solutionsSection, setSolutionsSection } = useGreeenhouseStore();
 
-  // Array that contains every line that will be shown on awareness section
+  // Array that contains every line that will be shown on solutions section
   const textLines = useMemo(
     () => [
-      "El Efecto Invernadero<br>es un fenómeno natural",
+      "El Efecto invernadero<br>es un",
       "Los gases en la atmósfera<br>atrapan el calor del sol",
       "Sin estos gases, la tierra tendría<br>una temperatura muy baja",
       "Pero, el ser humano ha aumentado<br>la concentración de estos gases",
       "Ese exceso tampoco es bueno",
       "No solo provoca<br>temperaturas extremas",
       "Sino otros problemas<br>como sequías,",
-      "inundaciones<br>y tormentas más poderosas"
+      "inundaciones<br>y tormentas más poderosas",
+      "Soluciones<br>y más soluciones"
     ], []
   );
 
   // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines we have
   const handleNextLine = (isNext) => {
     isNext ?
-    setAwarenessSection({ awarenessStep: (awarenessSection.awarenessStep + 1) % awarenessSection.textQuantity })
-    : setAwarenessSection({ awarenessStep: (awarenessSection.awarenessStep + awarenessSection.textQuantity - 1) % awarenessSection.textQuantity })
+    setSolutionsSection({ solutionsStep: (solutionsSection.solutionsStep + 1) % solutionsSection.textQuantity })
+    : setSolutionsSection({ solutionsStep: (solutionsSection.solutionsStep + solutionsSection.textQuantity - 1) % solutionsSection.textQuantity })
   };
 
   // Everytime user gets in this section, it will show the first line, so we set the current line with 0 using the store, also we set in the store the amount of lines we have
   useEffect(() => {
-    setAwarenessSection({
-      awarenessStep: 0,
+    setSolutionsSection({
+      solutionsStep: 0,
       textQuantity: textLines.length,
     });
 
@@ -49,7 +50,7 @@ const AwarenessText = () => {
   // Function to change camera position and lookAt to title view
   const handleClickCameraAnimation = useCallback(() => {
     setView({
-      isAwarenessSectionView: false,
+      isSolutionsSectionView: false,
     });
   }, []);
 
@@ -85,19 +86,19 @@ const AwarenessText = () => {
       }}>
         <AnimatePresence wait>
           <motion.div
-            key={awarenessSection.awarenessStep} // Unique key for each line
+            key={solutionsSection.solutionsStep} // Unique key for each line
             //className="text-container"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div dangerouslySetInnerHTML={{ __html: textLines[awarenessSection.awarenessStep] }} />
+            <div dangerouslySetInnerHTML={{ __html: textLines[solutionsSection.solutionsStep] }} />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <PaginationDots total={textLines.length} currentIndex={awarenessSection.awarenessStep} /> {/* Pagination for current line */}
+      <PaginationDots total={textLines.length} currentIndex={solutionsSection.solutionsStep} /> {/* Pagination for current line */}
 
       <div style={{ position: 'absolute', bottom: '10%', left: '10%' }}>
         <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
@@ -138,4 +139,4 @@ const AwarenessText = () => {
   );
 };
 
-export default AwarenessText;
+export default SolutionsText;

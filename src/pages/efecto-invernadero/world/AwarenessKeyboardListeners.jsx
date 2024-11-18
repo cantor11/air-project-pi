@@ -4,13 +4,13 @@ import { useFrame } from "@react-three/fiber";
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 /**
- * KeyboardListeners component provides KeyboardControls from the Drei library.
+ * AwarenessKeyboardListeners component provides KeyboardControls from the Drei library.
  * It allows users to press some keys to go to the next or previous line of information
  * in the Awareness section. To change the current line and to know how many lines we have
  * it will use a function brought from a store made with Zustand.
  */
 
-const KeyboardListeners = () => {
+const AwarenessKeyboardListeners = () => {
   const [sub, get] = useKeyboardControls();
   const { setView, awarenessSection, setAwarenessSection } = useGreeenhouseStore(); // information brought from store
   const textQuantity = useMemo(
@@ -58,4 +58,4 @@ const KeyboardListeners = () => {
   );
 };
 
-export default KeyboardListeners;
+export default AwarenessKeyboardListeners;
