@@ -5,10 +5,10 @@ const useGreenhouseStore = create((set) => ({
   view: {
     isTitleView: true,
     isAwarenessSectionView: false,
-    awarenessStep: 0,
   },
 
   awarenessSection: {
+    awarenessStep: 0,
     textQuantity: 0,
   },
 

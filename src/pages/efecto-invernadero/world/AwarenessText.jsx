@@ -13,7 +13,7 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
  */
 
 const AwarenessText = () => {
-  const { view, setView, awarenessSection, setAwarenessSection } = useGreeenhouseStore();
+  const { setView, awarenessSection, setAwarenessSection } = useGreeenhouseStore();
 
   // Array that contains every line that will be shown on awareness section
   const textLines = useMemo(
@@ -32,16 +32,14 @@ const AwarenessText = () => {
   // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines we have
   const handleNextLine = (isNext) => {
     isNext ?
-    setView({ awarenessStep: (view.awarenessStep + 1) % awarenessSection.textQuantity })
-    : setView({ awarenessStep: (view.awarenessStep + awarenessSection.textQuantity - 1) % awarenessSection.textQuantity })
+    setAwarenessSection({ awarenessStep: (awarenessSection.awarenessStep + 1) % awarenessSection.textQuantity })
+    : setAwarenessSection({ awarenessStep: (awarenessSection.awarenessStep + awarenessSection.textQuantity - 1) % awarenessSection.textQuantity })
   };
 
   // Everytime user gets in this section, it will show the first line, so we set the current line with 0 using the store, also we set in the store the amount of lines we have
   useEffect(() => {
-    setView({
-      awarenessStep: 0,
-    });
     setAwarenessSection({
+      awarenessStep: 0,
       textQuantity: textLines.length,
     });
 
@@ -87,19 +85,19 @@ const AwarenessText = () => {
       }}>
         <AnimatePresence wait>
           <motion.div
-            key={view.awarenessStep} // Unique key for each line
+            key={awarenessSection.awarenessStep} // Unique key for each line
             //className="text-container"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div dangerouslySetInnerHTML={{ __html: textLines[view.awarenessStep] }} />
+            <div dangerouslySetInnerHTML={{ __html: textLines[awarenessSection.awarenessStep] }} />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <PaginationDots total={textLines.length} currentIndex={view.awarenessStep} /> {/* Pagination for current line */}
+      <PaginationDots total={textLines.length} currentIndex={awarenessSection.awarenessStep} /> {/* Pagination for current line */}
 
       <div style={{ position: 'absolute', bottom: '10%', left: '10%' }}>
         <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',

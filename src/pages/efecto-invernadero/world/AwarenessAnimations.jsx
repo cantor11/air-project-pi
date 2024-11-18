@@ -18,26 +18,26 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
  */
 
 const AwarenessAnimations = () => {
-  const { view } = useGreeenhouseStore(); // Information brought from store
+  const { awarenessSection } = useGreeenhouseStore(); // Information brought from store
 
   return (
     <>
-      {view.awarenessStep === 1 ?
+      {awarenessSection.awarenessStep === 1 ?
         <NormalGasAnimation isAnimating={true} />
         : null}
-      {view.awarenessStep === 2 ?
+      {awarenessSection.awarenessStep === 2 ?
         <ColdingAnimation isAnimating={true} />
         : null}
-      {view.awarenessStep >= 3 ?
+      {awarenessSection.awarenessStep >= 3 ?
         <GasIncreaseAnimation isAnimating={true} />
         : null}
-      {view.awarenessStep === 5 ?
+      {awarenessSection.awarenessStep === 5 ?
         <BurningAnimation isAnimating={true} />
         : null}
-      {view.awarenessStep === 6 ?
+      {awarenessSection.awarenessStep === 6 ?
         <DroughtAnimation isAnimating={true} />
         : null}
-      {view.awarenessStep === 7 ?
+      {awarenessSection.awarenessStep === 7 ?
         <RainAnimation isAnimating={true} />
         : null}
     </>

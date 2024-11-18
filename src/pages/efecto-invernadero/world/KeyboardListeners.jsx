@@ -12,7 +12,7 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 const KeyboardListeners = () => {
   const [sub, get] = useKeyboardControls();
-  const { view, setView, awarenessSection } = useGreeenhouseStore(); // information brought from store
+  const { setView, awarenessSection, setAwarenessSection } = useGreeenhouseStore(); // information brought from store
   const textQuantity = useMemo(
     () => awarenessSection.textQuantity, []);
 
@@ -26,8 +26,8 @@ const KeyboardListeners = () => {
     // Logic for 'right' key
     if (right && !isRightKeyHeldRef.current) {
       isRightKeyHeldRef.current = true;
-      setView({
-        awarenessStep: (view.awarenessStep + 1) % textQuantity,
+      setAwarenessSection({
+        awarenessStep: (awarenessSection.awarenessStep + 1) % textQuantity,
       });
     }
     if (!right && isRightKeyHeldRef.current) {
@@ -37,8 +37,8 @@ const KeyboardListeners = () => {
     // Logic for 'left' key
     if (left && !isLeftKeyHeldRef.current) {
       isLeftKeyHeldRef.current = true;
-      setView({
-        awarenessStep: (view.awarenessStep + textQuantity - 1) % textQuantity,
+      setAwarenessSection({
+        awarenessStep: (awarenessSection.awarenessStep + textQuantity - 1) % textQuantity,
       });
     }
     if (!left && isLeftKeyHeldRef.current) {
