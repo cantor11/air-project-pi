@@ -6,8 +6,8 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
 /**
  * CameraPositioning component provides a camera animation using 'react-three/fiber' and 'three'.
  * It allows to change the camera view from main (Greenshouse Effect title and introduction)
- * to another view which could be Awareness section or Solutions section and vice versa. To know which view to show
- * it will get the information brought from a store made with Zustand.
+ * to another view which could be Awareness section or Solutions section and vice versa.
+ * To know which view to show it will get the information brought from a store made with Zustand.
  */
 
 const CameraPositioning = () => {
@@ -19,8 +19,8 @@ const CameraPositioning = () => {
   const awareSectionPosition = useMemo(() => new THREE.Vector3(-600, -140, -150), []);
   const awareSectionLookAt = useMemo(() => new THREE.Vector3(-1000, -300, -300), []);
 
-  const solutionsSectionPosition = useMemo(() => new THREE.Vector3(-6000, -3500,-11000), []);
-  const solutionsSectionLookAt = useMemo(() => new THREE.Vector3(-10000, -1000, -12000), []);
+  const solutionsSectionPosition = useMemo(() => new THREE.Vector3(-5000, 2000,-18000), []);
+  const solutionsSectionLookAt = useMemo(() => new THREE.Vector3(-10000, 1000, -18400), []);
 
   const speed = 0.03; // Speed that the camera moves from actual position to target one
   const { camera } = useThree();
