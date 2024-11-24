@@ -66,11 +66,8 @@ const BouncingBall = (props) => {
       colliders={false}
       restitution={1.5}
       gravityScale={0.1}
-      onCollisionEnter={({ other }) => {
-        handleChange()
-        if (other.rigidBodyObject.name === "cubeBox") {
-          console.log("Ball collided with cubeBox");
-        }
+      onCollisionEnter={() => {
+        handleChange();
       }}
     >
       <mesh {...props}>
