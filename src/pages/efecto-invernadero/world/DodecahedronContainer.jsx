@@ -43,7 +43,7 @@ function CubeFace({ position, rotation }) {
   return (
     <mesh ref={faceMeshRef} position={position} rotation={rotation}>
       <planeGeometry args={[1 + 2*size, 1 + 2*size]} />
-      <meshPhysicalMaterial color={"transparent"} />
+      <meshPhysicalMaterial color={"white"} />
     </mesh>
   )
 }
