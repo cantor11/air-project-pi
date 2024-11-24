@@ -18,6 +18,8 @@ const SolutionsText = () => {
   // Array that contains every line that will be shown on solutions section
   const textLines = useMemo(
     () => [
+      "Usar electrodomésticos<br>eficientes, como reemplazar<br>bombillas tradicionales<br>por bombillas LED de<br>bajo consumo",
+      "Desenchufar dispositivos, ya",
       "El Efecto invernadero<br>es un",
       "Los gases en la atmósfera<br>atrapan el calor del sol",
       "Sin estos gases, la tierra tendría<br>una temperatura muy baja",
