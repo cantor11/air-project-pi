@@ -60,7 +60,7 @@ const BouncingBall = (props) => {
 
   return (
     <RigidBody
-      name="rbBall"
+      name="bouncingBall"
       ref={bouncingBallRef}
       type="dynamic"
       colliders={false}

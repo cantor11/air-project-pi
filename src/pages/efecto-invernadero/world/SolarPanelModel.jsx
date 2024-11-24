@@ -19,7 +19,7 @@ export function SolarPanelModel(props) {
         geometry={nodes.SolarPanel_SolarPanel_0.geometry}
         material={materials.SolarPanel}
         position={[0, 12.206, 35.525]}
-        rotation={[-Math.PI / 4, 0, 0]}
+        rotation={[-Math.PI / 4, Math.PI / 2, 0]}
       />
     </group>
   )

@@ -69,7 +69,7 @@ const DodecahedronContainer = ({ position }) => {
         position={position}
         name='cubeBox'
         onCollisionEnter={({ other }) => {
-          if (other.rigidBodyObject.name === "rbBall") {
+          if (other.rigidBodyObject.name === "bouncingBall") {
             handleChange();
           }
         }}
