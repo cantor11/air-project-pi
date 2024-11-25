@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence  } from 'framer-motion';
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
+import SolutionsMoreInfoTexts from './SolutionsMoreInfoTexts';
 
 /**
  * SolutionsText Component
@@ -12,8 +13,9 @@ import useGreeenhouseStore from "../../../stores/greenhouse-store";
  * Also, we will set the amount of lines we have using the store.
  */
 
+
 const SolutionsText = () => {
-  const { setView, solutionsSection, setSolutionsSection } = useGreeenhouseStore();
+  const { setView, solutionsSection, setSolutionsSection } = useGreeenhouseStore(); // information brought from store
 
   // Array that contains every line that will be shown on solutions section
   const textLines = useMemo(
@@ -53,6 +55,13 @@ const SolutionsText = () => {
   const handleClickCameraAnimation = useCallback(() => {
     setView({
       isSolutionsSectionView: false,
+    });
+  }, []);
+
+  // Function to stop showing More Info subsection
+  const handleClickShowMoreInfo = useCallback(() => {
+    setSolutionsSection({
+      isMoreInfoView: true,
     });
   }, []);
 
@@ -116,6 +125,20 @@ const SolutionsText = () => {
         <button onClick={handleClickCameraAnimation}> Volver </button>
       </div>
 
+      <div style={{ position: 'absolute', bottom: '10%' }}>
+        <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
+          textShadow: `
+            -1px -1px 0 #5037da,
+            1px -1px 0 #5037da,
+            -1px 1px 0 #5037da,
+            1px 1px 0 #5037da`
+        }}>
+          {'Mira más información'}<br></br>
+          {'sobre la solución'}
+        </p>
+        <button onClick={handleClickShowMoreInfo}> Más informacion </button>
+      </div>
+
       <div style={{ position: 'absolute', bottom: '10%', right: '10%', alignItems:'center' }}>
         <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
           textShadow: `
@@ -137,6 +160,8 @@ const SolutionsText = () => {
           </button>
         </div>
       </div>
+
+      <SolutionsMoreInfoTexts />
     </>
   );
 };

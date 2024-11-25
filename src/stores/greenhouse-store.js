@@ -16,6 +16,7 @@ const useGreenhouseStore = create((set) => ({
   solutionsSection: {
     solutionsStep: 0,
     textQuantity: 0,
+    isMoreInfoView: false,
   },
 
   setView: (viewUpdates) =>
@@ -35,4 +36,3 @@ const useGreenhouseStore = create((set) => ({
 }));
 
 export default useGreenhouseStore;
-
