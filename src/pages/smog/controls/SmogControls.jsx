@@ -9,7 +9,6 @@ import { OrbitControls } from "@react-three/drei";
 
 const SmogControls = () => {
   return (
-<<<<<<< HEAD
     <OrbitControls
       enableRotate={false}
       //maxPolarAngle={Math.PI * 0.35} // Max upward tilt
@@ -21,18 +20,6 @@ const SmogControls = () => {
       rotateSpeed={0.05} // Rotation speed
       maxDistance={660} // Max distance from target
       minDistance={550} // Min distance from target
-=======
-    <OrbitControls    
-      maxPolarAngle={Math.PI * 0.35} // Max upward tilt
-      minPolarAngle={Math.PI * 0.35} // Min downward tilt
-      maxAzimuthAngle={Math.PI * 0.03} // Max horizontal rotation
-      minAzimuthAngle={-Math.PI * 0.03} // Min horizontal rotation
-      enableDamping={true} // Enable smooth damping
-      dampingFactor={0.2} // Damping intensity
-      rotateSpeed={0.1} // Rotation speed
-      maxDistance={580} // Max distance from target
-      minDistance={520} // Min distance from target
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
       enablePan={false} // Disable panning
       target={[0, 0, 0]} // Camera target position
     />

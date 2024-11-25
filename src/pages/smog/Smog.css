@@ -19,14 +19,8 @@
   pointer-events: none;
 }
 
-<<<<<<< HEAD
 .smog-container {
   filter: saturate(130%); 
-=======
-@font-face {
-  font-family: 'Arial Narrow';
-  src: url('/fonts/arial_narrow_7.ttf') format('truetype');
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
 }
 
 .intro-text{
@@ -34,23 +28,15 @@
   flex-direction: column;
   align-items: center; 
   text-align: center; 
-<<<<<<< HEAD
   color: rgb(215, 222, 0);
   font-size: 50px;
   font-family: 'Arial Narrow', sans-serif;
   text-shadow: -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000;
-=======
-  color: rgb(167, 173, 0);
-  font-size: 50px;
-  font-family: 'Arial Narrow', sans-serif;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 2s ease-in forwards;
 }
 
-<<<<<<< HEAD
 .intro-smog {
   width: 115%;       
 }
@@ -106,14 +92,11 @@
   text-shadow: 0 0 18px rgba(245, 225, 0, 0.849);
 }
 
-=======
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
 @keyframes fadeIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
-<<<<<<< HEAD
 }
 
 @font-face {
@@ -135,6 +118,3 @@
     transform: scale(1.03);
   }
 } 
-=======
-}
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037

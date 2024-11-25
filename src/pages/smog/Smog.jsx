@@ -10,10 +10,7 @@ import Moon from "./world/Moon";
 import SmogStaging from "./staging/SmogStaging";
 import IntroText from "./world/IntroText";
 import "./Smog.css";
-<<<<<<< HEAD
 import AwarenessText from "./world/AwarenessText";
-=======
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
 
 /**
  * `MiniCityScene` Component
@@ -72,17 +69,10 @@ const MiniCityScene = () => {
 const Smog = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const cameraSettings = {
-<<<<<<< HEAD
     position: [0, 250, 490],
     rotation: [0, 0, 0],
     near: 0.1, 
     far: 2500,
-=======
-    position: [0, 550, 0],
-    rotation: [-Math.PI / 6, Math.PI / 4, 0],
-    near: 0.1, 
-    far: 2000,
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
   };
 
   useEffect(() => {
@@ -92,24 +82,15 @@ const Smog = () => {
   return (
     <>
       <Header />
-<<<<<<< HEAD
       <div className="smog-container">
-=======
-      <div className="canvas-container">
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
         <div className={`transition-overlay ${isLoaded ? "fade-out" : ""}`}></div>
         <Canvas shadows camera={cameraSettings}>
           <Suspense fallback={null}>
             <SmogControls />
             <SmogLights />
-<<<<<<< HEAD
             <SmogStaging />
             <IntroText />
             <AwarenessText />      
-=======
-            <SmogStaging />  
-            <IntroText />        
->>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
             <MiniCityScene />
           </Suspense>
         </Canvas>
