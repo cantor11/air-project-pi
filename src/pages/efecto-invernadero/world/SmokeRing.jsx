@@ -55,6 +55,10 @@ export function SmokeRing(props) {
                   material={customMaterial}
                 />
               </group> */}
+              <group name="Cloud_GN001_2">
+              </group>
+              <group name="Cloud_GN002_3">
+              </group>
               <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
                 <mesh
                   name="Object_8"
