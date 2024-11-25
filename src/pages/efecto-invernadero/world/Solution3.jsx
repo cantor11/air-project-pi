@@ -21,7 +21,7 @@ const Solution3 = () => {
         name="bus"
         restitution={1.5}
         type="dynamic"
-        gravityScale={9}
+        gravityScale={2}
         mass={1}
         //ref={busRef}
         colliders="hull"
@@ -31,7 +31,7 @@ const Solution3 = () => {
 
       <RigidBody
         name="bmxBike"
-        restitution={2}
+        restitution={1.8}
         type="dynamic"
         gravityScale={9}
         mass={100}
