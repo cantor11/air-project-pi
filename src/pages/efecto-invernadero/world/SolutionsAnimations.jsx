@@ -70,7 +70,6 @@ const SolutionsAnimations = () => {
         {solutionsSection.solutionsStep === 9 ?
           <Solution9 />
           : null}
-        {/* <SocialMediaSetModel scale={15} position={[-550,300,-230]} rotation-y={Math.PI*1/2} /> */}
       </Physics>
 
       {solutionsSection.solutionsStep >= 90 ?
