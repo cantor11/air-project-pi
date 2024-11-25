@@ -20,17 +20,16 @@ const SolutionsText = () => {
   // Array that contains every line that will be shown on solutions section
   const textLines = useMemo(
     () => [
-      "Usar electrodomésticos<br>eficientes, como reemplazar<br>bombillas tradicionales<br>por bombillas LED de<br>bajo consumo",
-      "Desenchufar dispositivos, ya",
-      "El Efecto invernadero<br>es un",
-      "Los gases en la atmósfera<br>atrapan el calor del sol",
-      "Sin estos gases, la tierra tendría<br>una temperatura muy baja",
-      "Pero, el ser humano ha aumentado<br>la concentración de estos gases",
-      "Ese exceso tampoco es bueno",
-      "No solo provoca<br>temperaturas extremas",
-      "Sino otros problemas<br>como sequías,",
-      "inundaciones<br>y tormentas más poderosas",
-      "Soluciones<br>y más soluciones"
+      "Soluciones",
+      "Solución #1<br><br>Reducir el Consumo<br>de Energía en el Hogar",
+      "Solución #2<br><br>Optar por Fuentes<br>de Energía Renovables",
+      "Solución #3<br><br>Cambiar el Uso<br>del Transporte",
+      "Solución #4<br><br>Reducir, Reutilizar<br>y Reciclar",
+      "Solución #5<br><br>Reducir la Industria ganadera",
+      "Solución #6<br><br>Evitar el desperdicio<br>de alimentos",
+      "Solución #7<br><br>Apostar por el Reciclaje<br>del Agua",
+      "Solución #8<br><br>Plantar Árboles",
+      "Solución #9<br><br>¡Educa y Comparte<br>la Información!",
     ], []
   );
 
@@ -125,7 +124,7 @@ const SolutionsText = () => {
         <button onClick={handleClickCameraAnimation}> Volver </button>
       </div>
 
-      <div style={{ position: 'absolute', bottom: '10%' }}>
+      <div style={{ position: 'absolute', bottom: '10%', display:'flex', flexDirection:'column' }}>
         <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
           textShadow: `
             -1px -1px 0 #5037da,

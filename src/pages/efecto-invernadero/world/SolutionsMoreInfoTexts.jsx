@@ -17,7 +17,7 @@ const SolutionsMoreInfoTexts = () => {
   // Array that contains every line that will be shown
   const textLines = useMemo(
     () => [
-      "Usar electrodomésticos<br>\neficientes, como reemplazar<br>bombillas tradicionales<br>por bombillas LED de<br>bajo consumo",
+      "Aquí aparecerá información extra sobre la solución que se esté viendo.",
       "Desenchufar dispositivos, ya",
       "El Efecto invernadero<br>es un",
       "Los gases en la atmósfera<br>atrapan el calor del sol",
@@ -61,7 +61,7 @@ const SolutionsMoreInfoTexts = () => {
       {solutionsSection.isMoreInfoView ?
         <div style={{ position: 'absolute', backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ backgroundColor: 'gray', width: '40%', height: '60%', marginBottom: '10%', borderRadius: '10%' }}>
-            <div style={{ textAlign: 'center', fontSize: '2vw', color: 'lightgray', marginTop: '10%',
+            <div style={{ textAlign: 'center', fontSize: '1.5vw', color: 'lightgray', margin: '5%',
               textShadow: `
                 -1px -1px 0 #CC0,
                 1px -1px 0 #990,
