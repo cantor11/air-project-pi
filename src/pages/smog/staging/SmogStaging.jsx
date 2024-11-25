@@ -7,7 +7,11 @@ const SmogStaging = () => {
     <>
       <Sparkles
         position={[0, -30, 0]}
+<<<<<<< HEAD
         color={"#737811"}
+=======
+        color={"yellow"}
+>>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
         count={400}
         size={110}
         fade={true}
@@ -32,11 +36,16 @@ const SmogStaging = () => {
         radius={400}
         depth={500}
         count={5000}
+<<<<<<< HEAD
         factor={25}
+=======
+        factor={20}
+>>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
         saturation={5}
         fade
         speed={1}
       />
+<<<<<<< HEAD
       <Stars
         radius={400}
         depth={500}
@@ -56,6 +65,8 @@ const SmogStaging = () => {
         mieCoefficient={0.01}      // Coeficiente para oscurecer más
         mieDirectionalG={0.9}       // Reduce el efecto de dispersión para oscurecer el cielo
       />
+=======
+>>>>>>> 0c6585e19d6788ba400115226acd79e0b9ae4037
   </>
   )
 }
