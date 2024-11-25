@@ -2,7 +2,7 @@ import { RigidBody } from "@react-three/rapier";
 
 import { BucketModel } from "./BucketModel";
 import { CloudModel } from "./CloudModel";
-import { PurpleRainstormModel } from "./PurpleRainstormModel";
+import { RainModel } from "./RainModel";
 
 /**
  * Solution7 Component
@@ -39,7 +39,7 @@ const Solution7 = () => {
       <CloudModel position={[-850,400,-120]} scale={20} />
       <CloudModel position={[-850,400,-260]} scale={20} />
       <CloudModel position={[-850,400,-400]} scale={20} />
-      <PurpleRainstormModel position={[-850,0,-250]} scale={2} />
+      <RainModel  position={[-870,0,-250]} scale={0.8} />
     </>
   )
 }

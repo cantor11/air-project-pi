@@ -23,9 +23,9 @@ export function SocialMediaIcons(props) {
         {meshes.map((meshNode, index) => (
           <RigidBody
             key={index}
-            restitution={1.9}
+            restitution={1.6}
             type="dynamic"
-            gravityScale={9}
+            gravityScale={1}
             colliders="hull"
           >
             <mesh

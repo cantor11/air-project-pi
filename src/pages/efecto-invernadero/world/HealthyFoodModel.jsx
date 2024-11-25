@@ -25,7 +25,7 @@ export function HealthyFoodModel(props) {
             key={index}
             restitution={1.7}
             type="dynamic"
-            gravityScale={9}
+            gravityScale={1}
             mass={100}
             colliders="hull"
           >
