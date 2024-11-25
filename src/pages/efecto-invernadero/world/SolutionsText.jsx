@@ -97,7 +97,6 @@ const SolutionsText = () => {
         <AnimatePresence wait>
           <motion.div
             key={solutionsSection.solutionsStep} // Unique key for each line
-            //className="text-container"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}

@@ -1,7 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 
 import { BucketModel } from "./BucketModel";
-import { CloudModel } from "./CloudModel";
+import { CloudsModel } from "./CloudsModel";
 import { RainModel } from "./RainModel";
 
 /**
@@ -36,9 +36,7 @@ const Solution7 = () => {
       >
         <BucketModel position={[-800,300,-350]} scale={2000} />
       </RigidBody>
-      <CloudModel position={[-850,400,-120]} scale={20} />
-      <CloudModel position={[-850,400,-260]} scale={20} />
-      <CloudModel position={[-850,400,-400]} scale={20} />
+      <CloudsModel position={[-800,430,-230]} scale={0.8} />
       <RainModel  position={[-870,0,-250]} scale={0.8} />
     </>
   )
