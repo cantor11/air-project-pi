@@ -17,44 +17,30 @@ export function BusModel(props) {
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group position={[0, 0, 1.391]}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_0.geometry}
             material={materials.maincolor}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_1.geometry}
             material={materials.black}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_2.geometry}
             material={materials.secondcolor}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_3.geometry}
             material={materials.gray}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_4.geometry}
             material={materials.orange}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_5.geometry}
             material={materials.white}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Cube_6.geometry}
             material={materials.material}
           />
@@ -64,14 +50,10 @@ export function BusModel(props) {
           rotation={[0, Math.PI / 2, 0]}
           scale={[0.521, 0.521, 0.154]}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������001_0'].geometry}
             material={materials.black}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������001_1'].geometry}
             material={materials.gray}
           />
@@ -81,14 +63,10 @@ export function BusModel(props) {
           rotation={[0, Math.PI / 2, 0]}
           scale={[0.521, 0.521, 0.154]}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������002_0'].geometry}
             material={materials.black}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������002_1'].geometry}
             material={materials.gray}
           />
@@ -98,14 +76,10 @@ export function BusModel(props) {
           rotation={[0, -Math.PI / 2, 0]}
           scale={[0.521, 0.521, 0.154]}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������003_0'].geometry}
             material={materials.black}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������003_1'].geometry}
             material={materials.gray}
           />
@@ -115,14 +89,10 @@ export function BusModel(props) {
           rotation={[0, -Math.PI / 2, 0]}
           scale={[0.521, 0.521, 0.154]}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������004_0'].geometry}
             material={materials.black}
           />
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes['��������������004_1'].geometry}
             material={materials.gray}
           />

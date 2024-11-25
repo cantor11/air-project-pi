@@ -20,7 +20,7 @@ const SolutionsText = () => {
   // Array that contains every line that will be shown on solutions section
   const textLines = useMemo(
     () => [
-      "Soluciones",
+      "Soluciones<br><br>Aquí encontrarás diferentes<br>soluciones que puedes<br>hacer tú mismo",
       "Solución #1<br><br>Reducir el Consumo<br>de Energía en el Hogar",
       "Solución #2<br><br>Optar por Fuentes<br>de Energía Renovables",
       "Solución #3<br><br>Cambiar el Uso<br>del Transporte",
