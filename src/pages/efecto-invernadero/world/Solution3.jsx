@@ -22,11 +22,11 @@ const Solution3 = () => {
         restitution={1.5}
         type="dynamic"
         gravityScale={9}
-        mass={50}
+        mass={1}
         //ref={busRef}
         colliders="hull"
       >
-        <BusModel position={[-800,310,-350]} scale={30} />
+        <BusModel position={[-800,310,-350]} scale={35} />
       </RigidBody>
 
       <RigidBody

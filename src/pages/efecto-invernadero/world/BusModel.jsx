@@ -10,179 +10,126 @@ import { useGLTF } from '@react-three/drei';
 
 
 export function BusModel(props) {
-  const { nodes, materials } = useGLTF('/models-3d/hcr2_bus.glb');
+  const { nodes, materials } = useGLTF('/models-3d/paz_bus.glb');
 
   return (
     <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_4.geometry}
-        material={materials.material_0}
-      />
-      <mesh castShadow receiveShadow geometry={nodes.Object_6.geometry} material={materials.susp} />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_8.geometry}
-        material={materials.metal}
-        position={[0.359, 1.281, 1.596]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_10.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_12.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_14.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_16.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_18.geometry}
-        material={materials.Bus_Wheel}
-        position={[-1.088, 0.438, -1.361]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_20.geometry}
-        material={materials.Bus_Wheel}
-        position={[-1.23, 0.438, -1.361]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_22.geometry}
-        material={materials.Bus_Wheel}
-        position={[1.088, 0.438, -1.361]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_24.geometry}
-        material={materials.Bus_Wheel}
-        position={[1.23, 0.438, -1.361]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_26.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_28.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_30.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_32.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_34.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_36.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_38.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_40.geometry}
-        material={materials.Bus_Wheel}
-        position={[-1.088, 0.438, 1.23]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_42.geometry}
-        material={materials.Bus_Wheel}
-        position={[-1.23, 0.438, 1.23]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_44.geometry}
-        material={materials.Bus_Wheel}
-        position={[1.088, 0.438, 1.23]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_46.geometry}
-        material={materials.Bus_Wheel}
-        position={[1.23, 0.438, 1.23]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_48.geometry}
-        material={materials.material_0}
-        position={[0.426, 1.625, -2.332]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_50.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_51.geometry}
-        material={materials.metal}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_53.geometry}
-        material={materials.material_0}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_55.geometry}
-        material={materials.material_0}
-      />
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <group position={[0, 0, 1.391]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_0.geometry}
+            material={materials.maincolor}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_1.geometry}
+            material={materials.black}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_2.geometry}
+            material={materials.secondcolor}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_3.geometry}
+            material={materials.gray}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_4.geometry}
+            material={materials.orange}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_5.geometry}
+            material={materials.white}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube_6.geometry}
+            material={materials.material}
+          />
+        </group>
+        <group
+          position={[-1.205, -2.863, 0.538]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={[0.521, 0.521, 0.154]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������001_0'].geometry}
+            material={materials.black}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������001_1'].geometry}
+            material={materials.gray}
+          />
+        </group>
+        <group
+          position={[-1.205, 1.594, 0.538]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={[0.521, 0.521, 0.154]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������002_0'].geometry}
+            material={materials.black}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������002_1'].geometry}
+            material={materials.gray}
+          />
+        </group>
+        <group
+          position={[1.19, 1.594, 0.538]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[0.521, 0.521, 0.154]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������003_0'].geometry}
+            material={materials.black}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������003_1'].geometry}
+            material={materials.gray}
+          />
+        </group>
+        <group
+          position={[1.19, -2.863, 0.538]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[0.521, 0.521, 0.154]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������004_0'].geometry}
+            material={materials.black}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['��������������004_1'].geometry}
+            material={materials.gray}
+          />
+        </group>
+      </group>
     </group>
   )
 }
 
-useGLTF.preload('/models-3d/hcr2_bus.glb');
+useGLTF.preload('/models-3d/paz_bus.glb');
