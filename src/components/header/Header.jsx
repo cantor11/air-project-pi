@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
-//import useAuthStore from "../../stores/use-auth-store";
+import useAuthStore from "../../stores/use-auth-store";
 import { NavLink } from "react-router-dom";
 
 /**
@@ -67,7 +67,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className="right-section">
-        {/* user ? (
+        {user ? (
           <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>

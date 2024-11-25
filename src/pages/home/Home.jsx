@@ -3,7 +3,14 @@ import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Header from "../../components/header/Header";
 import { Loader } from "@react-three/drei";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
+import HomeText from "./world/HomeText";
+import BuildingsScenario from "./world/BuildingsScenario";
+import SmokeScenario from "./world/SmokeScenario";
+import CameraPositioning from "./world/CameraPositioning";
+import SummaryText from "./world/SummaryText";
+import useHomeStore from "../../stores/home-store";
+
 //import { Perf } from "r3f-perf"; //performance stats
 
 /**
@@ -21,9 +28,12 @@ import { Suspense } from "react";
  */
 
 const Home = () => {
-  const cameraSettings = {
-    position: [0, 15, 10],
-  };
+  const { setView } = useHomeStore(); // Information brought from store
+  useEffect(() => {
+    setView({
+      isSummaryView: false,
+    });
+  }, []);
 
   return (
     <>
@@ -35,6 +45,10 @@ const Home = () => {
             <Controls />
             <Lights />
           </Suspense>
+          <BuildingsScenario />
+          <SmokeScenario />
+          <HomeText />
+          <SummaryText />
         </Canvas>
         <Loader />
       </div>

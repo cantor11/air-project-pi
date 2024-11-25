@@ -1040,7 +1040,6 @@ export function PurpleRainstormModel(props) {
                   material={materials['16_-_Default']}
                 />
               </group>
-
               {/* <group name="cloud_1_80" position={[1.303, 5.776, 1.719]}>
                 <mesh
                   name="Object_162"

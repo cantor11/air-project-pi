@@ -7,7 +7,6 @@ import { OrbitControls } from "@react-three/drei";
  * while hiding the cursor. This is particularly useful for immersive
  * experiences, such as walking through a 3D space without interface
  * distractions.
-<<<<<<< HEAD
 
 
 const Controls = () => {

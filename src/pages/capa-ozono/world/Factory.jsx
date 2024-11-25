@@ -63,6 +63,7 @@ export default function Factory(props) {
     };
   }, [camera]);
 
+
   return (
     <group {...props} dispose={null}>
       <mesh
