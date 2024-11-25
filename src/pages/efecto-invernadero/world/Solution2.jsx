@@ -25,7 +25,7 @@ const Solution2 = () => {
         //ref={solarPanel1Ref}
         colliders="hull"
       >
-        <SolarPanelModel position={[-800,310,-350]} scale={1} />
+        <SolarPanelModel position={[-800,310,-350]} scale={0.2} />
       </RigidBody>
 
       <RigidBody
@@ -33,11 +33,23 @@ const Solution2 = () => {
         restitution={2}
         type="dynamic"
         gravityScale={9}
-        mass={100}
+        mass={1}
         //ref={solarPanel2Ref}
         colliders="hull"
       >
-        <SolarPanelModel position={[-800,310,-150]} scale={1.3} />
+        <SolarPanelModel position={[-800,310,-250]} scale={0.3} />
+      </RigidBody>
+
+      <RigidBody
+        name="solarPanel3"
+        restitution={2}
+        type="dynamic"
+        gravityScale={9}
+        mass={100}
+        //ref={solarPanel3Ref}
+        colliders="hull"
+      >
+        <SolarPanelModel position={[-800,310,-150]} scale={0.2} />
       </RigidBody>
     </>
   )

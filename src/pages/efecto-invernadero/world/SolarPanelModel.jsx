@@ -9,20 +9,35 @@ import { useGLTF } from '@react-three/drei';
  */
 
 export function SolarPanelModel(props) {
-  const { nodes, materials } = useGLTF('/models-3d/solar_panel.glb');
+  const { nodes, materials } = useGLTF('/models-3d/cartoon_low_poly_solar_panel.glb');
 
   return (
     <group {...props} dispose={null}>
-      <mesh
+      <group position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, Math.PI / 2]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder_Environment1_0.geometry}
+          material={materials['Environment.1']}
+          position={[0, 0, 49.937]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane_003_Environment2_0.geometry}
+          material={materials['Environment.2']}
+          position={[0, 0, 52.126]}
+        />
+      </group>
+      {/* <mesh
         castShadow
         receiveShadow
-        geometry={nodes.SolarPanel_SolarPanel_0.geometry}
-        material={materials.SolarPanel}
-        position={[0, 12.206, 35.525]}
-        rotation={[-Math.PI / 4, Math.PI / 2, 0]}
-      />
+        geometry={nodes.Plane_Environment_0.geometry}
+        material={materials.Environment}
+        position={[0, -100.287, 0]}
+      /> */}
     </group>
   )
 }
 
-useGLTF.preload('/models-3d/solar_panel.glb');
+useGLTF.preload('/models-3d/cartoon_low_poly_solar_panel.glb');
