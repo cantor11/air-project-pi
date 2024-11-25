@@ -1,14 +1,32 @@
+.background {
+    background-image: url('/images/login-font.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-login {
     display: flex;
     flex-direction: column;
-    align-items: center;      
-    justify-content: center;  
-    height: 100vh;
-    width: 100vw;             
-    text-align: center;     
+    align-items: center;   
+    margin: 0;     
+    background-color: rgba(36, 36, 36, 0.8);
+    border-radius: 15px;
     padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    justify-content: center;  
     box-sizing: border-box;
-    margin: 0;       
+    width: 520px;
+    height: auto;
+}
+
+.logo {
+    width: 190px;
+    margin: 10px 0; 
 }
 
 .loading-container {
@@ -26,18 +44,19 @@
 }
 
 .title-login {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 0;
+    margin-top: 20px; 
 }
 
 .subtitle-login {
     font-size: 1.5em;
     margin-top: 5px; 
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-.intro-text {
+.login-text {
     font-size: 1.1em;
     margin-top: 10px; 
     margin-bottom: 15px;
@@ -46,5 +65,9 @@
 
 .button-login{
     width: 200px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
 }
 
