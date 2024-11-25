@@ -14,13 +14,14 @@ import Solution4 from "./Solution4";
 import Solution5 from "./Solution5";
 import Solution6 from "./Solution6";
 import Solution7 from "./Solution7";
+import Solution8 from "./Solution8";
 
 /**
  * SolutionsAnimations component
  * 
  * This functional React component sets up animations using other components based
  * on the current line being seen in solutions section.
- * We have: normal amount of Greenhouse gases over Earth, Solution 1, Solution 2, Solution 3, solution 4, solution 5, solution 6, solution 7.
+ * We have: normal amount of Greenhouse gases over Earth, Solution 1, 2, 3, 4, 5, 6, 7, 8.
  * To know the current line it will get the information brought from a store made with Zustand.
  * In addition, show some objets with Physics, colliders and Forces for the environment of the page.
  */
@@ -61,6 +62,9 @@ const SolutionsAnimations = () => {
           : null}
         {solutionsSection.solutionsStep === 7 ?
           <Solution7 />
+          : null}
+        {solutionsSection.solutionsStep === 8 ?
+          <Solution8 />
           : null}
         {/* <SocialMediaSetModel scale={15} position={[-550,300,-230]} rotation-y={Math.PI*1/2} /> */}
       </Physics>
