@@ -72,7 +72,7 @@ const SolutionsAnimations = () => {
           : null}
       </Physics>
 
-      {solutionsSection.solutionsStep >= 90 ?
+      {solutionsSection.solutionsStep >= 0 ?
         <NormalGasAnimation isAnimating={true} />
         : null}
     </>
