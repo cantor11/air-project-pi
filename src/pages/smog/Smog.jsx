@@ -50,7 +50,7 @@ const Smog = () => {
             <SmogControls freeNavigation={freeNavigation}/>
             <SmogLights />
             <SmogStaging />
-            <Physics gravity={[0, -50, 0]} debug>
+            <Physics gravity={[0, -50, 0]}>
             <IntroText cameraRef={cameraRef} setCameraPosition={setCameraPosition}/>
             <AwarenessText cameraRef={cameraRef} setCameraPosition={setCameraPosition} setFreeNavigation={setFreeNavigation}/> 
             <SmogSolutions />     
