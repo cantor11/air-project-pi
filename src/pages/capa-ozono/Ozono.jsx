@@ -13,7 +13,7 @@ import SmokeScenario from "./world/SmokeScenario";
 import Staging from "./world/Staging";
 import SensitizationText from "./world/SensitizationText";
 import { Physics } from "@react-three/rapier";
-import Floor from "./world/floor";
+import Floor from "./world/Floor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
 
