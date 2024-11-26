@@ -67,7 +67,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className="right-section">
-        user ? (
+        {user ? (
           <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
@@ -75,7 +75,8 @@ const Header = () => {
           <Link to="/login">
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
-        )
+        )}
+
       </div>
     </header>
   );
