@@ -29,6 +29,8 @@ const Controls = () => {
       maxPolarAngle={Math.PI / 2}  
       minPolarAngle={0} 
       minDistance={12}
+      panSpeed={0.1}
+      screenSpacePanning={true}
       OrbitControls maxDistance={20}
     />
   );
