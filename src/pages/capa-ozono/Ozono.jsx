@@ -31,7 +31,7 @@ import SolutionText from "./world/SolutionText";
 const Ozono = () => {
   // Sets initial camera position to emphasize elements in the scene
   const cameraSettings = {
-    position: [-15, 3, 0.5],
+    position: [-17, 3, 0],
     rotation: [0, -Math.PI/2, 0],
   };
 
