@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Factory from "./world/Factory";
+import Donut from "./world/Donut";
 import Header from "../../components/header/Header";
 import "./Ozono.css";
 import { useMemo } from "react";
@@ -12,6 +13,10 @@ import { Suspense } from "react";
 import SmokeScenario from "./world/SmokeScenario";
 import Staging from "./world/Staging";
 import SensitizationText from "./world/SensitizationText";
+import { Physics } from "@react-three/rapier";
+import Floor from "./world/floor";
+import Interactions from "./world/Interactions";
+
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution
@@ -56,10 +61,20 @@ const Ozono = () => {
               <Controls /> {/* Enables user camera control */}
               <Lights /> {/* Adds lighting to the scene */}
             </Suspense>
-            <Factory /> {/* 3D model of a factory, representing industrial pollution */}
+            <Physics debug gravity={[0, -9.8, 0]}>
+              <Factory /> {/* 3D model of a factory, representing industrial pollution */}
+              <Donut
+                name="donut"
+                position={[0, 10, 0]}
+                rotation-x={-Math.PI * 0.25}
+                castShadow
+              />
+              <Floor />
+            </Physics>
             {/*<SmokeScenario />  Scenario simulating smoke/smog effects */}
             <IntroductionText /> {/* Introductory text describing the air pollution issue */}
             <SensitizationText />
+            <Interactions />
             <Staging /> {/* Background and environment settings */}
           </Canvas>
           <Loader /> {/* Shows a loading indicator while the scene loads */}
