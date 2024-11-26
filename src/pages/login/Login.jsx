@@ -56,7 +56,7 @@ const Login = () => {
       </div>
     );  
   }
- 
+
   // Render the login interface
   return (
     <div className="background">
@@ -65,7 +65,7 @@ const Login = () => {
         <img src="/images/logo.webp" alt="Logo" className="logo" />
         <h3 className="subtitle-login">Visualizando el aire que respiramos</h3>
         <p className="login-text">Para continuar, inicia sesión con Google:</p>
-        <button onClick={handleLogin} className="button-login">Iniciar sesión</button>
+        <button className="button-login" onClick={handleLogin}>Iniciar sesión</button>
       </div>
     </div>
   );
