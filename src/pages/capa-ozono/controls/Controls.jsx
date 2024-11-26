@@ -1,5 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 
+
 /**
  * Controls Component
  * This component integrates Pointer Lock controls into the 3D scene,
@@ -28,6 +29,8 @@ const Controls = () => {
       maxPolarAngle={Math.PI / 2}  
       minPolarAngle={0} 
       minDistance={12}
+      panSpeed={0.1}
+      screenSpacePanning={true}
       OrbitControls maxDistance={20}
     />
   );

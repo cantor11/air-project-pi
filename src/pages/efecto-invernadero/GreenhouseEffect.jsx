@@ -1,6 +1,6 @@
 import { Suspense, useCallback, useEffect, useMemo } from "react";
-import { Canvas } from '@react-three/fiber';
 import { Html, KeyboardControls, Loader } from "@react-three/drei";
+import { Canvas } from '@react-three/fiber';
 import useGreeenhouseStore from "../../stores/greenhouse-store";
 
 import Header from "../../components/header/Header";
