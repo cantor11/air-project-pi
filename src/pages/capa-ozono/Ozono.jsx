@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Factory from "./world/Factory";
-import Donut from "./world/Donut";
 import Header from "../../components/header/Header";
 import "./Ozono.css";
 import { useMemo } from "react";
@@ -17,8 +16,6 @@ import { Physics } from "@react-three/rapier";
 import Floor from "./world/floor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
-import { Perf } from "r3f-perf";
-
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution
@@ -72,7 +69,6 @@ const Ozono = () => {
             <SensitizationText />
             <Interactions />
             <SolutionText />
-            <Perf position={"top-left"}/>
             <Staging /> {/* Background and environment settings */}
           </Canvas>
           <Loader /> {/* Shows a loading indicator while the scene loads */}

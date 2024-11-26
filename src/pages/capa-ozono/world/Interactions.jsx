@@ -15,7 +15,12 @@ const Interactions = (props) => {
   }
 
   const handleHitboxBushThree = (e) => {
-    camera.position.set(-14, 3, 0.5); 
+    camera.position.set(-17, 3, 0); 
+    camera.lookAt(0, 2, 0);
+  }
+
+  const handleHitboxBushFour = (e) => {
+    camera.position.set(20, 4, 0); 
     camera.lookAt(0, 2, 0);
   }
   
@@ -31,6 +36,16 @@ const Interactions = (props) => {
         camera.position.set(1, 3, -21);
         camera.lookAt(0, 2, 0); // Ajusta si necesitas que la cámara mire hacia un punto específico
       }
+      if (e.key === 'ArrowUp') {
+        // Cambiar la posición de la cámara cuando se presiona la flecha hacia arriba
+        camera.position.set(20, 4, 0);
+        camera.lookAt(0, 2, 0); // Ajusta si necesitas que la cámara mire hacia un punto específico
+      }
+      if (e.key === 'ArrowDown') {
+        // Cambiar la posición de la cámara cuando se presiona la flecha hacia arriba
+        camera.position.set(-17, 3, 0);
+        camera.lookAt(0, 2, 0); // Ajusta si necesitas que la cámara mire hacia un punto específico
+      }
     };
 
     // Agrega el event listener
@@ -43,15 +58,38 @@ const Interactions = (props) => {
   }, [camera]);
     return (
       <group>
-        <mesh name='HitboxBushOne' onClick={(e) => handleHitboxBushOne(e)} rotation-x={Math.PI * 0.5} position={[-8.15, 0.1, 1.5]}>
+        <mesh name='HitboxBushOne' onClick={(e) => handleHitboxBushTwo(e)} rotation-x={Math.PI * 0.5} position={[-10, 0.1, -0.5]}>
             <boxGeometry args={[0.9, 0.9, 0.9]}/> 
             <meshStandardMaterial color={"black"}/>
         </mesh>
-        <mesh name='HitboxBushTwo' onClick={(e) => handleHitboxBushTwo(e)} rotation-x={Math.PI * 0.5} position={[1, 0.1, 13]}>
+        <mesh name='HitboxBushOne' onClick={(e) => handleHitboxBushOne(e)} rotation-x={Math.PI * 0.5} position={[-10, 0.1, 3]}>
             <boxGeometry args={[0.9, 0.9, 0.9]}/> 
             <meshStandardMaterial color={"black"}/>
         </mesh>
-        <mesh name='HitboxBushThree' onClick={(e) => handleHitboxBushThree(e)} rotation-x={Math.PI * 0.5} position={[1, 0.1, -13]}>
+        
+        <mesh name='HitboxBushTwo' onClick={(e) => handleHitboxBushThree(e)} rotation-x={Math.PI * 0.5} position={[0, 0.1, 13]}>
+            <boxGeometry args={[0.9, 0.9, 0.9]}/> 
+            <meshStandardMaterial color={"black"}/>
+        </mesh>
+        <mesh name='HitboxBushTwo' onClick={(e) => handleHitboxBushFour(e)} rotation-x={Math.PI * 0.5} position={[2, 0.1, 13]}>
+            <boxGeometry args={[0.9, 0.9, 0.9]}/> 
+            <meshStandardMaterial color={"black"}/>
+        </mesh>
+
+        <mesh name='HitboxBushThree' onClick={(e) => handleHitboxBushThree(e)} rotation-x={Math.PI * 0.5} position={[0, 0.1, -13]}>
+            <boxGeometry args={[0.9, 0.9, 0.9]}/> 
+            <meshStandardMaterial color={"black"}/>
+        </mesh>
+        <mesh name='HitboxBushThree' onClick={(e) => handleHitboxBushFour(e)} rotation-x={Math.PI * 0.5} position={[2, 0.1, -13]}>
+            <boxGeometry args={[0.9, 0.9, 0.9]}/> 
+            <meshStandardMaterial color={"black"}/>
+        </mesh>
+
+        <mesh name='HitboxBushThree' onClick={(e) => handleHitboxBushTwo(e)} rotation-x={Math.PI * 0.5} position={[14, 0.1, -1]}>
+            <boxGeometry args={[0.9, 0.9, 0.9]}/> 
+            <meshStandardMaterial color={"black"}/>
+        </mesh>
+        <mesh name='HitboxBushThree' onClick={(e) => handleHitboxBushOne(e)} rotation-x={Math.PI * 0.5} position={[14, 0.1, 1]}>
             <boxGeometry args={[0.9, 0.9, 0.9]}/> 
             <meshStandardMaterial color={"black"}/>
         </mesh>

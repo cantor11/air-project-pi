@@ -1,4 +1,4 @@
-import { Text, Text3D, Html } from "@react-three/drei";
+import { Text, Text3D, Html, Center } from "@react-three/drei";
 import { MathUtils } from "three";
 
 const SensitizationText = () => {
@@ -30,7 +30,7 @@ const SensitizationText = () => {
                     textAlign: "center", 
                     fontSize: "12pt",
                     backgroundColor: "rgba(0, 0, 0, 0.7)",
-                    maxWidth: "1500px", 
+                    maxWidth: "1800px", 
                     maxHeight: "2000px"
                 }}
             >
@@ -47,7 +47,7 @@ const SensitizationText = () => {
                 center 
                 transform
                 distanceFactor={6}
-                position={[1, 4, -15]} 
+                position={[1, 4, -14]} 
                 rotation={[0, Math.PI, 0]}
             >
                 <div className="containerImgText" style={{textAlign: "center"}}>
