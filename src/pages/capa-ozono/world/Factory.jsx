@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState, useEffect } from 'react'
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber';
 import { RigidBody } from '@react-three/rapier';
@@ -38,6 +38,16 @@ export default function Factory(props) {
     }
   });
 
+  const rbPhysicsLeaves1 = useRef();
+  const rbPhysicsLeaves2 = useRef();
+
+  const handleLeaves1 = useCallback(() => {
+    rbPhysicsLeaves1.current.applyImpulse({ x: 0, y: 100, z: -20 }, true)
+  }, []);
+  
+  const handleLeaves2 = useCallback(() => {
+    rbPhysicsLeaves2.current.applyImpulse({ x: 0, y: 100, z: 20 }, true)
+  }, []);
 
   return (
     <group {...props} dispose={null}>
@@ -48,7 +58,6 @@ export default function Factory(props) {
         geometry={nodes.Cube011_Cube036.geometry}
         material={materials['Material.001']}
       />
-      
       <mesh
         name='leaves3'
         ref={leaves3Ref}
@@ -56,7 +65,6 @@ export default function Factory(props) {
         geometry={nodes.Cube014_Cube025.geometry}
         material={materials['Material.001']}
       />
-      
       <mesh
         name='leaves5'
         castShadow
@@ -64,7 +72,36 @@ export default function Factory(props) {
         geometry={nodes.Cube018_Cube042.geometry}
         material={materials['Material.001']}
       />
-      
+      <RigidBody 
+        ref={rbPhysicsLeaves1}
+        colliders="hull"
+        gravityScale={6}
+        restitution={0.5}
+      >
+        <mesh
+          onClick={handleLeaves1}
+          position={[-17.5, 2.5, -2]}
+          name='physicsLeaves1'
+          castShadow
+          geometry={nodes.Cube016_Cube040.geometry}
+          material={materials['Material.001']}
+        />
+      </RigidBody>
+      <RigidBody 
+        ref={rbPhysicsLeaves2}
+        colliders="hull"
+        gravityScale={6}
+        restitution={0.5}
+      >
+        <mesh
+          onClick={handleLeaves2}
+          position={[0, 2.5, 3]}
+          name='physicsLeaves2'
+          castShadow
+          geometry={nodes.Cube013_Cube038.geometry}
+          material={materials['Material.001']}
+        />
+      </RigidBody>
       <mesh
         name='mainRoad'
         geometry={nodes.Cube032_Cube066.geometry}
@@ -79,12 +116,14 @@ export default function Factory(props) {
         name='mainRoad3'
         geometry={nodes.Cube038_Cube065.geometry}
         material={materials.None}
-      />      
+      />  
+      <RigidBody type="fixed" colliders="trimesh">
       <mesh
         name='factory'
         geometry={nodes.Plane002_Plane004_1.geometry}
         material={materials['Material.001']}
       />
+      </RigidBody> 
       <mesh
         name='accessories'
         castShadow

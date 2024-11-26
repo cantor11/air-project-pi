@@ -16,7 +16,7 @@ const Floor = (props) => {
     return (
       <group {...props} dispose={null}>
         <RigidBody type="static">
-        <mesh name='MainFloor' rotation-x={Math.PI * 1.5} position={[0, 0.2, 0]}>
+        <mesh name='MainFloor' rotation-x={Math.PI * 1.5} position={[0, -1, 0]}>
           <planeGeometry args={[100, 100]} />  
           <meshStandardMaterial color={"black"}/>
         </mesh>

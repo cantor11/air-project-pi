@@ -63,7 +63,7 @@ const Ozono = () => {
               <Controls /> {/* Enables user camera control */}
               <Lights /> {/* Adds lighting to the scene */}
             </Suspense>
-            <Physics debug gravity={[0, -9.8, 0]}>
+            <Physics gravity={[0, -9.8, 0]}>
             <Factory /> {/* 3D model of a factory, representing industrial pollution */}
               <Floor />
             </Physics>
