@@ -24,7 +24,7 @@ const IntroText = () => {
   // Animation Hook
   const springProps = useSpring({
     position: clicked ? [0, 660, 0] : [camera.position.x, camera.position.y, camera.position.z],
-    config: { tension: 10, friction: 30 },
+    config: { tension: 18, friction: 30 },
     onChange: ({ value }) => {
       camera.position.set(...value.position);
       camera.lookAt(0, 0, 0);

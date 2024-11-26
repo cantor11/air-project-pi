@@ -106,7 +106,7 @@ const HomeText = () => {
             {`Problemas\nMedioambientales\ndel Aire`}
           </Text>
           <Text
-            position={[-30, -20, 0]}
+            position={[30, -20, 0]}
             color={hoveredSummary ? "white" : "gray"} // Change when hovered
             anchorX={"center"}
             anchorY={"bottom"}
@@ -119,7 +119,7 @@ const HomeText = () => {
             {`Resumen`}
           </Text>
           <Text
-            position={[30, -20, 0]}
+            position={[-30, -20, 0]}
             color={hoveredIntroduction ? "white" : "gray"} // Change when hovered
             anchorX={"center"}
             anchorY={"bottom"}
