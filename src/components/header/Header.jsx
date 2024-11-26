@@ -15,14 +15,14 @@ import { NavLink } from "react-router-dom";
  */
 
 const Header = () => {
-  const { user, logout } = useAuthStore();
+  /* const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
     logout();
     navigate("/login");
   }, [logout]);
-
+ */
   return (
     <header>
       <div className="left-section">
@@ -76,6 +76,9 @@ const Header = () => {
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
         )}
+        <Link to="/login">
+          <img src="/images/logout.webp" alt="Login" className="login" />
+        </Link>
       </div>
     </header>
   );

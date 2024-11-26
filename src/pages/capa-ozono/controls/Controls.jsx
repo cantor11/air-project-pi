@@ -1,6 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
 
-
 /**
  * Controls Component
  * This component integrates Pointer Lock controls into the 3D scene,
