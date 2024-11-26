@@ -1014,8 +1014,33 @@ export function PurpleRainstormModel(props) {
                   material={materials['16_-_Default']}
                 />
               </group>
+              <group
+                name="Plane078_85"
+                position={[52.831, 209.247, 66.074]}
+                rotation={[-Math.PI, Math.PI / 4, -Math.PI]}
+                scale={0.087}>
+                <mesh
+                  name="Object_172"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_172.geometry}
+                  material={materials['16_-_Default']}
+                />
+              </group>
+              <group
+                name="Plane078001_86"
+                position={[52.831, 209.247, 66.074]}
+                rotation={[-Math.PI, Math.PI / 4, -Math.PI]}
+                scale={0.087}>
+                <mesh
+                  name="Object_174"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_174.geometry}
+                  material={materials['16_-_Default']}
+                />
+              </group>
 
-              
               {/* <group name="cloud_1_80" position={[1.303, 5.776, 1.719]}>
                 <mesh
                   name="Object_162"
@@ -1062,32 +1087,15 @@ export function PurpleRainstormModel(props) {
                 />
               </group> */}
 
-
-              <group
-                name="Plane078_85"
-                position={[52.831, 209.247, 66.074]}
-                rotation={[-Math.PI, Math.PI / 4, -Math.PI]}
-                scale={0.087}>
-                <mesh
-                  name="Object_172"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.Object_172.geometry}
-                  material={materials['16_-_Default']}
-                />
+              <group name="cloud_1_80">
               </group>
-              <group
-                name="Plane078001_86"
-                position={[52.831, 209.247, 66.074]}
-                rotation={[-Math.PI, Math.PI / 4, -Math.PI]}
-                scale={0.087}>
-                <mesh
-                  name="Object_174"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.Object_174.geometry}
-                  material={materials['16_-_Default']}
-                />
+              <group name="cloud2_81">
+              </group>
+              <group name="cloud3_82">
+              </group>
+              <group name="cloud4_83">
+              </group>
+              <group name="cloud5_84">
               </group>
             </group>
           </group>

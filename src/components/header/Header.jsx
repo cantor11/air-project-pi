@@ -15,16 +15,14 @@ import { NavLink } from "react-router-dom";
  */
 
 const Header = () => {
-  /*
-  const { user, logout } = useAuthStore();
+  /* const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
     logout();
     navigate("/login");
   }, [logout]);
-  */
-
+ */
   return (
     <header>
       <div className="left-section">
@@ -69,8 +67,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className="right-section">
-        {/*
-        {user ? (
+        {/* user ? (
           <button onClick={handleLogout} className="button-logout">
             <img src="/images/logout.webp" alt="Logout" className="logout" />
           </button>
@@ -78,9 +75,7 @@ const Header = () => {
           <Link to="/login">
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
-        )}
-        */}
-
+        ) */}
         {/* Esto no va  en el codigo final*/}
         <Link to="/login">
           <img src="/images/logout.webp" alt="Login" className="login" />
