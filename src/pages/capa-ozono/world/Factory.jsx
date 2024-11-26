@@ -75,8 +75,8 @@ export default function Factory(props) {
       <RigidBody 
         ref={rbPhysicsLeaves1}
         colliders="hull"
-        gravityScale={6}
-        restitution={0.5}
+        gravityScale={20}
+        restitution={0.7}
       >
         <mesh
           onClick={handleLeaves1}
@@ -90,8 +90,8 @@ export default function Factory(props) {
       <RigidBody 
         ref={rbPhysicsLeaves2}
         colliders="hull"
-        gravityScale={6}
-        restitution={0.5}
+        gravityScale={20}
+        restitution={0.7}
       >
         <mesh
           onClick={handleLeaves2}
