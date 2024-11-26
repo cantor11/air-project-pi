@@ -15,13 +15,9 @@ const SmokeScenario = () => {
         Smoke rings are positioned in a vertical arrangement to simulate the effect of smoke rising.
         Each ring has a different scale to create a layered effect.
       */}
-      <SmokeRing scale={2} position={[0, 20, 0]} opacity={0.5} />  {/* Smallest smoke ring */}
-      <SmokeRing scale={2.5} position={[0, 18, 0]} opacity={0.5} />  {/* Slightly larger ring */}
-      <SmokeRing scale={3} position={[0, 16, 0]} opacity={0.5} />    {/* Medium ring */}
-      <SmokeRing scale={3.5} position={[0, 13.5, 0]} opacity={0.5} />{/* Larger ring */}
-      <SmokeRing scale={4} position={[0, 11, 0]} opacity={0.5} />    {/* Larger still */}
-      <SmokeRing scale={5} position={[0, 8, 0]} opacity={0.5} />     {/* Approaching maximum scale */}
-      <SmokeRing scale={6.5} position={[0, 5, 0]} opacity={0.5} />   {/* Largest smoke ring */}
+      <SmokeRing scale={0.25} position={[6.5, 4.5, 11.3]} opacity={0.7} />  {/* Smallest smoke ring */}
+      <SmokeRing scale={0.3} position={[11, 4.7, -12.2]} opacity={0.7} />  {/* Smallest smoke ring */}
+      <SmokeRing scale={0.3} position={[-5, 4.7, -12.5]} opacity={0.7} />  {/* Smallest smoke ring */}
     </>
   );
 };

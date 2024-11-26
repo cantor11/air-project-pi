@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useState, useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
-import { useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { RigidBody } from '@react-three/rapier';
 
 /**
@@ -14,11 +14,36 @@ import { RigidBody } from '@react-three/rapier';
 
 export default function Factory(props) {
   const { nodes, materials } = useGLTF('/models-3d/factory.glb')
-  
+  const leaves1Ref = useRef();
+  const leaves3Ref = useRef();
+  const leaves5Ref = useRef();
+
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime();
+    const sway = Math.sin(time * 2) * 0.02; // Oscilación suave
+    const bounce = Math.cos(time * 1.5) * 0.000002; // Movimiento vertical leve
+
+    // Movimiento de las hojas
+    if (leaves1Ref.current) {
+      leaves1Ref.current.rotation.z = sway;
+      leaves1Ref.current.position.y += bounce;
+    }
+    if (leaves3Ref.current) {
+      leaves3Ref.current.rotation.z = -sway/2;
+      leaves3Ref.current.position.y -= bounce;
+    }
+    if (leaves5Ref.current) {
+      leaves5Ref.current.rotation.z = sway;
+      leaves5Ref.current.position.y += bounce;
+    }
+  });
+
+
   return (
     <group {...props} dispose={null}>
       <mesh
         name='leaves1'
+        ref={leaves1Ref}
         castShadow
         geometry={nodes.Cube011_Cube036.geometry}
         material={materials['Material.001']}
@@ -26,6 +51,7 @@ export default function Factory(props) {
       
       <mesh
         name='leaves3'
+        ref={leaves3Ref}
         castShadow
         geometry={nodes.Cube014_Cube025.geometry}
         material={materials['Material.001']}
@@ -34,6 +60,7 @@ export default function Factory(props) {
       <mesh
         name='leaves5'
         castShadow
+        ref={leaves5Ref}
         geometry={nodes.Cube018_Cube042.geometry}
         material={materials['Material.001']}
       />

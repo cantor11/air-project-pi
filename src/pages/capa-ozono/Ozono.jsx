@@ -65,10 +65,9 @@ const Ozono = () => {
             </Suspense>
             <Physics debug gravity={[0, -9.8, 0]}>
             <Factory /> {/* 3D model of a factory, representing industrial pollution */}
-              
               <Floor />
             </Physics>
-            {/*<SmokeScenario />  Scenario simulating smoke/smog effects */}
+            <SmokeScenario />  {/*Scenario simulating smoke/smog effects */}
             <IntroductionText /> {/* Introductory text describing the air pollution issue */}
             <SensitizationText />
             <Interactions />

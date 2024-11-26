@@ -15,7 +15,7 @@ const SolutionText = () => {
                             
                 >
                     Que podemos hacer?
-                    <meshNormalMaterial color="red"/>
+                    <meshNormalMaterial />
                 </Text3D>
             </Center>
             <Html
