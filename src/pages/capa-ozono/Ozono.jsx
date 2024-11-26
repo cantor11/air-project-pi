@@ -13,9 +13,9 @@ import SmokeScenario from "./world/SmokeScenario";
 import Staging from "./world/Staging";
 import SensitizationText from "./world/SensitizationText";
 import { Physics } from "@react-three/rapier";
-import Floor from "./world/floor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
+import EsceneFloor from "./world/EsceneFloor";
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution
@@ -62,7 +62,7 @@ const Ozono = () => {
             </Suspense>
             <Physics gravity={[0, -9.8, 0]}>
             <Factory /> {/* 3D model of a factory, representing industrial pollution */}
-              <Floor />
+              <EsceneFloor />
             </Physics>
             <SmokeScenario />  {/*Scenario simulating smoke/smog effects */}
             <IntroductionText /> {/* Introductory text describing the air pollution issue */}
