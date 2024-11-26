@@ -23,36 +23,21 @@ export default function Factory(props) {
         geometry={nodes.Cube011_Cube036.geometry}
         material={materials['Material.001']}
       />
-      <mesh
-        name='leaves2'
-        castShadow
-        geometry={nodes.Cube013_Cube038.geometry}
-        material={materials['Material.001']}
-      />
+      
       <mesh
         name='leaves3'
         castShadow
         geometry={nodes.Cube014_Cube025.geometry}
         material={materials['Material.001']}
       />
-      <mesh
-        name='leaves4'
-        castShadow
-        geometry={nodes.Cube016_Cube040.geometry}
-        material={materials['Material.001']}
-      />
+      
       <mesh
         name='leaves5'
         castShadow
         geometry={nodes.Cube018_Cube042.geometry}
         material={materials['Material.001']}
       />
-      <mesh
-        name='leaves6'
-        castShadow
-        geometry={nodes.Cube020_Cube044.geometry}
-        material={materials['Material.001']}
-      />
+      
       <mesh
         name='mainRoad'
         geometry={nodes.Cube032_Cube066.geometry}

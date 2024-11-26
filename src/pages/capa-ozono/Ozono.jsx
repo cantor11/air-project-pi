@@ -16,6 +16,8 @@ import SensitizationText from "./world/SensitizationText";
 import { Physics } from "@react-three/rapier";
 import Floor from "./world/floor";
 import Interactions from "./world/Interactions";
+import SolutionText from "./world/SolutionText";
+import { Perf } from "r3f-perf";
 
 
 /**
@@ -62,19 +64,16 @@ const Ozono = () => {
               <Lights /> {/* Adds lighting to the scene */}
             </Suspense>
             <Physics debug gravity={[0, -9.8, 0]}>
-              <Factory /> {/* 3D model of a factory, representing industrial pollution */}
-              <Donut
-                name="donut"
-                position={[0, 10, 0]}
-                rotation-x={-Math.PI * 0.25}
-                castShadow
-              />
+            <Factory /> {/* 3D model of a factory, representing industrial pollution */}
+              
               <Floor />
             </Physics>
             {/*<SmokeScenario />  Scenario simulating smoke/smog effects */}
             <IntroductionText /> {/* Introductory text describing the air pollution issue */}
             <SensitizationText />
             <Interactions />
+            <SolutionText />
+            <Perf position={"top-left"}/>
             <Staging /> {/* Background and environment settings */}
           </Canvas>
           <Loader /> {/* Shows a loading indicator while the scene loads */}
