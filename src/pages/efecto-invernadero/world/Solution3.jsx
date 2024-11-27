@@ -1,7 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 
 import { BmxBikeModel } from "./BmxBikeModel";
-import { BusModel } from "./BusModel";
+import { MioBusModel } from "./MioBusModel";
 
 /**
  * Solution3 Component
@@ -18,24 +18,19 @@ const Solution3 = () => {
   return (
     <>
       <RigidBody
-        name="bus"
         restitution={1.5}
         type="dynamic"
-        gravityScale={2}
-        mass={1}
-        //ref={busRef}
+        gravityScale={5}
         colliders="hull"
       >
-        <BusModel position={[-800,310,-350]} scale={35} />
+        <MioBusModel position={[-800,310,-350]} scale={[8,8,4]} />
       </RigidBody>
 
       <RigidBody
-        name="bmxBike"
         restitution={1.8}
         type="dynamic"
         gravityScale={9}
         mass={100}
-        //ref={bmxBikeRef}
         colliders="hull"
       >
         <BmxBikeModel position={[-800,310,-150]} scale={15} />
