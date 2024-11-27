@@ -1,7 +1,7 @@
 import { RigidBody } from "@react-three/rapier";
 
 import { DirtyBottleModel } from "./DirtyBottle";
-import { PlasticBottleModel } from "./PlasticBottle";
+import { PlasticWaterBottleModel } from "./PlasticWaterBottleModel";
 import { RecycleBinModel } from "./RecycleBinModel";
 
 
@@ -21,39 +21,33 @@ const Solution4 = () => {
   return (
     <>
       <RigidBody
-        name="recycleBin"
         restitution={2}
         type="dynamic"
         gravityScale={9}
         mass={100}
-        //ref={recybleBinRef}
         colliders="hull"
       >
         <RecycleBinModel position={[-800,310,-350]} scale={12} />
       </RigidBody>
 
       <RigidBody
-        name="dirtyBottle"
         restitution={2}
         type="dynamic"
         gravityScale={9}
         mass={100}
-        //ref={dirtyBottleRef}
         colliders="hull"
       >
         <DirtyBottleModel position={[-800,350,-250]} scale={4} />
       </RigidBody>
 
       <RigidBody
-        name="plasticBottle"
         restitution={2}
         type="dynamic"
         gravityScale={9}
         mass={100}
-        //ref={plasticBottleRef}
         colliders="hull"
       >
-        <PlasticBottleModel position={[-800,300,-150]} scale={3} />
+        <PlasticWaterBottleModel position={[-800,310,-150]} scale={400} />
       </RigidBody>
     </>
   )

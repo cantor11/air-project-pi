@@ -14,20 +14,14 @@ export function RecycleBinModel(props) {
   return (
     <group {...props} dispose={null} rotation-y={Math.PI/2}>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_4.geometry}
         material={materials.material}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_5.geometry}
         material={materials.material_1}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_6.geometry}
         material={materials.material_2}
       />
