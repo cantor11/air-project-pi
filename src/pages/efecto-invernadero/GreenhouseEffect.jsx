@@ -68,6 +68,7 @@ const GreenhouseEffect = () => {
     setView({
       isTitleView: true,
       isAwarenessSectionView: false,
+      isSolutionsSectionView: false,
     });
   }, []);
 
