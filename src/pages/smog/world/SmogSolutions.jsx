@@ -5,10 +5,13 @@ import Trash3 from './trash/Trash3';
 import Trash4 from './trash/Trash4';
 import { Float, Text3D } from '@react-three/drei';
 import AdSignal from './AdSignal';
-import { RigidBody } from '@react-three/rapier';
+import { Text } from '@react-three/drei';
+import { useNavigate } from "react-router-dom";
 
 const SmogSolutions = () => {
-  return (
+    const navigate = useNavigate();
+
+    return (
     <>  
         <Float
             speed={2}
@@ -97,6 +100,48 @@ const SmogSolutions = () => {
             <meshStandardMaterial color={"#ffff00"}/>
         </Text3D>
         </Float>
+        <Text 
+            position={[-50, 30, -245]}
+            rotation={[0, Math.PI, 0]}
+            color="yellow" 
+            anchorX={"right"} 
+            anchorY={"bottom"}
+            font="/fonts/arial_narrow_7.ttf"
+            scale={[7, 7, 7]}
+            outlineWidth={0.03}
+            outlineColor="black" 
+        >
+            {"                        ¿Terminaste de navegar? \n\
+                 Pon a prueba tus conocimientos con \n\
+                nuestro quiz, pero si aún no terminas, \n\
+                   vuelve cuando estés preparado"}
+        </Text>
+        <mesh 
+            onPointerUp={() => navigate("/quiz")} 
+            onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+            onPointerOut={(e) => (document.body.style.cursor = "default")}
+            >
+        <Float 
+            speed={3}
+            rotationIntensity={0.1}
+            floatIntensity={0.6}
+            floatingRange={[1,1]}
+        >
+            <Text 
+                position={[-21, 10, -245]}
+                rotation={[0, Math.PI, 0]}
+                color="yellow" 
+                anchorX={"right"} 
+                anchorY={"bottom"}
+                font="/fonts/arial_narrow_7.ttf"
+                scale={[7, 7, 7]}
+                outlineWidth={0.012}
+                outlineColor="yellow" 
+             >
+            Realiza el quiz...
+            </Text>
+        </Float>
+        </mesh>
     </>  
     )
 }

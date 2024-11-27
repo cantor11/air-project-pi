@@ -80,11 +80,6 @@ const Header = () => {
           </Link>
         )}
         */}
-
-        {/* Esto no va  en el codigo final*/}
-        <Link to="/login">
-          <img src="/images/logout.webp" alt="Login" className="login" />
-        </Link>
       </div>
     </header>
   );
