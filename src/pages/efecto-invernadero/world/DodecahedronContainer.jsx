@@ -25,7 +25,7 @@ const Dodecahedron = ({ position, rotationValue }) => {
       <meshPhysicalMaterial 
         color="cyan" 
         transparent={true} 
-        opacity={0.4}
+        opacity={0.03}
       />
     </mesh>
   );

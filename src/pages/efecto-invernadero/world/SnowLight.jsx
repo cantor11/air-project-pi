@@ -12,7 +12,7 @@ const SnowLight = ({scale = 1}) => {
   return (
     <mesh position={[-1000,-300,-300]} scale={scale}>
       <sphereGeometry args={[20, 32, 32]} />
-      <meshBasicMaterial color="lightblue" transparent opacity={0.1} />
+      <meshBasicMaterial color="lightblue" transparent opacity={0.01} />
     </mesh>
   )
 }
