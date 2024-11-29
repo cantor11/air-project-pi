@@ -29,7 +29,7 @@ const SmogSolutions = () => {
             size={9.5}
         >
             {'NO a la contaminación!'}
-            <meshStandardMaterial color={"#aeab00"}/>
+            <meshStandardMaterial color={"#dcdc00"}/>
         </Text3D>
         </Float>
 
@@ -114,10 +114,10 @@ const SmogSolutions = () => {
             {"                        ¿Terminaste de navegar? \n\
                  Pon a prueba tus conocimientos con \n\
                 nuestro quiz, pero si aún no terminas, \n\
-                   vuelve cuando estés preparado"}
+                    vuelve cuando estés preparado."}
         </Text>
         <mesh 
-            onPointerUp={() => navigate("/quiz")} 
+            onClick={() => navigate("/quiz")} 
             onPointerOver={(e) => (document.body.style.cursor = "pointer")}
             onPointerOut={(e) => (document.body.style.cursor = "default")}
             >
