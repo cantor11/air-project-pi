@@ -14,32 +14,22 @@ export function LedBulbModel(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_4.geometry}
         material={materials.Metal}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_6.geometry}
         material={materials.Blanco}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_8.geometry}
         material={materials.Difuso}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_10.geometry}
         material={materials.Metal_2}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Object_12.geometry}
         material={materials.Blanco_2}
       />
