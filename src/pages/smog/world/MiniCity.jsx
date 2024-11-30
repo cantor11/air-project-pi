@@ -66,7 +66,7 @@ const MiniCity = (props) => {
           <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
             <group name="f24d49609aed4057bf28a9aa3eafbe31fbx" rotation={[Math.PI / 2, 0, 0]}>
               <group name="Object_2">
-                <group name="RootNode">
+                <group name="RootNode" onClick={(e) => e.stopPropagation()}>
                   <group
                     name="Building003"
                     position={[-1941.616, 0, -3233.158]}
