@@ -12,7 +12,7 @@ import { Html } from "@react-three/drei";
  * through the content.
  */
 
-const AwarenessText = ({ setFreeNavigation }) => {
+const AwarenessText = ({ setFreeNavigation, setShowIntroText }) => {
   const [textIndex, setTextIndex] = useState(0);
   const [instructionText, setInstructionText] = useState("Utiliza las flechas izquierda y derecha para navegar.");
 
@@ -27,6 +27,7 @@ const AwarenessText = ({ setFreeNavigation }) => {
   const handleUnlockNavigation = () => {
     setFreeNavigation(true);
     setInstructionText("Desplazate por la ciudad y descubre que puedes hacer al respecto.");
+    setShowIntroText(false); 
   };
 
   useEffect(() => {

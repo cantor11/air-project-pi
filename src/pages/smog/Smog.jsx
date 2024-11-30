@@ -29,9 +29,11 @@ const Smog = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cameraPosition, setCameraPosition] = useState([0, 250, 490]);
   const [freeNavigation, setFreeNavigation] = useState(false);
-  const cameraRef = useRef();
-  const audioRef = useRef(null); // Ref para el audio
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showIntroText, setShowIntroText] = useState(true);
+
+  const cameraRef = useRef();
+  const audioRef = useRef(null); 
 
   const cameraSettings = {
     position: cameraPosition,
@@ -40,10 +42,6 @@ const Smog = () => {
     far: 2500,
   };
 
-  useEffect(() => {
-    setTimeout(() => setIsLoaded(true), 600); // Delays the fade-out effect
-  }, []);
-
   const handlePointerMove = useCallback(() => {
     if (!isPlaying && audioRef.current) {
       audioRef.current.play(); 
@@ -51,6 +49,10 @@ const Smog = () => {
       setIsPlaying(true);
     }
   }, [isPlaying]);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoaded(true), 600); // Delays the fade-out effect
+  }, []);
 
   return (
     <>
@@ -72,11 +74,14 @@ const Smog = () => {
             <SmogStaging />
             <SmogPostProcessing />
             <Physics gravity={[0, -50, 0]}>
-              <IntroText cameraRef={cameraRef} setCameraPosition={setCameraPosition} />
+              {showIntroText && (
+                <IntroText cameraRef={cameraRef} setCameraPosition={setCameraPosition} />
+              )}
               <AwarenessText
                 cameraRef={cameraRef}
                 setCameraPosition={setCameraPosition}
                 setFreeNavigation={setFreeNavigation}
+                setShowIntroText={setShowIntroText} 
               />
               <SmogSolutions />
               <CityScene />
