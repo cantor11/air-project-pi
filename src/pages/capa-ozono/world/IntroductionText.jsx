@@ -1,4 +1,4 @@
-import { Text } from "@react-three/drei";
+import { Text, Text3D, Center } from "@react-three/drei";
 import { MathUtils } from "three";
 
 /**
@@ -43,8 +43,21 @@ const IntroductionText = () => {
                 La capa de ozono nos protege de la radiación ultravioleta dañina. Sin embargo, 
                 sustancias como los CFCs la han debilitado, aumentando los riesgos de cáncer de piel, 
                 daños oculares y afectando ecosistemas. Gracias al Protocolo de Montreal, su recuperación 
-                está en marcha, pero es vital continuar con prácticas sostenibles para protegerla.
+                está en marcha, pero es vital continuar con prácticas sostenibles para protegerla. Haz click 
+                en el arbusto o usa las flechas izquierda y derecha para cambiar de escena. 
             </Text>
+            <Center left top position={[-9.5, 0.7, 1.2]}>
+                <Text3D
+                    font="/fonts/blue-ocean.json"
+                    rotation={[0, MathUtils.degToRad(-90), 0]}
+                    size={0.3}
+                    height={0.1}
+                            
+                >
+                    {' Utiliza las plataformas o flechas para cambiar de escenas'}
+                    <meshNormalMaterial />
+                </Text3D>
+            </Center>
         </>
     );
 };

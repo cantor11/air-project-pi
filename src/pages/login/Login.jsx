@@ -5,8 +5,7 @@ import { useCallback, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  /*
-  // Destructure values from the authentication store
+  /* // Destructure values from the authentication store
   const { user, loginGoogleWithPopUp, observeAuthState, loading } = useAuthStore();
   const navigate = useNavigate();
 
@@ -56,9 +55,7 @@ const Login = () => {
         <p className="loading-text">Cargando...</p>
       </div>
     );  
-  }
-
-  */
+  } */
  
   // Render the login interface
   return (

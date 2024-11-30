@@ -43,22 +43,22 @@ export function SmokeRing({ opacity = 1, ...props }) {
           <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
               <group name="Cloud_GN001_2">
-                <mesh
+                {/* <mesh
                   name="Object_4"
                   castShadow
                   receiveShadow
                   geometry={nodes.Object_4.geometry}
                   material={customMaterial}
-                />
+                /> */}
               </group>
               <group name="Cloud_GN002_3" rotation={[0, -0.016, 0]}>
-                <mesh
+                {/* <mesh
                   name="Object_6"
                   castShadow
                   receiveShadow
                   geometry={nodes.Object_6.geometry}
                   material={customMaterial}
-                />
+                /> */}
               </group>
               <group name="Cloud_GN003_4" rotation={[0, -0.031, 0]}>
                 <mesh

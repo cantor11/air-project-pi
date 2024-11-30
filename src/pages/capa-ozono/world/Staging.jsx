@@ -1,4 +1,4 @@
-import { Sky } from "@react-three/drei";
+import { Sky, Stars } from "@react-three/drei";
 
 /**
  * This component defines the sky settings for the 3D scene, simulating a nighttime environment
@@ -17,7 +17,15 @@ const Staging = () => {
         azimuth={0.25} // Determines the direction of the light relative to the scene
         turbidity={10} // Increases atmospheric particles for a hazier look
       />
-    </>
+      <Stars
+        radius={100}           
+        depth={50}              
+        count={5000}            
+        factor={4}              
+        saturation={0}          
+        fade={true}             
+      />
+      </>
   );
 };
 

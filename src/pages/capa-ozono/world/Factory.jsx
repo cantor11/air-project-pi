@@ -1,5 +1,7 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber';
+import { RigidBody } from '@react-three/rapier';
 
 /**
  * Factory Component
@@ -12,125 +14,122 @@ import { useGLTF, useTexture } from '@react-three/drei'
 
 export default function Factory(props) {
   const { nodes, materials } = useGLTF('/models-3d/factory.glb')
+  const leaves1Ref = useRef();
+  const leaves3Ref = useRef();
+  const leaves5Ref = useRef();
 
-  const PATH = useMemo(() => "materials/floor-factory/brick_villa_floor_", []);
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime();
+    const sway = Math.sin(time * 2) * 0.02; // Oscilación suave
+    const bounce = Math.cos(time * 1.5) * 0.000002; // Movimiento vertical leve
+
+    // Movimiento de las hojas
+    if (leaves1Ref.current) {
+      leaves1Ref.current.rotation.z = sway;
+      leaves1Ref.current.position.y += bounce;
+    }
+    if (leaves3Ref.current) {
+      leaves3Ref.current.rotation.z = -sway/2;
+      leaves3Ref.current.position.y -= bounce;
+    }
+    if (leaves5Ref.current) {
+      leaves5Ref.current.rotation.z = sway;
+      leaves5Ref.current.position.y += bounce;
+    }
+  });
+
+  const rbPhysicsLeaves1 = useRef();
+  const rbPhysicsLeaves2 = useRef();
+
+  const handleLeaves1 = useCallback(() => {
+    rbPhysicsLeaves1.current.applyImpulse({ x: 0, y: 100, z: -20 }, true)
+  }, []);
   
-  const floorTexture = useTexture({
-    map: PATH + "diff_1k.jpg",
-    displacementMap: PATH + "disp_1k.png",
-    normalMap: PATH + "nor_gl_1k.jpg",
-    roughnessMap: PATH + "rough_1k.jpg",
-    ambientOcclusionMap: PATH + "ao_1k.jpg",
-  })
-
-  console.log(floorTexture);
+  const handleLeaves2 = useCallback(() => {
+    rbPhysicsLeaves2.current.applyImpulse({ x: 0, y: 100, z: 20 }, true)
+  }, []);
 
   return (
     <group {...props} dispose={null}>
       <mesh
+        name='leaves1'
+        ref={leaves1Ref}
         castShadow
         geometry={nodes.Cube011_Cube036.geometry}
         material={materials['Material.001']}
       />
       <mesh
-        castShadow
-        geometry={nodes.Cube013_Cube038.geometry}
-        material={materials['Material.001']}
-      />
-      <mesh
+        name='leaves3'
+        ref={leaves3Ref}
         castShadow
         geometry={nodes.Cube014_Cube025.geometry}
         material={materials['Material.001']}
       />
       <mesh
+        name='leaves5'
         castShadow
-        geometry={nodes.Cube016_Cube040.geometry}
-        material={materials['Material.001']}
-      />
-      <mesh
-        castShadow
+        ref={leaves5Ref}
         geometry={nodes.Cube018_Cube042.geometry}
         material={materials['Material.001']}
       />
+      <RigidBody 
+        ref={rbPhysicsLeaves1}
+        colliders="hull"
+        gravityScale={20}
+        restitution={0.7}
+      >
+        <mesh
+          onClick={handleLeaves1}
+          position={[-17.5, 2.5, -2]}
+          name='physicsLeaves1'
+          castShadow
+          geometry={nodes.Cube016_Cube040.geometry}
+          material={materials['Material.001']}
+        />
+      </RigidBody>
+      <RigidBody 
+        ref={rbPhysicsLeaves2}
+        colliders="hull"
+        gravityScale={20}
+        restitution={0.7}
+      >
+        <mesh
+          onClick={handleLeaves2}
+          position={[0, 2.5, 3]}
+          name='physicsLeaves2'
+          castShadow
+          geometry={nodes.Cube013_Cube038.geometry}
+          material={materials['Material.001']}
+        />
+      </RigidBody>
       <mesh
-        castShadow
-        geometry={nodes.Cube020_Cube044.geometry}
-        material={materials['Material.001']}
-      />
-      <mesh
+        name='mainRoad'
         geometry={nodes.Cube032_Cube066.geometry}
         material={materials.None}
       />
       <mesh
+        name='mainRoad2'
         geometry={nodes.Cube033_Cube067.geometry}
         material={materials.None}
       />
       <mesh
+        name='mainRoad3'
         geometry={nodes.Cube038_Cube065.geometry}
         material={materials.None}
-      />
+      />  
+      <RigidBody type="fixed" colliders="trimesh">
       <mesh
+        name='factory'
         geometry={nodes.Plane002_Plane004_1.geometry}
         material={materials['Material.001']}
       />
+      </RigidBody> 
       <mesh
+        name='accessories'
         castShadow
         geometry={nodes.Plane002_Plane004_2.geometry}
         material={materials['Material.006']}
       />
-      <mesh receiveShadow rotation-x={Math.PI * 0.5} position={[-10.5, 0.38, 5.25]}>
-        <boxGeometry args={[4, 2, 0.1]}/>
-        <meshStandardMaterial 
-          map={floorTexture.map}
-          normalMap={floorTexture.normalMap}
-          roughnessMap={floorTexture.roughnessMap}
-          ambientOcclusionMap={floorTexture.ambientOcclusionMap}
-        />
-      </mesh>
-      <mesh receiveShadow rotation-x={Math.PI * 0.5} position={[-13.5, 0.38, 0]}>
-        <boxGeometry args={[2, 32, 0.1]}/>
-        <meshStandardMaterial 
-          map={floorTexture.map}
-          normalMap={floorTexture.normalMap}
-          roughnessMap={floorTexture.roughnessMap}
-          ambientOcclusionMap={floorTexture.ambientOcclusionMap}
-        />
-      </mesh>
-      <mesh receiveShadow rotation-x={Math.PI * 0.5} position={[16, 0.38, 0]}>
-        <boxGeometry args={[2, 32, 0.1]}/>
-        <meshStandardMaterial 
-          map={floorTexture.map}
-          normalMap={floorTexture.normalMap}
-          roughnessMap={floorTexture.roughnessMap}
-          ambientOcclusionMap={floorTexture.ambientOcclusionMap}
-        />
-      </mesh>
-      <mesh receiveShadow rotation-x={Math.PI * 0.5} position={[0, 0.38, 15]}>
-        <boxGeometry args={[30, 2, 0.1]}/>
-        <meshStandardMaterial 
-          map={floorTexture.map}
-          normalMap={floorTexture.normalMap}
-          roughnessMap={floorTexture.roughnessMap}
-          ambientOcclusionMap={floorTexture.ambientOcclusionMap}
-        />
-      </mesh>
-      <mesh receiveShadow rotation-x={Math.PI * 0.5} position={[0, 0.38, -15]}>
-        <boxGeometry args={[30, 2, 0.1]}/>
-        <meshStandardMaterial 
-          map={floorTexture.map}
-          normalMap={floorTexture.normalMap}
-          roughnessMap={floorTexture.roughnessMap}
-          ambientOcclusionMap={floorTexture.ambientOcclusionMap}
-        />
-      </mesh>
-      <mesh receiveShadow rotation-x={Math.PI * 1.5} position={[0, 0.39, 0]}>
-        <planeGeometry args={[30, 30]} />  
-        <shadowMaterial opacity={0.5}/>
-      </mesh>
-      <mesh rotation-x={Math.PI * 1.5} position={[0, 0.2, 0]}>
-        <planeGeometry args={[100, 100]} />  
-        <meshStandardMaterial color={"black"}/>
-      </mesh>
     </group>
   )
 }

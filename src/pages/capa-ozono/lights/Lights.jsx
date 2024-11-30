@@ -1,6 +1,4 @@
 import React from 'react';
-import { useHelper } from '@react-three/drei';
-import { DirectionalLightHelper, PointLightHelper, SpotLightHelper } from 'three';
 
 /**
  * Lights component defines the lighting setup for the 3D scene.
@@ -27,7 +25,6 @@ const Lights = () => {
         position={[-20, 3, 0]}
         intensity={100}
         distance={25}
-        
         penumbra={50}
       />
       <pointLight
@@ -66,9 +63,50 @@ const Lights = () => {
         decay={1}
       />
       <pointLight
-
         castShadow
         position={[-6.5, 6.5, -11]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      />
+      <pointLight
+        castShadow
+        position={[11, 6.5, -9]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      />  
+      <pointLight
+        castShadow
+        position={[11, 6.5, -1]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      />
+      <pointLight
+        castShadow
+        position={[11, 6.5, 7]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      />
+      <pointLight
+        castShadow
+        position={[11, 0, -9]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      /> 
+      <pointLight
+        castShadow
+        position={[11, 0, -1]}
+        intensity={5}
+        distance={6.5}
+        decay={1}
+      />
+      <pointLight
+        castShadow
+        position={[11, 0, 7]}
         intensity={5}
         distance={6.5}
         decay={1}

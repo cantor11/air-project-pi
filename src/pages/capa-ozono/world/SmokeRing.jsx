@@ -25,7 +25,7 @@ export function SmokeRing({ opacity = 1, ...props }) {
     const action = actions['Animation']; // Get the animation action
     if (action) {
       action.reset().play(); // Reset and play the animation
-      action.timeScale = 0.2; // Slow down the animation
+      action.timeScale = 10; // Slow down the animation
     }
 
     // Cleanup function to stop the animation when the component unmounts
