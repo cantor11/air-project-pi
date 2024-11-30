@@ -15,7 +15,8 @@ import { NavLink } from "react-router-dom";
  */
 
 const Header = () => {
-  /* const { user, logout } = useAuthStore();
+  /* 
+  const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
@@ -77,10 +78,6 @@ const Header = () => {
           </Link>
 
         ) */}
-
-        )}
-        */}
-
       </div>
     </header>
   );
