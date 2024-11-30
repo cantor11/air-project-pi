@@ -44,17 +44,24 @@ const SolutionsText = () => {
   useEffect(() => {
     setSolutionsSection({
       solutionsStep: 0,
+      isMoreInfoView: false,
       textQuantity: textLines.length,
     });
 
     return () => null;
   }, []);
 
-  // Function to change camera position and lookAt to title view
-  const handleClickCameraAnimation = useCallback(() => {
-    setView({
-      isSolutionsSectionView: false,
-    });
+  // Function to change camera position and lookAt to title view or get out from More Info subsection
+  const handleClickBackButton = useCallback(() => {
+    if (solutionsSection.isMoreInfoView) {
+      setSolutionsSection({
+        isMoreInfoView: false,
+      });
+    } else {
+      setView({
+        isSolutionsSectionView: false,
+      });
+    }
   }, []);
 
   // Function to stop showing More Info subsection
@@ -109,7 +116,7 @@ const SolutionsText = () => {
 
       <PaginationDots total={textLines.length} currentIndex={solutionsSection.solutionsStep} /> {/* Pagination for current line */}
 
-      <div style={{ position: 'absolute', bottom: '10%', left: '10%' }}>
+      <div style={{ position: 'absolute', bottom: '10%', left: '10%', zIndex: '1' }}>
         <p style={{ textAlign: 'center', fontSize: '1vw', color: 'lightgray',
           textShadow: `
             -1px -1px 0 #5037da,
@@ -120,7 +127,7 @@ const SolutionsText = () => {
           {'Usa Esc'}<br></br>
           {'para salir'}
         </p>
-        <button onClick={handleClickCameraAnimation}> Volver </button>
+        <button onClick={handleClickBackButton}> Volver </button>
       </div>
 
       <div style={{ position: 'absolute', bottom: '10%', display:'flex', flexDirection:'column' }}>

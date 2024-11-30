@@ -41,7 +41,7 @@ const SolutionsMoreInfoTexts = () => {
   return (
     <>
       {solutionsSection.isMoreInfoView ?
-        <div style={{ position: 'absolute', backgroundColor: 'rgba(0, 0, 0, 0.7)', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ position: 'absolute', backgroundColor: 'rgba(0, 0, 0, 0.8)', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ backgroundColor: 'rgb(50, 50, 50)', width: '60%', height: 'min-content', marginBottom: '10%', borderRadius: '10%' }}>
             <div style={{ textAlign: 'center', fontSize: '1.5vw', color: 'lightgray', margin: '5%',
               textShadow: `

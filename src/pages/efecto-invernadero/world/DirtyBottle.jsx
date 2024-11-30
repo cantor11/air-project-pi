@@ -14,14 +14,10 @@ export function DirtyBottleModel(props) {
   return (
     <group {...props} dispose={null} rotation-x={-Math.PI/2}>
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Beat_Water_Bottle_WaterBottle1_0.geometry}
         material={materials.WaterBottle1}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Bottle_Cap_BottleCap_0.geometry}
         material={materials.BottleCap}
       />

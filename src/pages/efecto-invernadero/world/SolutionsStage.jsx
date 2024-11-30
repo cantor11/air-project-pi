@@ -20,7 +20,7 @@ const SolutionsStage = (props) => {
     <meshStandardMaterial
       color={"white"}
       transparent={true}
-      opacity={0.06}
+      opacity={0.03}
       depthWrite={false} // Improve transparency
     />
   , []);

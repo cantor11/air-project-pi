@@ -21,6 +21,7 @@ import TitleText from "./world/TitleText";
 import AwarenessKeyboardListeners from "./world/AwarenessKeyboardListeners";
 import CameraPositioning from "./world/CameraPositioning";
 import SolutionsKeyboardListeners from "./world/SolutionsKeyboardListeners";
+import PostProcessing from "./postprocessing/PostProcessing";
 
 //import { Perf } from "r3f-perf"; //performance stats
 
@@ -29,9 +30,12 @@ import SolutionsKeyboardListeners from "./world/SolutionsKeyboardListeners";
  * 
  * This functional React component sets up a 3D scene using `@react-three/fiber` 
  * to visualize the section for the specific enviromental problem "greenhouse effect"
- * with an introduction, an Awareness section and a Solutions section, in which the user can better know the
- * effects, consequences and reasons of the problem. In adition, incorporates KeyControls
- * to do some functionalities when pressing specific keys with the keyboard.
+ * with an introduction, an Awareness section in which the user can better know the
+ * effects, consequences and reasons of the problem and a Solutions section in which
+ * the user can see many simple solutions for this specific problem
+ * that they could do by themselves.
+ * In adition, incorporates KeyControls to do some functionalities when pressing
+ * specific keys with the keyboard.
  * It incorporates a `Header` for navigation and utilizes * `Suspense` for lazy loading
  * of components like `Controls` and `Lights`.
  * The scene aims to enhance user engagement and understanding of this specific topic.
@@ -68,6 +72,7 @@ const GreenhouseEffect = () => {
     setView({
       isTitleView: true,
       isAwarenessSectionView: false,
+      isSolutionsSectionView: false,
     });
   }, []);
 
@@ -81,34 +86,35 @@ const GreenhouseEffect = () => {
             <Suspense fallback={null}>
               <Controls />
               <Lights />
+              <PostProcessing />
+              <Staging />
+
+              <EarthModel position={[-1000,-300,-300]} scale={100} receiveShadow/>
+              <SunModel position={[460, 150, -50]} scale={30}/>
+              <MoonModel />
+
+              {view.isAwarenessSectionView ? // If we are in Awareness section, activate Awareness Keyboard Events and Animations
+              <>
+                <AwarenessKeyboardListeners /> {/* Handle Keyboard events */}
+                <AwarenessAnimations /> {/* Handle animations for Awareness Section */}
+              </>
+              :
+              view.isSolutionsSectionView ? // If we are in Solutions section, activate Solutions Keyboard Events and Animations
+              <>
+                <SolutionsKeyboardListeners /> {/* Handle Keyboard events */}
+                <SolutionsAnimations /> {/* Handle animations for Solutions Section */}
+              </>
+              :
+              <>
+                <TitleText /> {/* Show title or introduction in main view */}
+                <Html center position={[-100,-170,0]} > {/* Implementing 3D Html element */}
+                  <button onClick={() => handleClickCameraAnimation(true)}> Sensibilización </button>
+                </Html>
+                <Html center position={[100,-170,0]} > {/* Implementing 3D Html element */}
+                  <button onClick={() => handleClickCameraAnimation(false)}> Soluciones </button>
+                </Html>
+              </>}
             </Suspense>
-            <Staging />
-
-            <EarthModel position={[-1000,-300,-300]} scale={100} receiveShadow/>
-            <SunModel position={[460, 150, -50]} scale={30}/>
-            <MoonModel />
-
-            {view.isAwarenessSectionView ? // If we are in Awareness section, activate Awareness Keyboard Events and Animations
-            <>
-              <AwarenessKeyboardListeners /> {/* Handle Keyboard events */}
-              <AwarenessAnimations /> {/* Handle animations for Awareness Section */}
-            </>
-            :
-            view.isSolutionsSectionView ? // If we are in Solutions section, activate Solutions Keyboard Events and Animations
-            <>
-              <SolutionsKeyboardListeners /> {/* Handle Keyboard events */}
-              <SolutionsAnimations /> {/* Handle animations for Solutions Section */}
-            </>
-            :
-            <>
-              <TitleText /> {/* Show title or introduction in main view */}
-              <Html center position={[-100,-170,0]} > {/* Implementing 3D Html element */}
-                <button onClick={() => handleClickCameraAnimation(true)}> Sensibilización </button>
-              </Html>
-              <Html center position={[100,-170,0]} > {/* Implementing 3D Html element */}
-                <button onClick={() => handleClickCameraAnimation(false)}> Soluciones </button>
-              </Html>
-            </>}
           </Canvas>
           {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
           {view.isSolutionsSectionView ? <SolutionsText /> : null} {/* If we are in Solutions section, show the corresponding text */}
