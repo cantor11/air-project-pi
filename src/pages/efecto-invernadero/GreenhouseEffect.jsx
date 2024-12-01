@@ -1,4 +1,5 @@
 import { Suspense, useCallback, useEffect, useMemo } from "react";
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { Html, KeyboardControls, Loader } from "@react-three/drei";
 import { Canvas } from '@react-three/fiber';
 import useGreeenhouseStore from "../../stores/greenhouse-store";
@@ -42,11 +43,13 @@ import PostProcessing from "./postprocessing/PostProcessing";
  * In addition, this component uses a 'CameraPositioning' component which will let
  * the user change the view to focus on different content in the page.
  * Every time this component is shown, it will show the Title view first,
- * to do that it will use a store made from Zustand
+ * to do that it will use a store made from Zustand.
+ * Also, there can be sounds in all this page, to mute or unmute them, there is a botton
+ * to do that and we will set the state using the store.
  */
 
 const GreenhouseEffect = () => {
-  const { view, setView } = useGreeenhouseStore(); // Information brought from store
+  const { view, setView, sound, setSound } = useGreeenhouseStore(); // Information brought from store
 
   // Function to change camera position and lookAt to Awareness section view or Solutions section
   const handleClickCameraAnimation = useCallback((mostrarSensibilizacion) => {
@@ -75,6 +78,14 @@ const GreenhouseEffect = () => {
       isSolutionsSectionView: false,
     });
   }, []);
+
+  // Function to mute or unmute the page, setting the state in the store
+  const toggleMute = useCallback(() => {
+    setSound({
+      isMuted: !sound.isMuted,
+    });
+  }, [sound]);
+
 
   return (
     <>
@@ -118,6 +129,17 @@ const GreenhouseEffect = () => {
           </Canvas>
           {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
           {view.isSolutionsSectionView ? <SolutionsText /> : null} {/* If we are in Solutions section, show the corresponding text */}
+          
+          <div style={{ position: 'absolute', top: '12%', left: '5%', zIndex: '1' }}>
+            <button onClick={toggleMute} >
+            {sound.isMuted ? (
+              <FaVolumeMute size={24} color="gray" />
+            ) : (
+              <FaVolumeUp size={24} color="black" />
+            )}
+            </button>
+          </div>
+
           <Loader />
         </KeyboardControls>
       </div>
