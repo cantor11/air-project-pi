@@ -24,7 +24,7 @@ const Solution0 = () => {
           font="/fonts/blue-ocean.json"
           bevelEnabled
           bevelSize={0.02}
-          bevelThickness={0.01}
+          bevelThickness={20.01}
           height={0.5}
           lineHeight={0.75}
           letterSpacing={0.05}
