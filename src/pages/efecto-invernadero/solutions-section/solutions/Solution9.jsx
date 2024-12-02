@@ -1,5 +1,3 @@
-import { RigidBody } from "@react-three/rapier";
-
 import { SocialMediaIcons } from "./SocialMediaIcons";
 
 /**

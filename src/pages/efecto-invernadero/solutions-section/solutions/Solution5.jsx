@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react";
 import { PositionalAudio } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 import { MinecraftCowModel } from "./MinecraftCow";
-import useGreenhouseStore from "../../../stores/greenhouse-store";
+import useGreenhouseStore from "../../../../stores/greenhouse-store";
 
 /**
  * Solution5 Component

@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef } from "react";
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 import { Html, KeyboardControls, Loader, PositionalAudio } from "@react-three/drei";
 import { Canvas } from '@react-three/fiber';
@@ -13,15 +13,15 @@ import { EarthModel } from "./world/EarthModel";
 import MoonModel from "./world/MoonModel";
 import { SunModel } from "./world/SunModel";
 
-import AwarenessAnimations from "./world/AwarenessAnimations";
-import AwarenessText from "./world/AwarenessText";
-import SolutionsAnimations from "./world/SolutionsAnimations";
-import SolutionsText from "./world/SolutionsText";
+import AwarenessAnimations from "./awareness-section/AwarenessAnimations";
+import AwarenessText from "./awareness-section/AwarenessText";
+import SolutionsAnimations from "./solutions-section/SolutionsAnimations";
+import SolutionsText from "./solutions-section/SolutionsText";
 import TitleText from "./world/TitleText";
 
-import AwarenessKeyboardListeners from "./world/AwarenessKeyboardListeners";
+import AwarenessKeyboardListeners from "./awareness-section/AwarenessKeyboardListeners";
 import CameraPositioning from "./world/CameraPositioning";
-import SolutionsKeyboardListeners from "./world/SolutionsKeyboardListeners";
+import SolutionsKeyboardListeners from "./solutions-section/SolutionsKeyboardListeners";
 import PostProcessing from "./postprocessing/PostProcessing";
 
 //import { Perf } from "r3f-perf"; //performance stats

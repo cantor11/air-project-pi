@@ -1,18 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { SmokeRing } from "./SmokeRing";
+import { SmokeRing } from "../../world/SmokeRing";
 
 /**
- * GasIncreaseAnimation Component
+ * NormalGasAnimation Component
  * 
  * This functional React component sets up a 3D object imported in this proyect
- * to use them to show an animation. The animation simulates the increase of the
- * greenhouse gases for the immersion in the page.
+ * to use them to show an animation. The animation simulates
+ * the greenhouse gases for the immersion in the page.
  * The animation uses a "value" and changes it from 0 to 1 to scale the objects and let
  * them be watched on screen, also, the animation uses a easeInOut effect, so at the
  * beggining it goes fast, and slow at the end.
  */
 
-const GasIncreaseAnimation = ({ isAnimating }) => {
+const NormalGasAnimation = ({ isAnimating }) => {
   const [value, setValue] = useState(0); // Value of scale for the objects
   const duration = 1200; // Time used to appear on screen
   const animationRef = useRef(null);
@@ -65,11 +65,10 @@ const GasIncreaseAnimation = ({ isAnimating }) => {
 
   return (
     <>
-      <SmokeRing position={[-1000,-220,-300]} scale={100*value} rotation-x={Math.PI}/>
-      <SmokeRing position={[-1000,-40,-300]} scale={9*value} />
-      <SmokeRing position={[-1000,-300,-300]} scale={100*value} rotation-y={Math.PI/2}/>
+      <SmokeRing position={[-1000,-56,-300]} scale={90*value} />
+      <SmokeRing position={[-1000,-260,-300]} scale={100*value} rotation-y={Math.PI/2}/>
     </>
   )
 }
 
-export default GasIncreaseAnimation;
+export default NormalGasAnimation;

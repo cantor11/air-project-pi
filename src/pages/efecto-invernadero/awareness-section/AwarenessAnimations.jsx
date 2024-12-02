@@ -1,9 +1,9 @@
-import BurningAnimation from "./BurningAnimation";
-import ColdingAnimation from "./ColdingAnimation";
-import DroughtAnimation from "./DroughtAnimation";
-import GasIncreaseAnimation from "./GasIncreaseAnimation";
-import NormalGasAnimation from "./NormalGasAnimation";
-import RainAnimation from "./RainAnimation";
+import BurningAnimation from "./animations/BurningAnimation";
+import ColdingAnimation from "./animations/ColdingAnimation";
+import DroughtAnimation from "./animations/DroughtAnimation";
+import GasIncreaseAnimation from "./animations/GasIncreaseAnimation";
+import NormalGasAnimation from "./animations/NormalGasAnimation";
+import RainAnimation from "./animations/RainAnimation";
 import useGreeenhouseStore from "../../../stores/greenhouse-store";
 
 /**
