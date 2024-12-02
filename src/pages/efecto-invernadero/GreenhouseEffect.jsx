@@ -1,6 +1,6 @@
-import { Suspense, useCallback, useEffect, useMemo } from "react";
+import { Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
-import { Html, KeyboardControls, Loader } from "@react-three/drei";
+import { Html, KeyboardControls, Loader, PositionalAudio } from "@react-three/drei";
 import { Canvas } from '@react-three/fiber';
 import useGreeenhouseStore from "../../stores/greenhouse-store";
 
@@ -50,6 +50,7 @@ import PostProcessing from "./postprocessing/PostProcessing";
 
 const GreenhouseEffect = () => {
   const { view, setView, sound, setSound } = useGreeenhouseStore(); // Information brought from store
+  const spaceAudioRef = useRef();
 
   // Function to change camera position and lookAt to Awareness section view or Solutions section
   const handleClickCameraAnimation = useCallback((mostrarSensibilizacion) => {
@@ -84,6 +85,26 @@ const GreenhouseEffect = () => {
     setSound({
       isMuted: !sound.isMuted,
     });
+  }, [sound]);
+
+  useEffect(() => {
+    // When the component is up, we start to check for the moment when the audio reference is ready so we can play the audio
+    const checkAudioReady = () => {
+      const audio = spaceAudioRef.current;
+      if (audio) {
+        if (!sound.isMuted) {
+          audio.setVolume(100);
+          audio.play();
+        } else {
+          audio.stop();
+        }
+      } else {
+        // If the reference is not ready yet, we try again but we wait a bit using a Timeout
+        setTimeout(checkAudioReady, 100);
+      }
+    };
+
+    checkAudioReady(); // We start to verify when we have audio
   }, [sound]);
 
 
@@ -125,6 +146,10 @@ const GreenhouseEffect = () => {
                   <button onClick={() => handleClickCameraAnimation(false)}> Soluciones </button>
                 </Html>
               </>}
+
+              <group position={[0,200,-200]}>
+                <PositionalAudio ref={spaceAudioRef} loop url="/sounds/space_sound.mp3" distance={1} />
+              </group>
             </Suspense>
           </Canvas>
           {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
@@ -132,11 +157,11 @@ const GreenhouseEffect = () => {
           
           <div style={{ position: 'absolute', top: '12%', left: '5%', zIndex: '1' }}>
             <button onClick={toggleMute} >
-            {sound.isMuted ? (
-              <FaVolumeMute size={24} color="gray" />
-            ) : (
-              <FaVolumeUp size={24} color="black" />
-            )}
+              {sound.isMuted ? (
+                <FaVolumeMute size={24} color="gray" />
+              ) : (
+                <FaVolumeUp size={24} color="black" />
+              )}
             </button>
           </div>
 
