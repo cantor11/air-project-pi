@@ -1,6 +1,6 @@
 import { Suspense, useCallback, useEffect, useMemo } from "react";
-import { Canvas } from '@react-three/fiber';
 import { Html, KeyboardControls, Loader } from "@react-three/drei";
+import { Canvas } from '@react-three/fiber';
 import useGreeenhouseStore from "../../stores/greenhouse-store";
 
 import Header from "../../components/header/Header";
@@ -8,15 +8,19 @@ import Controls from "./controls/Controls";
 import Lights from "./lights/Lights";
 import Staging from "./staging/Staging";
 
-import AwarenessAnimations from "./world/AwarenessAnimations";
-import AwarenessText from "./world/AwarenessText";
 import { EarthModel } from "./world/EarthModel";
 import MoonModel from "./world/MoonModel";
 import { SunModel } from "./world/SunModel";
+
+import AwarenessAnimations from "./world/AwarenessAnimations";
+import AwarenessText from "./world/AwarenessText";
+import SolutionsAnimations from "./world/SolutionsAnimations";
+import SolutionsText from "./world/SolutionsText";
 import TitleText from "./world/TitleText";
 
+import AwarenessKeyboardListeners from "./world/AwarenessKeyboardListeners";
 import CameraPositioning from "./world/CameraPositioning";
-import KeyboardListeners from "./world/KeyboardListeners";
+import SolutionsKeyboardListeners from "./world/SolutionsKeyboardListeners";
 
 //import { Perf } from "r3f-perf"; //performance stats
 
@@ -25,7 +29,7 @@ import KeyboardListeners from "./world/KeyboardListeners";
  * 
  * This functional React component sets up a 3D scene using `@react-three/fiber` 
  * to visualize the section for the specific enviromental problem "greenhouse effect"
- * with an introduction and an Awareness section, in which the user can better know the
+ * with an introduction, an Awareness section and a Solutions section, in which the user can better know the
  * effects, consequences and reasons of the problem. In adition, incorporates KeyControls
  * to do some functionalities when pressing specific keys with the keyboard.
  * It incorporates a `Header` for navigation and utilizes * `Suspense` for lazy loading
@@ -40,11 +44,12 @@ import KeyboardListeners from "./world/KeyboardListeners";
 const GreenhouseEffect = () => {
   const { view, setView } = useGreeenhouseStore(); // Information brought from store
 
-  // Function to change camera position and lookAt to Awareness section view
-  const handleClickCameraAnimation = useCallback(() => {
+  // Function to change camera position and lookAt to Awareness section view or Solutions section
+  const handleClickCameraAnimation = useCallback((mostrarSensibilizacion) => {
     setView({
       isTitleView: true,
-      isAwarenessSectionView: true,
+      isAwarenessSectionView: mostrarSensibilizacion,
+      isSolutionsSectionView: !mostrarSensibilizacion
     });
   }, [view]);
 
@@ -83,20 +88,30 @@ const GreenhouseEffect = () => {
             <SunModel position={[460, 150, -50]} scale={30}/>
             <MoonModel />
 
-            {view.isAwarenessSectionView ? // If we are in Awareness section, activate Keyboard Events and Awareness animations
+            {view.isAwarenessSectionView ? // If we are in Awareness section, activate Awareness Keyboard Events and Animations
             <>
-              <KeyboardListeners /> {/* Handle Keyboard events */}
+              <AwarenessKeyboardListeners /> {/* Handle Keyboard events */}
               <AwarenessAnimations /> {/* Handle animations for Awareness Section */}
+            </>
+            :
+            view.isSolutionsSectionView ? // If we are in Solutions section, activate Solutions Keyboard Events and Animations
+            <>
+              <SolutionsKeyboardListeners /> {/* Handle Keyboard events */}
+              <SolutionsAnimations /> {/* Handle animations for Solutions Section */}
             </>
             :
             <>
               <TitleText /> {/* Show title or introduction in main view */}
-              <Html center position={[0,-170,0]} > {/* Implementing 3D Html element */}
-                <button onClick={handleClickCameraAnimation}> Sensibilización </button>
+              <Html center position={[-100,-170,0]} > {/* Implementing 3D Html element */}
+                <button onClick={() => handleClickCameraAnimation(true)}> Sensibilización </button>
+              </Html>
+              <Html center position={[100,-170,0]} > {/* Implementing 3D Html element */}
+                <button onClick={() => handleClickCameraAnimation(false)}> Soluciones </button>
               </Html>
             </>}
           </Canvas>
           {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
+          {view.isSolutionsSectionView ? <SolutionsText /> : null} {/* If we are in Solutions section, show the corresponding text */}
           <Loader />
         </KeyboardControls>
       </div>

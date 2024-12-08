@@ -13,9 +13,9 @@ import SmokeScenario from "./world/SmokeScenario";
 import Staging from "./world/Staging";
 import SensitizationText from "./world/SensitizationText";
 import { Physics } from "@react-three/rapier";
+import EsceneFloor from "./world/EsceneFloor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
-import EsceneFloor from "./world/EsceneFloor";
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution

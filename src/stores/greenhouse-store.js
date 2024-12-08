@@ -5,11 +5,18 @@ const useGreenhouseStore = create((set) => ({
   view: {
     isTitleView: true,
     isAwarenessSectionView: false,
-    awarenessStep: 0,
+    isSolutionsSectionView: false,
   },
 
   awarenessSection: {
+    awarenessStep: 0,
     textQuantity: 0,
+  },
+
+  solutionsSection: {
+    solutionsStep: 0,
+    textQuantity: 0,
+    isMoreInfoView: false,
   },
 
   setView: (viewUpdates) =>
@@ -21,7 +28,11 @@ const useGreenhouseStore = create((set) => ({
     set((state) => ({
       awarenessSection: { ...state.awarenessSection, ...awarenessSectionUpdates},
     })),
+
+  setSolutionsSection: (solutionsSectionUpdates) =>
+    set((state) => ({
+      solutionsSection: { ...state.solutionsSection, ...solutionsSectionUpdates},
+    })),
 }));
 
 export default useGreenhouseStore;
-
