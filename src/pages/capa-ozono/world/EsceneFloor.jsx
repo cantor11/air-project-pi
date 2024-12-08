@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useTexture } from "@react-three/drei";
 import { RigidBody } from "@react-three/rapier";
 
-const Floor = (props) => {
+const EsceneFloor = (props) => {
   const PATH = useMemo(() => "materials/floor-factory/brick_villa_floor_", []);
   
   const floorTexture = useTexture({
@@ -74,4 +74,4 @@ const Floor = (props) => {
     );
   };
   
-  export default Floor;
+  export default EsceneFloor;
