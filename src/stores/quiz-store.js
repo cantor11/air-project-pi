@@ -2,27 +2,17 @@
 import { create } from "zustand";
 
 const useQuizStore = create((set) => ({
-    view: {
-      isSummaryView: false,
-    },
-
-    questionsSection: {
-        questionsStep: 0,
-        textQuantity: 0,
-        isMoreInfoView: false,
-      },
+  questionsSection: {
+    questionsStep: 0,
+    textQuantity: 0,
+    userScore: [0, 0, 0],
+    userAnswered: [false, false, false],
+  },
   
-    setView: (viewUpdates) =>
-      set((state) => ({
-        view: { ...state.view, ...viewUpdates },
-      })),
-    
-    setQuestionsSection: (questionsSectionUpdates) =>
-      set((state) => ({
-        questionsSection: { ...state.questionsSection, ...questionsSectionUpdates},
-      })),
-  }));
+  setQuestionsSection: (questionsSectionUpdates) =>
+    set((state) => ({
+      questionsSection: { ...state.questionsSection, ...questionsSectionUpdates},
+    })),
+}));
   
-  export default useQuizStore;
-  
-  
+export default useQuizStore;

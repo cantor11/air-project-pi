@@ -8,7 +8,7 @@ import Arrow from "./Arrow";
 
 
 const Questions = () => {
-    const { setView, questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
+    const { questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
 
     const questionsTextLines = useMemo(
         () => [
