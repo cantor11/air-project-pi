@@ -17,6 +17,7 @@ import { RigidBody } from '@react-three/rapier'
 
 
 const ResponseStage = (props) => {
+
   // Custom transparent material
   const transparentMaterial = useMemo(() => 
     <meshStandardMaterial
@@ -26,52 +27,59 @@ const ResponseStage = (props) => {
       depthWrite={false} // Improve transparency
     />
   , []);
+  
 
   return (
-    <RigidBody type="fixed" name="rbFloor" position={[-19,-7,0]}>
-      <group scale={0.03}>
-        <mesh {...props}>
-          <boxGeometry args={[300, 20, 520]} />
-          <meshStandardMaterial color={"white"} />
-        </mesh>
+    <>
+      <RigidBody type="fixed" name="responseStage" position={[-19,-7,0]}>
+        <group scale={0.03}>
+          <mesh {...props}>
+            <boxGeometry args={[300, 20, 520]} />
+            <meshStandardMaterial color={"white"} />
+          </mesh>
 
-        {/* Stage Walls */}
-        <mesh {...props} position={[0, 30, -250]}>
-          <boxGeometry args={[300, 50, 30]} />
-          {transparentMaterial}
-        </mesh>
-        <mesh {...props} position={[0, 30, 250]}>
-          <boxGeometry args={[300, 50, 30]} />
-          {transparentMaterial}
-        </mesh>
-        <mesh {...props} position={[-140, 30, 0]}>
-          <boxGeometry args={[30, 50, 520]} />
-          {transparentMaterial}
-        </mesh>
-        <mesh {...props} position={[140, 30, 0]}>
-          <boxGeometry args={[30, 50, 520]} />
-          {transparentMaterial}
-        </mesh>
+          {/* Stage Walls */}
+          <mesh {...props} position={[0, 30, -250]}>
+            <boxGeometry args={[300, 50, 30]} />
+            {transparentMaterial}
+          </mesh>
+          <mesh {...props} position={[0, 30, 250]}>
+            <boxGeometry args={[300, 50, 30]} />
+            {transparentMaterial}
+          </mesh>
+          <mesh {...props} position={[-140, 30, 0]}>
+            <boxGeometry args={[30, 50, 520]} />
+            {transparentMaterial}
+          </mesh>
+          <mesh {...props} position={[140, 30, 0]}>
+            <boxGeometry args={[30, 50, 520]} />
+            {transparentMaterial}
+          </mesh>
+        </group>
+      </RigidBody>
 
-        {/* Answers Platforms */}
-        <mesh {...props} position={[0, 300, 500]}>
-          <boxGeometry args={[200, 20, 200]} />
-          <meshStandardMaterial color={"white"} />
-        </mesh>
-        <mesh {...props} position={[0, 0, 500]}>
-          <boxGeometry args={[200, 20, 200]} />
-          <meshStandardMaterial color={"white"} />
-        </mesh>
-        <mesh {...props} position={[0, 300, -500]}>
-          <boxGeometry args={[200, 20, 200]} />
-          <meshStandardMaterial color={"white"} />
-        </mesh>
-        <mesh {...props} position={[0, 0, -500]}>
-          <boxGeometry args={[200, 20, 200]} />
-          <meshStandardMaterial color={"white"} />
-        </mesh>
-      </group >
-    </RigidBody>
+      <RigidBody type="fixed" name="responsePlatforms">
+        <group scale={1}>
+          {/* Answers Platforms */}
+          <mesh {...props} position={[-19, -7, 15]}>
+            <boxGeometry args={[7, 1, 7]} />
+            <meshStandardMaterial color={"white"} />
+          </mesh>
+          <mesh {...props} position={[-19, 2, 15]}>
+            <boxGeometry args={[7, 1, 7]} />
+            <meshStandardMaterial color={"white"} />
+          </mesh>
+          <mesh {...props} position={[-19, -7, -15]}>
+            <boxGeometry args={[7, 1, 7]} />
+            <meshStandardMaterial color={"white"} />
+          </mesh>
+          <mesh {...props} position={[-19, 2, -15]}>
+            <boxGeometry args={[7, 1, 7]} />
+            <meshStandardMaterial color={"white"} />
+          </mesh>
+        </group >
+      </RigidBody>
+    </>
   );
 };
 

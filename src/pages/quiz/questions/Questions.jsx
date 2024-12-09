@@ -8,13 +8,15 @@ import Arrow from "./Arrow";
 
 
 const Questions = () => {
-    const { questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
+  const { questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
 
-    const questionsTextLines = useMemo(
-        () => [
-          "Efecto Invernadero","Smog","Capa de Ozono"
-        ], []
-      );
+  const questionsTextLines = useMemo(
+    () => [
+      "Efecto Invernadero","Smog","Capa de Ozono"
+    ], []
+  );
+
+
   // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines we have
   const handleNextLine = (isNext) => {
     setQuestionsSection({
@@ -23,8 +25,34 @@ const Questions = () => {
         : (questionsSection.questionsStep + questionsTextLines.length - 1) % questionsTextLines.length,
     });
   };
-    return(
-<group>
+
+
+  // Finish the Quiz if user finished
+  const finishQuiz = useCallback(() => {
+    const isQuizFinished = didUserAnswerAll();
+    if (isQuizFinished) {
+      alert("¡Quiz Enviado!");
+      /* Logic to save the score on Firestore */
+    } else {
+      alert("Faltan preguntas por responder");
+    }
+  }, []);
+
+
+  // Check if user answered all questions
+  const didUserAnswerAll = useCallback(() => {
+    const userAnswered = questionsSection.userAnswered;
+
+    for (let i = 0; i < userAnswered.length; i++) {
+      const didAnswer = userAnswered[i];
+      if (!didAnswer) return false;
+    }
+    return true;
+  }, []);
+
+
+  return(
+    <group>
       <AnimatePresence mode="wait">
         <motion.group
           key={questionsSection.questionsStep} // Clave única para cada línea
@@ -52,7 +80,6 @@ const Questions = () => {
         <mesh
           onClick={() => handleNextLine(false)}
           position={[-2, 0, 0]}
-          scale={[1, 1, 1]}
           rotation={[Math.PI/2,Math.PI/2,0]}
         >
           <Arrow/>
@@ -60,12 +87,17 @@ const Questions = () => {
         <mesh
           onClick={() => handleNextLine(true)}
           position={[2, 0, 0]}
-          scale={[1, 1, 1]}
           rotation={[Math.PI/2,-Math.PI/2,0]}
         >
           <Arrow/>
         </mesh>
       </group>
+
+      <Html position={[-800, -500, 100]}>
+        <button style={{ fontSize: '2vh', width: 'max-content' }} onClick={finishQuiz}>
+          Enviar Quiz
+        </button>
+      </Html>
     </group>
     );
 };

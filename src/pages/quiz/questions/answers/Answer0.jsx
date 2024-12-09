@@ -99,9 +99,15 @@ const Answer0 = () => {
   
   }, []); */
 
+  const answerCollision = useCallback((other) => {
+    if(other.rigidBodyObject.name === "responseStage") {
+      console.log("COLISSION");
+    }
+  }, []);
+
   return (
     <>
-      <RigidBody ref={topLeftImpulse}>
+      <RigidBody ref={topLeftImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
         <mesh name="topLeft" position={[-19, 8, 15]} onClick={() => userAnswer(1)}>
           <boxGeometry args={[3, 3, 3]} />
           <meshStandardMaterial color={"blue"} />
