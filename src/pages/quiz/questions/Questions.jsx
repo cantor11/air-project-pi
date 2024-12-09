@@ -109,6 +109,12 @@ const Questions = () => {
           Enviar Quiz
         </button>
       </Html>
+      <Html position={[-800, -450, -350]}>
+        <p style={{ fontSize: '2vh', color: 'white', width: 'max-content', textAlign: 'center' }}>
+          {'Usa las teclas <- -> | A D'}<br></br>
+          {'para continuar las preguntas'}
+        </p>
+      </Html>
     </group>
     );
 };
