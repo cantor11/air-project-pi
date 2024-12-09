@@ -5,6 +5,7 @@ import Page404 from "../pages/page-404/Page404";
 import Smog from "../pages/smog/Smog";
 import Ozono from "../pages/capa-ozono/Ozono";
 import GreenhouseEffect from "../pages/efecto-invernadero/GreenhouseEffect";
+import Quiz from "../pages/quiz/Quiz";
 
 /**
  * RoutesProject component sets up the routing for the application using React Router.
@@ -22,6 +23,7 @@ const RoutesProject = () => {
         <Route path="/" element={<Login />} />
         <Route path="/smog" element={<Smog/>}/>
         <Route path="/capa-ozono" element={<Ozono />} />
+        <Route path="/quiz" element={<Quiz />}/>
         <Route path="*" element={<Page404/>}/>
       </Routes>
     </BrowserRouter>
