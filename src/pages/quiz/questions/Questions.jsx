@@ -12,7 +12,7 @@ const Questions = () => {
 
     const questionsTextLines = useMemo(
         () => [
-          "Esteban me la chupa","Junior también","xd"
+          "Efecto Invernadero","Smog","Capa de Ozono"
         ], []
       );
   // Change the current line of information using the store, with the next one or previous one, using % and based on the amount of lines we have

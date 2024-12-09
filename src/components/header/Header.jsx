@@ -77,10 +77,9 @@ const Header = () => {
           </Link>
 
         ) */}
-
-        )}
-        */}
-
+        <button className="button-logout">
+          <img src="/images/logout.webp" alt="Logout" className="logout" />
+        </button>
       </div>
     </header>
   );
