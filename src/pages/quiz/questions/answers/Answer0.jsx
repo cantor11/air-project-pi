@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { RigidBody } from "@react-three/rapier";
 import useQuizStore from "../../../../stores/quiz-store";
 
@@ -16,6 +16,8 @@ import useQuizStore from "../../../../stores/quiz-store";
 
 
 const Answer0 = () => {
+  const [timer, setTimer] = useState(0);
+  const intervalRef = useRef(null); // To ref the interval and cancel it if necessary
   const { questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
 
   // Refs for each answer model
@@ -94,16 +96,47 @@ const Answer0 = () => {
   }, []);
 
 
-/*   // When the component is shown, set it to show the Title view first
-  useEffect(() => {
-  
-  }, []); */
-
+  // When an answer model falls on the stage, execute the feedback timer
   const answerCollision = useCallback((other) => {
     if(other.rigidBodyObject.name === "responseStage") {
-      console.log("COLISSION");
+      executeFeedbackTimer();
     }
   }, []);
+
+  // Starts the timer from 0 to max Time to show the Feedback
+  const executeFeedbackTimer = () => {
+    const maxTime = 2;
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current); // If there is an interval running, then clean it
+    }
+    setTimer(0); // Restart the timer
+
+    intervalRef.current = setInterval(() => {
+      setTimer(prevTimer => {
+        if (prevTimer + 1 === maxTime) {
+          clearInterval(intervalRef.current);
+          showFeedback(); // When timer finishes, execute this
+          return maxTime;
+        }
+        return prevTimer + 1; // Increase timer every second
+      });
+    }, 1000); // 1000 ms = 1 second
+  };
+
+
+  // Executed when timer finishes
+  const showFeedback = () => {
+    console.log("Feedback");
+  };
+
+
+  useEffect(() => {
+    // Clean interval when component is down
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
 
   return (
     <>
@@ -113,19 +146,19 @@ const Answer0 = () => {
           <meshStandardMaterial color={"blue"} />
         </mesh>
       </RigidBody>
-      <RigidBody ref={topRightImpulse}>
+      <RigidBody ref={topRightImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
         <mesh name="topRight" position={[-19, 8, -15]} onClick={() => userAnswer(2)}>
           <boxGeometry args={[3, 3, 3]} />
           <meshStandardMaterial color={"blue"} />
         </mesh>
       </RigidBody>
-      <RigidBody ref={bottomLeftImpulse}>
+      <RigidBody ref={bottomLeftImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
         <mesh name="bottomLeft" position={[-19, -1, 15]} onClick={() => userAnswer(3)}>
           <boxGeometry args={[3, 3, 3]} />
           <meshStandardMaterial color={"blue"} />
         </mesh>
       </RigidBody>
-      <RigidBody ref={bottomRightImpulse}>
+      <RigidBody ref={bottomRightImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
         <mesh name="bottomRight" position={[-19, -1, -15]} onClick={() => userAnswer(4)}>
           <boxGeometry args={[3, 3, 3]} />
           <meshStandardMaterial color={"blue"} />
