@@ -21,10 +21,21 @@ const Questions = () => {
   const handleNextLine = (isNext) => {
     setQuestionsSection({
       questionsStep: isNext
-        ? (questionsSection.questionsStep + 1) % questionsTextLines.length
-        : (questionsSection.questionsStep + questionsTextLines.length - 1) % questionsTextLines.length,
+        ? (questionsSection.questionsStep + 1) % questionsSection.textQuantity //questionsTextLines.length
+        : (questionsSection.questionsStep + questionsSection.textQuantity /* questionsTextLines.length */ - 1) % questionsSection.textQuantity //questionsTextLines.length,
     });
   };
+
+
+  // Everytime user gets in this section, it will show the first question, so we set the current question with 0 using the store, also we set in the store the amount of questions we have
+  useEffect(() => {
+    setQuestionsSection({
+      questionsStep: 0,
+      textQuantity: questionsTextLines.length,
+    });
+
+    return () => null;
+  }, []);
 
 
   // Finish the Quiz if user finished

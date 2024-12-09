@@ -10,13 +10,15 @@ import useQuizStore from "../../../../stores/quiz-store";
  * user chooses then an impulse will be applied on the answer.
  * When the user chooses an answer, it checks if it was correct and set the score, and saves that
  * the user already answered this question, so they can't answer again, unless the whole Quiz is
- * restarted.
+ * restarted. After some time the user answers, a Feedback of the question will be shown on screen.
  * To know if the user has answered and save the score based on their answer we will use a store made from Zustand.
  */
 
 
 const Answer0 = () => {
   const [timer, setTimer] = useState(0);
+  const [answerSelected, setAnswerSelected] = useState(false); // To know if the user selected an answer already
+  const [showFeedback, setShowFeedback] = useState(false); // To know if after answer, show the Feedback already
   const intervalRef = useRef(null); // To ref the interval and cancel it if necessary
   const { questionsSection, setQuestionsSection } = useQuizStore(); // information brought from store
 
@@ -48,12 +50,12 @@ const Answer0 = () => {
 
   // Check if the user already answered or not to check the answer
   const userAnswer = useCallback((answer) => {
-    const hasUserAnswered = questionsSection.userAnswered[0]; // Check if user answered based on the index of the Answer Component
-    if (!hasUserAnswered) {
+    //const hasUserAnswered = questionsSection.userAnswered[0]; // Check if user answered based on the index of the Answer Component
+    if (!answerSelected) {
+      setAnswerSelected(true);
       checkAnswer(answer);
-      setUserAnswer();
     }
-  }, []);
+  }, [answerSelected]);
 
 
   // Check the answer of the user, and check if it's correct
@@ -103,6 +105,7 @@ const Answer0 = () => {
     }
   }, []);
 
+
   // Starts the timer from 0 to max Time to show the Feedback
   const executeFeedbackTimer = () => {
     const maxTime = 2;
@@ -115,7 +118,7 @@ const Answer0 = () => {
       setTimer(prevTimer => {
         if (prevTimer + 1 === maxTime) {
           clearInterval(intervalRef.current);
-          showFeedback(); // When timer finishes, execute this
+          setShowFeedback(true); // When timer finishes, execute this
           return maxTime;
         }
         return prevTimer + 1; // Increase timer every second
@@ -125,9 +128,9 @@ const Answer0 = () => {
 
 
   // Executed when timer finishes
-  const showFeedback = () => {
-    console.log("Feedback");
-  };
+  useEffect(() => {
+    if (showFeedback) setUserAnswer();
+  }, [showFeedback]);
 
 
   useEffect(() => {
