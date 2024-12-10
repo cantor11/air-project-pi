@@ -12,7 +12,9 @@ const Questions = () => {
 
   const questionsTextLines = useMemo(
     () => [
-      "Efecto Invernadero","Smog","Capa de Ozono"
+      "        Como se veria la tierra si no\nhubiesen Gases de Efecto Invernadero?",
+      "Smog",
+      "Capa de Ozono"
     ], []
   );
 
@@ -67,20 +69,26 @@ const Questions = () => {
       <AnimatePresence mode="wait">
         <motion.group
           key={questionsSection.questionsStep} // Clave única para cada línea
-          initial={{ opacity: 0, positionY: -5 }}
-          animate={{ opacity: 1, positionY: 0 }}
-          exit={{ opacity: 0, positionY: 5 }}
-          transition={{ duration: 0.5 }}
         >
-          <Center top position={[-14, 6, 0]}>
+          <Center position={[-24, 11, 0]}>
             <Text3D
-              font="/fonts/blue-ocean.json"
+              position={[-0.01, 0, 0.2]}
+              font="/fonts/Winter_Minie_Regular.json"
               rotation={[0, MathUtils.degToRad(90), 0]}
-              size={1}
+              height={0.1}
+              size={1.02}
+            >
+              {questionsTextLines[questionsSection.questionsStep]}
+              <meshBasicMaterial color="black" />
+            </Text3D>
+
+            <Text3D
+              font="/fonts/Winter_Minie_Regular.json"
+              rotation={[0, MathUtils.degToRad(90), 0]}
               height={0.1}
             >
-              {questionsTextLines[questionsSection.questionsStep].replace(/<br>/g, '\n')}
-              <meshNormalMaterial />
+              {questionsTextLines[questionsSection.questionsStep]}
+              <meshBasicMaterial color="white" />
             </Text3D>
           </Center>
         </motion.group>
