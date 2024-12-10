@@ -1,6 +1,6 @@
 import { RigidBody } from "@react-three/rapier";
 import { useRef, useCallback, useEffect, useState } from "react";
-import Antenna from "./answerModels/antenna";
+import Antenna from "./answerModels/Antenna";
 import Factory from "./answerModels/Factory";
 import Plant from "./answerModels/Plant";
 import Microwave from "./answerModels/Microwave";
