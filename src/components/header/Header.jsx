@@ -15,7 +15,8 @@ import { NavLink } from "react-router-dom";
  */
 
 const Header = () => {
-  /* const { user, logout } = useAuthStore();
+  /* 
+  const { user, logout } = useAuthStore();
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
@@ -77,9 +78,6 @@ const Header = () => {
           </Link>
 
         ) */}
-        <button className="button-logout">
-          <img src="/images/logout.webp" alt="Logout" className="logout" />
-        </button>
       </div>
     </header>
   );
