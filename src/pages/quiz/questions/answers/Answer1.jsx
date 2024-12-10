@@ -148,12 +148,6 @@ const Answer1 = () => {
                 <Plant />
             </mesh>
         </RigidBody>
-        <RigidBody>
-        <mesh position={[-18, -1, 5]} onClick={() => console.log(questionsSection.userScore)}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color={"green"} />
-        </mesh>
-      </RigidBody>
         </>
     )
   };
