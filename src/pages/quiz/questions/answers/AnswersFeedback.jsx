@@ -17,8 +17,8 @@ const AnswersFeedback = () => {
   // Array that contains every line that will be shown
   const textLines = useMemo(
     () => [
-      "Pregunta #1<br><br>Aquí va una retroalimentación para la pregunta de Efecto Invernadero",
-      "Pregunta #2<br><br>El smog se genera a partir de los elementos que provocan GASES nocivos en exceso, como fábricas, basureros, vehiculo con biocombustible, entre otras.",
+      "Pregunta #1<br><br>El Efecto Invernadero es un fenómeno natural.<br><br>Los gases en la atmósfera atrapan el calor del sol, por lo que sin estos gases la Tierra tendría una temperatura MUY baja. Por eso son necesarios.",
+      "Pregunta #2<br><br>El smog se genera a partir de los elementos que provocan GASES nocivos en exceso, como fábricas, basureros, vehiculos con biocombustible, entre otras.",
       "Pregunta #3<br><br> Los clorofluorocarbonos (CFCs) fueron ampliamente utilizados en el pasado, especialmente en aerosoles y sistemas de refrigeración. Sin embargo, estos compuestos tienen un efecto devastador en la capa de ozono, lo que llevó a su regulación y posterior prohibición a nivel global.",
     ], []
   );
