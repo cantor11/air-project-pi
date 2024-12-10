@@ -18,7 +18,7 @@ const AnswersFeedback = () => {
   const textLines = useMemo(
     () => [
       "Pregunta #0<br><br>Aquí va una retroalimentación para la pregunta de Efecto Invernadero",
-      "Pregunta #1<br><br>Aquí va una retroalimentación para la pregunta de Smog",
+      "Pregunta #1<br><br>El smog se genera a partir de los elementos que provocan GASES nocivos en exceso",
       "Pregunta #2<br><br>Aquí va una retroalimentación para la pregunta de Capa de Ozono",
     ], []
   );

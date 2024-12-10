@@ -11,11 +11,14 @@ const Staging = () => {
   return (
     <>
       <Sky
-        distance={450000} // Controls the distance of the sky dome for perspective depth
-        sunPosition={[0, -1, 0]} // Positions the sun below the horizon for a darker sky
-        inclination={0.6} // Adjusts the angle of the light source to simulate nightfall
-        azimuth={0.25} // Determines the direction of the light relative to the scene
-        turbidity={10} // Increases atmospheric particles for a hazier look
+        distance={450000}  
+        sunPosition={[0, -10, 0]}
+        inclination={0}  
+        azimuth={0.1}      
+        turbidity={510}      
+        rayleigh={0.1}
+        mieCoefficient={0.01}    
+        mieDirectionalG={0.9}      
       />
       <Stars
         radius={100}           
