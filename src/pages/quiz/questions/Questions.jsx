@@ -12,7 +12,9 @@ const Questions = () => {
 
   const questionsTextLines = useMemo(
     () => [
-      "Efecto Invernadero","Smog","Capa de Ozono"
+      "    ¿Cómo se verìa la tierra si no\nhubiesen Gases de Efecto Invernadero?",
+      "Smog",
+      "Capa de Ozono"
     ], []
   );
 

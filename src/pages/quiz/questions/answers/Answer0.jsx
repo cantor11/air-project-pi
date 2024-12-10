@@ -1,5 +1,10 @@
 import { useRef, useCallback, useEffect, useState } from "react";
 import { RigidBody } from "@react-three/rapier";
+
+import { DryMudModel } from "./answerModels/DryMudModel";
+import { EarthModel } from "./answerModels/EarthModel";
+import { SnowBallRocks } from "./answerModels/SnowBallRocks";
+import WaterWorldModel from "./answerModels/WaterWorldModel";
 import useQuizStore from "../../../../stores/quiz-store";
 
 /**
@@ -32,25 +37,24 @@ const Answer0 = () => {
   // Impulses to be applied on answers
 
   const impulse1 = useCallback(() => {
-    topLeftImpulse.current.applyImpulse({ x: 0, y: 100, z: -200 }, true)
+    topLeftImpulse.current.applyImpulse({ x: 0, y: 300, z: -900 }, true)
   }, []);
   
   const impulse2 = useCallback(() => {
-    topRightImpulse.current.applyImpulse({ x: 0, y: 100, z: 200 }, true)
+    topRightImpulse.current.applyImpulse({ x: 0, y: 500, z: 1800 }, true)
   }, []);
 
   const impulse3 = useCallback(() => {
-    bottomLeftImpulse.current.applyImpulse({ x: 0, y: 200, z: -200 }, true)
+    bottomLeftImpulse.current.applyImpulse({ x: 0, y: 1200, z: -1600 }, true)
   }, []);
   
   const impulse4 = useCallback(() => {
-    bottomRightImpulse.current.applyImpulse({ x: 0, y: 200, z: 200 }, true)
+    bottomRightImpulse.current.applyImpulse({ x: 0, y: 1000, z: 1200 }, true)
   }, []);
 
 
   // Check if the user already answered or not to check the answer
   const userAnswer = useCallback((answer) => {
-    //const hasUserAnswered = questionsSection.userAnswered[0]; // Check if user answered based on the index of the Answer Component
     if (!answerSelected) {
       setAnswerSelected(true);
       checkAnswer(answer);
@@ -63,9 +67,9 @@ const Answer0 = () => {
     switch (answer) {
       case 1:
         impulse1();
-        correctAnswer();
         break;
       case 2:
+        correctAnswer();
         impulse2();
         break;
       case 3:
@@ -144,36 +148,25 @@ const Answer0 = () => {
   return (
     <>
       <RigidBody ref={topLeftImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
-        <mesh name="topLeft" position={[-19, 8, 15]} onClick={() => userAnswer(1)}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color={"blue"} />
-        </mesh>
+        <EarthModel position={[-19, 10, 15]} scale={0.5} onClick={() => userAnswer(1)} />
       </RigidBody>
       <RigidBody ref={topRightImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
-        <mesh name="topRight" position={[-19, 8, -15]} onClick={() => userAnswer(2)}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color={"blue"} />
-        </mesh>
+        <SnowBallRocks position={[-19, 7, -15]} scale={6} onClick={() => userAnswer(2)} />
       </RigidBody>
       <RigidBody ref={bottomLeftImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
-        <mesh name="bottomLeft" position={[-19, -1, 15]} onClick={() => userAnswer(3)}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color={"blue"} />
-        </mesh>
+        <EarthModel position={[-19, -2, 15]} scale={0.5} onClick={() => userAnswer(3)} />
+        <WaterWorldModel scale={0.13} />
       </RigidBody>
       <RigidBody ref={bottomRightImpulse} onCollisionEnter={({ other }) => answerCollision(other) }>
-        <mesh name="bottomRight" position={[-19, -1, -15]} onClick={() => userAnswer(4)}>
-          <boxGeometry args={[3, 3, 3]} />
-          <meshStandardMaterial color={"blue"} />
-        </mesh>
+        <DryMudModel position={[-19, -2, -15]} scale={2.7} onClick={() => userAnswer(4)} />
       </RigidBody>
 
-      <RigidBody>
+      {/* <RigidBody>
         <mesh position={[-19, -1, -2]} onClick={() => console.log(questionsSection.userScore)}>
           <boxGeometry args={[3, 3, 3]} />
           <meshStandardMaterial color={"green"} />
         </mesh>
-      </RigidBody>
+      </RigidBody> */}
     </>
   )
 };

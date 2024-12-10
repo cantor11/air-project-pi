@@ -1,5 +1,5 @@
 /**
- * FrostBall Component
+ * SnowLight Component
  * 
  * This functional React component sets up a 3D object using `@react-three/fiber` 
  * to visualize an 3d object made by hand.
