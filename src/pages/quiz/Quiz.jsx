@@ -1,7 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import Header from "../../components/header/Header";
 import { Physics } from '@react-three/rapier';
-
 import ResponseStage from './world/ResponseStage';
 import Controls from './controls/Controls';
 import Lights from './lights/Ligths';
