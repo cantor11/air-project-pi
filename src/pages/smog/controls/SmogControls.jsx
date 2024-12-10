@@ -17,7 +17,7 @@ const SmogControls = ({ freeNavigation }) => {
       //maxAzimuthAngle={Math.PI * 0.032} // Max horizontal rotation
       //minAzimuthAngle={-Math.PI * 0.032} // Min horizontal rotation
       enableDamping={true} // Enable smooth damping
-      dampingFactor={0.4} // Damping intensity
+      dampingFactor={0.1} // Damping intensity
       rotateSpeed={0.3} // Rotation speed
       maxDistance={660} // Max distance from target
       minDistance={330} // Min distance from target
