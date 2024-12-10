@@ -8,29 +8,43 @@ import Lights from './lights/Ligths';
 import Staging from './staging/Staging';
 import Questions from './questions/Questions';
 import ShowAnswers from './questions/ShowAnswers';
-import { Html } from '@react-three/drei';
+import { Html, KeyboardControls } from '@react-three/drei';
+import AnswersFeedback from './questions/answers/AnswersFeedback';
+import { useMemo } from 'react';
 
 const Quiz = () => {
     const cameraSettings = {
         position: [0, 0, 0],
         rotation: [0, 0, 0],
-      };
+    };
+
+    // Keys for keyboard events
+    const map = useMemo(
+    () => [
+        { name: "left", keys: ["ArrowLeft", "KeyA"] },
+        { name: "right", keys: ["ArrowRight", "KeyD"] },
+    ],
+    []
+    );
 
     return (
         <>
             <Header/>
-            <div className='quiz-container'>
-                <Canvas shadows camera={cameraSettings}>
-                    <Controls/>
-                    <Lights />
-                    <Staging />
-                    <Questions />
+            <div className='container'>
+                <KeyboardControls map={map}>
+                    <Canvas shadows camera={cameraSettings}>
+                        <Controls/>
+                        <Lights />
+                        <Staging />
+                        <Questions />
 
-                    <Physics gravity={[0, -9.8, 0]}>
-                        <ShowAnswers />
-                        <ResponseStage />
-                    </Physics >
-                </Canvas>
+                        <Physics gravity={[0, -9.8, 0]}>
+                            <ShowAnswers />
+                            <ResponseStage />
+                        </Physics >
+                    </Canvas>
+                </KeyboardControls>
+                <AnswersFeedback />
             </div>
         </>
     )

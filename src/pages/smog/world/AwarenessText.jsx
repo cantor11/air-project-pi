@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Html } from "@react-three/drei";
-//import Lungs from './Lungs';
-//import DeadPlant from './DeadPlant';
 
 /**
  * `AwarenessText` is a React component that renders a series of informative text sections
@@ -14,8 +12,9 @@ import { Html } from "@react-three/drei";
  * through the content.
  */
 
-const AwarenessText = () => {
+const AwarenessText = ({ setFreeNavigation, setShowIntroText }) => {
   const [textIndex, setTextIndex] = useState(0);
+  const [instructionText, setInstructionText] = useState("Utiliza las flechas izquierda y derecha para navegar.");
 
   const handleKeyPress = (event) => {
     if (event.key === "ArrowRight" && textIndex < 2) {
@@ -23,6 +22,12 @@ const AwarenessText = () => {
     } else if (event.key === "ArrowLeft" && textIndex > 0) {
       setTextIndex((prevIndex) => prevIndex - 1);
     }
+  };
+
+  const handleUnlockNavigation = () => {
+    setFreeNavigation(true);
+    setInstructionText("Desplazate por la ciudad y descubre que puedes hacer al respecto.");
+    setShowIntroText(false); 
   };
 
   useEffect(() => {
@@ -83,13 +88,6 @@ const AwarenessText = () => {
             <img src="images/smog/lungs.png" alt="pulmon" width="1400" height="1400"/>
           </div>
         </Html>
-
-        {/*
-        <mesh position={[-90, 570, 35]} scale={[0.007, 0.008, 0.001]} rotation={[-Math.PI / 2, 0, 0]}>
-          <Lungs />
-        </mesh>
-        */}
-
         </>
       )}
 
@@ -142,12 +140,6 @@ const AwarenessText = () => {
             <img src="images/smog/pollution-city.png" alt="mundo" width="1800" height="1800"/>
           </div>
         </Html>
-
-      {/*
-      <mesh position={[80, 580, 28]} scale={[0.7, 0.7, 0.7]} rotation={[-Math.PI / 2, 0, 0]}>
-        <DeadPlant />
-      </mesh>
-      */}
       </>
       )}
 
@@ -157,7 +149,7 @@ const AwarenessText = () => {
           wrapperClass='intro-text'
           occlude
           center
-          distanceFactor={16}
+          distanceFactor={17}
           transform
           position={[0, 580, 0]}
           rotation={[-Math.PI / 2, 0, 0]}
@@ -166,8 +158,10 @@ const AwarenessText = () => {
             <h1><b>¿Qué vamos a hacer al respecto?</b></h1>
             <h2>
             ¿Vamos a seguir ignorando las consecuencias del smog hasta que sea demasiado tarde? 
-            La salud de las personas y el futuro de nuestro planeta dependen de las decisiones que tomemos hoy
+            La salud de las personas y el futuro de nuestro planeta dependen de las decisiones que tomemos hoy.
             </h2>
+            <br />
+            <button className="intro-button" onClick={handleUnlockNavigation}>Activa la navegación...</button>
           </div>
         </Html>
       )}
@@ -178,13 +172,13 @@ const AwarenessText = () => {
       center                       // Centers the text in 3D space
       distanceFactor={15}          // Scales the visual distance of the text
       transform                    // Enables 3D transformations
-      position={[-100, 580, 55]}     // Positions the text within the 3D space
+      position={[-100, 578, 51]}     // Positions the text within the 3D space
       rotation={[-Math.PI / 2, 0, 0]} // Rotates the text for optimal visualization in the scene
     >
       <div className='awareness-instruction'>
         <h2> 
-          <marquee scrollamount="21">
-          Utiliza las flechas izquierda y derecha para navegar.
+          <marquee scrollamount="23">
+            {instructionText}
           </marquee>
         </h2>
         </div>
