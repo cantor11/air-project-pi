@@ -46,6 +46,9 @@ const Questions = () => {
     const isQuizFinished = didUserAnswerAll();
     if (isQuizFinished) {
       alert("¡Quiz Enviado!");
+      setQuestionsSection({
+        testDone: true,
+      });
       /* Logic to save the score on Firestore */
     } else {
       alert("Faltan preguntas por responder");
