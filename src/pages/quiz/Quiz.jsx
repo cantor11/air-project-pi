@@ -38,7 +38,7 @@ const Quiz = () => {
                         <Staging />
                         <Questions />
 
-                        <Physics gravity={[0, -9.8, 0]}>
+                        <Physics gravity={[0, -9.8, 0]} debug>
                             <ShowAnswers />
                             <ResponseStage />
                         </Physics >
