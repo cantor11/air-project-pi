@@ -19,7 +19,7 @@ const AnswersFeedback = () => {
     () => [
       "Pregunta #0<br><br>Aquí va una retroalimentación para la pregunta de Efecto Invernadero",
       "Pregunta #1<br><br>Aquí va una retroalimentación para la pregunta de Smog",
-      "Pregunta #2<br><br>Aquí va una retroalimentación para la pregunta de Capa de Ozono",
+      "Pregunta #2<br><br> Los clorofluorocarbonos (CFCs) fueron ampliamente utilizados en el pasado, especialmente en aerosoles y sistemas de refrigeración. Sin embargo, estos compuestos tienen un efecto devastador en la capa de ozono, lo que llevó a su regulación y posterior prohibición a nivel global.",
     ], []
   );
 
