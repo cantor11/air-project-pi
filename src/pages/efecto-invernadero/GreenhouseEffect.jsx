@@ -1,5 +1,6 @@
-import { Suspense, useCallback, useEffect, useMemo } from "react";
-import { Html, KeyboardControls, Loader } from "@react-three/drei";
+import { Suspense, useCallback, useEffect, useMemo, useRef } from "react";
+import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import { Html, KeyboardControls, Loader, PositionalAudio } from "@react-three/drei";
 import { Canvas } from '@react-three/fiber';
 import useGreeenhouseStore from "../../stores/greenhouse-store";
 
@@ -12,15 +13,15 @@ import { EarthModel } from "./world/EarthModel";
 import MoonModel from "./world/MoonModel";
 import { SunModel } from "./world/SunModel";
 
-import AwarenessAnimations from "./world/AwarenessAnimations";
-import AwarenessText from "./world/AwarenessText";
-import SolutionsAnimations from "./world/SolutionsAnimations";
-import SolutionsText from "./world/SolutionsText";
+import AwarenessAnimations from "./awareness-section/AwarenessAnimations";
+import AwarenessText from "./awareness-section/AwarenessText";
+import SolutionsAnimations from "./solutions-section/SolutionsAnimations";
+import SolutionsText from "./solutions-section/SolutionsText";
 import TitleText from "./world/TitleText";
 
-import AwarenessKeyboardListeners from "./world/AwarenessKeyboardListeners";
+import AwarenessKeyboardListeners from "./awareness-section/AwarenessKeyboardListeners";
 import CameraPositioning from "./world/CameraPositioning";
-import SolutionsKeyboardListeners from "./world/SolutionsKeyboardListeners";
+import SolutionsKeyboardListeners from "./solutions-section/SolutionsKeyboardListeners";
 import PostProcessing from "./postprocessing/PostProcessing";
 
 //import { Perf } from "r3f-perf"; //performance stats
@@ -42,11 +43,14 @@ import PostProcessing from "./postprocessing/PostProcessing";
  * In addition, this component uses a 'CameraPositioning' component which will let
  * the user change the view to focus on different content in the page.
  * Every time this component is shown, it will show the Title view first,
- * to do that it will use a store made from Zustand
+ * to do that it will use a store made from Zustand.
+ * Also, there can be sounds in all this page, to mute or unmute them, there is a botton
+ * to do that and we will set the state using the store.
  */
 
 const GreenhouseEffect = () => {
-  const { view, setView } = useGreeenhouseStore(); // Information brought from store
+  const { view, setView, sound, setSound } = useGreeenhouseStore(); // Information brought from store
+  const spaceAudioRef = useRef();
 
   // Function to change camera position and lookAt to Awareness section view or Solutions section
   const handleClickCameraAnimation = useCallback((mostrarSensibilizacion) => {
@@ -75,6 +79,34 @@ const GreenhouseEffect = () => {
       isSolutionsSectionView: false,
     });
   }, []);
+
+  // Function to mute or unmute the page, setting the state in the store
+  const toggleMute = useCallback(() => {
+    setSound({
+      isMuted: !sound.isMuted,
+    });
+  }, [sound]);
+
+  useEffect(() => {
+    // When the component is up, we start to check for the moment when the audio reference is ready so we can play the audio
+    const checkAudioReady = () => {
+      const audio = spaceAudioRef.current;
+      if (audio) {
+        if (!sound.isMuted) {
+          audio.setVolume(100);
+          audio.play();
+        } else {
+          audio.stop();
+        }
+      } else {
+        // If the reference is not ready yet, we try again but we wait a bit using a Timeout
+        setTimeout(checkAudioReady, 100);
+      }
+    };
+
+    checkAudioReady(); // We start to verify when we have audio
+  }, [sound]);
+
 
   return (
     <>
@@ -114,10 +146,25 @@ const GreenhouseEffect = () => {
                   <button onClick={() => handleClickCameraAnimation(false)}> Soluciones </button>
                 </Html>
               </>}
+
+              <group position={[0,200,-200]}>
+                <PositionalAudio ref={spaceAudioRef} loop url="/sounds/space_sound.mp3" distance={1} />
+              </group>
             </Suspense>
           </Canvas>
           {view.isAwarenessSectionView ? <AwarenessText /> : null} {/* If we are in Awareness section, show the corresponding text */}
           {view.isSolutionsSectionView ? <SolutionsText /> : null} {/* If we are in Solutions section, show the corresponding text */}
+          
+          <div style={{ position: 'absolute', top: '12%', left: '5%', zIndex: '1' }}>
+            <button onClick={toggleMute} >
+              {sound.isMuted ? (
+                <FaVolumeMute size={24} color="gray" />
+              ) : (
+                <FaVolumeUp size={24} color="black" />
+              )}
+            </button>
+          </div>
+
           <Loader />
         </KeyboardControls>
       </div>
