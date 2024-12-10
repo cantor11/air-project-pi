@@ -10,6 +10,7 @@ import ShowAnswers from './questions/ShowAnswers';
 import { Html, KeyboardControls } from '@react-three/drei';
 import AnswersFeedback from './questions/answers/AnswersFeedback';
 import { useMemo } from 'react';
+import Rewards from './rewards/Rewards';
 
 const Quiz = () => {
     const cameraSettings = {
@@ -40,6 +41,7 @@ const Quiz = () => {
                         <Physics gravity={[0, -9.8, 0]}>
                             <ShowAnswers />
                             <ResponseStage />
+                            <Rewards />
                         </Physics >
                     </Canvas>
                 </KeyboardControls>
