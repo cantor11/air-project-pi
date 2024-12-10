@@ -1,3 +1,4 @@
+import { Text } from "@react-three/drei";
 import useQuizStore from "../../../stores/quiz-store";
 
 import Platform from "./trophies/Platform";
@@ -10,6 +11,12 @@ const Rewards = () => {
 
     return(
         <>
+          <Text position={[-140, 10, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={10}>
+            Trofeos
+          </Text>
+          <Text position={[-140, 1, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={5}>
+            Responde correctamente
+          </Text>
           <Platform position={[-40, -23, -126.5]}/>
           {questionsSection.userScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 1 && questionsSection.testDone === true ?
             <BronzeTrophy position={[-40, -20, -126.5]}/>

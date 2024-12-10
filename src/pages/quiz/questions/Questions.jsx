@@ -13,7 +13,7 @@ const Questions = () => {
   const questionsTextLines = useMemo(
     () => [
       "        Como se veria la tierra si no\nhubiesen Gases de Efecto Invernadero?",
-      "    Cual es una emision nosiva que puede provocar Smog?",
+      "    Cual es una emision nociva que puede provocar Smog?",
       "        Cual de los siguientes productos es una fuente de\nclorofluorocarbonos (CFCs) que deterioran la capa de ozono?"
 
     ], []
