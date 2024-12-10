@@ -13,14 +13,16 @@ const Controls = () => {
     <OrbitControls
       maxPolarAngle={Math.PI * 0.48}
       minPolarAngle={Math.PI * 0.46}
-      maxAzimuthAngle={Math.PI * 0.6}
-      minAzimuthAngle={Math.PI * 0.4}
+      maxAzimuthAngle={Math.PI * 0.54}
+      minAzimuthAngle={Math.PI * 0.46}
       target={[-1, -0.1, 0]}
-      panSpeed={0.1}
       screenSpacePanning={true}
-      OrbitControls maxDistance={20}
+      maxDistance={20}
+      reverseOrbit={false} 
       enableZoom={false}
       enablePan={false}
+      enableDamping={true} // Enable smooth damping
+      dampingFactor={0.01} // Damping intensity
     />
   );
 };

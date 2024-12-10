@@ -13,8 +13,9 @@ const Questions = () => {
   const questionsTextLines = useMemo(
     () => [
       "        Como se veria la tierra si no\nhubiesen Gases de Efecto Invernadero?",
-      "Smog",
+      "    Cual es una emision nosiva que puede provocar Smog?",
       "        Cual de los siguientes productos es una fuente de\nclorofluorocarbonos (CFCs) que deterioran la capa de ozono?"
+
     ], []
   );
 
@@ -70,7 +71,7 @@ const Questions = () => {
         <motion.group
           key={questionsSection.questionsStep} // Clave única para cada línea
         >
-          <Center position={[-24, 11, 0]}>
+          <Center position={[-26, 13, 0]}>
             <Text3D
               position={[-0.01, 0, 0.2]}
               font="/fonts/Winter_Minie_Regular.json"
@@ -119,7 +120,7 @@ const Questions = () => {
       </Html>
       <Html position={[-800, -450, -350]}>
         <p style={{ fontSize: '2vh', color: 'white', width: 'max-content', textAlign: 'center' }}>
-          {'Usa las teclas <- -> | A D'}<br></br>
+          {'Usa las teclas ⭠ ⭢ | A D'}<br></br>
           {'para continuar las preguntas'}
         </p>
       </Html>
