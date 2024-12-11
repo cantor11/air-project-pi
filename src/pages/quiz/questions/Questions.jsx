@@ -55,6 +55,10 @@ const Questions = () => {
       const oldScoreSum = existingData?.userScore?.reduce((a, b) => a + b, 0) || 0;
 
       if (newScoreSum > oldScoreSum) {
+        setQuestionsSection({
+          bestUserScore : questionsSection.userScore
+        });
+
         await setDoc(userRef, {
           userScore: questionsSection.userScore,
           userAnswered: questionsSection.userAnswered,

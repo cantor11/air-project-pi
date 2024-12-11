@@ -8,6 +8,7 @@ const useQuizStore = create((set) => ({
     userScore: [0, 0, 0],
     userAnswered: [false, false, false],
     testDone: false,
+    bestUserScore: [0, 0, 0],
   },
   
   setQuestionsSection: (questionsSectionUpdates) =>
