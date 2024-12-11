@@ -16,7 +16,7 @@ import { Physics } from "@react-three/rapier";
 import EsceneFloor from "./world/EsceneFloor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
-import PostProcessing from "./postprocessing/postProcessing";
+import PostProcessing from "./postprocessing/PostProcessing";
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution
