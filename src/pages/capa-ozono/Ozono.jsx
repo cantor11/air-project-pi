@@ -4,8 +4,8 @@ import Lights from "./lights/Lights";
 import Factory from "./world/Factory";
 import Header from "../../components/header/Header";
 import "./Ozono.css";
-import { useMemo } from "react";
-import { KeyboardControls } from "@react-three/drei";
+import { useMemo, useRef, useCallback } from "react";
+import { KeyboardControls, PositionalAudio } from "@react-three/drei";
 import IntroductionText from "./world/IntroductionText";
 import { Loader } from "@react-three/drei";
 import { Suspense } from "react";
@@ -16,6 +16,7 @@ import { Physics } from "@react-three/rapier";
 import EsceneFloor from "./world/EsceneFloor";
 import Interactions from "./world/Interactions";
 import SolutionText from "./world/SolutionText";
+import PostProcessing from "./postprocessing/PostProcessing";
 
 /**
  * This component defines a 3D webpage layout focusing on environmental issues, specifically air pollution
@@ -34,6 +35,13 @@ const Ozono = () => {
     position: [-17, 3, 0],
     rotation: [0, -Math.PI/2, 0],
   };
+
+  const audioRef = useRef();
+
+  const handAudio = useCallback(()=>{
+    audioRef.current.play();
+    audioRef.current.setVolume(0.5);
+  }, []);
 
   // Configures keyboard controls for user navigation within the scene
   const map = useMemo(
@@ -55,7 +63,7 @@ const Ozono = () => {
         {/* Initializes keyboard controls for 3D navigation */}
         <KeyboardControls map = {map}>
           {/* Canvas for the 3D scene with shadows and camera settings */}
-          <Canvas shadows camera={cameraSettings}>
+          <Canvas shadows camera={cameraSettings} onPointerMove={handAudio}>
             <Suspense fallback={null}> {/* Loads complex elements with a fallback */}
               <Controls /> {/* Enables user camera control */}
               <Lights /> {/* Adds lighting to the scene */}
@@ -69,6 +77,10 @@ const Ozono = () => {
             <SensitizationText />
             <Interactions />
             <SolutionText />
+            <group position={[0, 5, 0]}>
+              <PositionalAudio ref={audioRef} loop url="/sounds/ozoneSound.mp3" distance={1}/>
+            </group>
+            <PostProcessing />
             <Staging /> {/* Background and environment settings */}
           </Canvas>
           <Loader /> {/* Shows a loading indicator while the scene loads */}
