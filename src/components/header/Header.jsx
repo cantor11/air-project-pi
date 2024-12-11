@@ -22,7 +22,6 @@ const Header = () => {
     logout();
     navigate("/login");
   }, [logout]);
-
   return (
     <header>
       <div className="left-section">
@@ -76,7 +75,6 @@ const Header = () => {
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
         )}
-
       </div>
     </header>
   );
