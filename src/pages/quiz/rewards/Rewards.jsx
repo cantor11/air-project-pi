@@ -11,11 +11,11 @@ const Rewards = () => {
 
     return(
         <>
-          <Text position={[-140, 10, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={10}>
+          <Text position={[-140, 10, 0]} rotation-y={Math.PI / 2.2} color="yellow" fontSize={10}>
             Trofeos
           </Text>
-          <Text position={[-140, 1, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={5}>
-            Responde correctamente
+          <Text position={[-140, 1, 0]} rotation-y={Math.PI / 2.2} color="yellow" fontSize={5}>
+            Gana trofeos por demostrar tu conocimiento
           </Text>
           <Platform position={[-40, -23, -126.5]}/>
           {questionsSection.userScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 1 && questionsSection.testDone === true ?

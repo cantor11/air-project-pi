@@ -16,12 +16,19 @@ const AnswersFeedback = () => {
   // Array that contains every line that will be shown
   const textLines = useMemo(
     () => [
-      "Pregunta #1<br><br>El Efecto Invernadero es un fenómeno natural.<br><br>Los gases en la atmósfera atrapan el calor del sol, por lo que sin estos gases la Tierra tendría una temperatura MUY baja. Por eso son necesarios.",
-      "Pregunta #2<br><br>El smog se genera a partir de los elementos que provocan GASES nocivos en exceso, como fábricas, basureros, vehiculos con biocombustible, entre otras.",
-      "Pregunta #3<br><br> Los clorofluorocarbonos (CFCs) fueron ampliamente utilizados en el pasado, especialmente en aerosoles y sistemas de refrigeración. Sin embargo, estos compuestos tienen un efecto devastador en la capa de ozono, lo que llevó a su regulación y posterior prohibición a nivel global.",
+      "El Efecto Invernadero es un fenómeno natural.<br><br>Los gases en la atmósfera atrapan el calor del sol, por lo que sin estos gases la Tierra tendría una temperatura MUY baja. Por eso son necesarios.",
+      "El smog se genera a partir de los elementos que provocan GASES nocivos en exceso, como fábricas, basureros, vehiculos con biocombustible, entre otras.",
+      "Los clorofluorocarbonos (CFCs) fueron ampliamente utilizados en el pasado, especialmente en aerosoles y sistemas de refrigeración. Sin embargo, estos compuestos tienen un efecto devastador en la capa de ozono, lo que llevó a su regulación y posterior prohibición a nivel global.",
     ],
     []
   );
+
+    // Build the feedback message
+    const getFeedbackMessage = (index) => {
+      const isCorrect = questionsSection.userScore[index] === 1;
+      const correctnessText = isCorrect ? "Correcta" : "Incorrecta";
+      return `Pregunta #${index + 1}: ${correctnessText}<br><br>${textLines[index]}`;
+    };
 
   // If the current question has been answered, then show its feedback
   useEffect(() => {
@@ -67,41 +74,18 @@ const AnswersFeedback = () => {
                 color: "lightgray",
                 margin: "5%",
                 textShadow: `
-                  -1px -2px 0 #AA0,
-                  0px -0px 0 #990,
-                  -2px 2px 0 #330,
-                  2px 2px 0 #550`,
+                  -2px -2px 0 #000, 
+                  2px -2px 0 #000, 
+                  -2px 2px 0 #000, 
+                  2px 2px 0 #000`,
               }}
             >
               <div
                 dangerouslySetInnerHTML={{
-                  __html: textLines[questionsSection.questionsStep],
+                  __html: getFeedbackMessage(questionsSection.questionsStep),
                 }}
               />
             </div>
-            <button
-              onClick={() => setShowFeedback(false)}
-              style={{
-                position: "absolute",
-                top: "15px",
-                right: "15px",
-                backgroundColor: "red",
-                color: "white",
-                border: "none",
-                borderRadius: "30%",
-                width: "30px",
-                height: "30px",
-                cursor: "pointer",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                transition: "background-color 0.3s",
-              }}
-              onMouseEnter={(e) => (e.target.style.backgroundColor = "#ff6666")}
-              onMouseLeave={(e) => (e.target.style.backgroundColor = "red")}
-            >
-              X
-            </button>
           </div>
         </div>
       ) : null}
