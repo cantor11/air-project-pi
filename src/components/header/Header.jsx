@@ -2,7 +2,11 @@ import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import useAuthStore from "../../stores/use-auth-store";
+import useQuizStore from "../../stores/quiz-store";
 import { NavLink } from "react-router-dom";
+
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db, auth } from "../../../firebase.config";
 
 /**
  * Header Component
@@ -16,12 +20,39 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const { user, logout } = useAuthStore();
+  const { questionsSection, setQuestionsSection } = useQuizStore(); // Información del store
   const navigate = useNavigate();
 
   const handleLogout = useCallback(() => {
     logout();
     navigate("/login");
   }, [logout]);
+
+  const syncFirestoreData = async () => {
+    if (!auth.currentUser) {
+      alert("Debes iniciar sesión para enviar el quiz.");
+      return;
+    }
+
+    const userId = auth.currentUser.uid;
+    const userRef = doc(db, "quizzes", userId);
+
+    try {
+      const userSnapshot = await getDoc(userRef);
+      const existingData = userSnapshot.exists() ? userSnapshot.data() : null;
+
+      const oldScoreSum = existingData?.userScore?.reduce((a, b) => a + b, 0) || 0;
+      if (oldScoreSum != 0) {
+        setQuestionsSection({
+          bestUserScore : existingData.userScore
+        });
+        console.log(questionsSection.bestUserScore) 
+      } 
+    } catch (error) {
+      console.error("Error al guardar el quiz en DB:", error);
+      alert("Ocurrió un error al enviar el quiz. Revisar consola.");
+    }
+  };
 
   return (
     <header>
@@ -60,6 +91,7 @@ const Header = () => {
             <NavLink
               to="/quiz"
               className={({ isActive }) => isActive ? "button-link active" : "button-link"}
+              onClick={syncFirestoreData}
             >
               Quiz
             </NavLink>
@@ -76,7 +108,6 @@ const Header = () => {
             <img src="/images/logout.webp" alt="Login" className="login" />
           </Link>
         )}
-
       </div>
     </header>
   );

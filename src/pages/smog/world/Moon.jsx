@@ -43,8 +43,8 @@ const Moon = () => {
         normalMap={moonTexture.normalMap}
         aoMap={moonTexture.aoMap}
         roughnessMap={moonTexture.roughnessMap}
-        roughness={0}
-        metalness={3} 
+        roughness={0.5}
+        metalness={-0.9} 
         displacementMap={moonTexture.displacementMap}
       />
     </mesh>

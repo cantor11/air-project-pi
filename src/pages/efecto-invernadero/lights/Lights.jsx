@@ -28,7 +28,7 @@ const Lights = () => {
         position={[27, 8, 10]}
         intensity={5000000}
         angle={Math.PI / 5}
-        distance={1000}
+        distance={800}
       />
       <spotLight
         ref={spotLightRef}

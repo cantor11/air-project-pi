@@ -19,6 +19,10 @@ const useGreenhouseStore = create((set) => ({
     isMoreInfoView: false,
   },
 
+  sound: {
+    isMuted: false,
+  },
+
   setView: (viewUpdates) =>
     set((state) => ({
       view: { ...state.view, ...viewUpdates },
@@ -32,6 +36,11 @@ const useGreenhouseStore = create((set) => ({
   setSolutionsSection: (solutionsSectionUpdates) =>
     set((state) => ({
       solutionsSection: { ...state.solutionsSection, ...solutionsSectionUpdates},
+    })),
+
+  setSound: (soundUpdates) =>
+    set((state) => ({
+      sound: { ...state.sound, ...soundUpdates},
     })),
 }));
 
