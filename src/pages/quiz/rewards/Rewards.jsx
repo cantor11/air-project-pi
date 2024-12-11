@@ -9,6 +9,8 @@ import BronzeTrophy from "./trophies/BronzeTrophy";
 const Rewards = () => {
     const { questionsSection } = useQuizStore(); // Information brought from store
 
+
+
     return(
         <>
           <Text position={[-140, 10, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={10}>
@@ -17,14 +19,17 @@ const Rewards = () => {
           <Text position={[-140, 1, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={5}>
             Responde correctamente
           </Text>
+          <Text position={[-125, -80, 75]} rotation-y={Math.PI / 2} color="white" fontSize={6}>
+            Mejor puntaje: {questionsSection.bestUserScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0)}
+          </Text>
           <Platform position={[-40, -23, -126.5]}/>
-          {questionsSection.userScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 1 && questionsSection.testDone === true ?
+          {questionsSection.bestUserScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 1 ?
             <BronzeTrophy position={[-40, -20, -126.5]}/>
             : null}
-          {questionsSection.userScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 2 && questionsSection.testDone === true ?
+          {questionsSection.bestUserScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 2 ?
             <SilverTrophy position={[-40, -20.5, -126.5]}/>
             : null}
-          {questionsSection.userScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 3 && questionsSection.testDone === true ?
+          {questionsSection.bestUserScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0) >= 3 ?
             <GoldTrophy position={[-40, -21, -126.5]}/>
             : null}
         </>
