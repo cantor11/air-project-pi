@@ -5,9 +5,8 @@ import useAuthStore from "../../stores/use-auth-store";
 import useQuizStore from "../../stores/quiz-store";
 import { NavLink } from "react-router-dom";
 
-import { db } from "../../../../firebase.config"; // Ajusta la ruta según tu estructura
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { auth } from "../../../../firebase.config";
+import { db, auth } from "../../../firebase.config";
 
 /**
  * Header Component
