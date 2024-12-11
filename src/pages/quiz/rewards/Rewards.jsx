@@ -8,16 +8,14 @@ import BronzeTrophy from "./trophies/BronzeTrophy";
 
 const Rewards = () => {
     const { questionsSection } = useQuizStore(); // Information brought from store
-
-
-
+  
     return(
         <>
-          <Text position={[-140, 10, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={10}>
+          <Text position={[-140, 10, 0]} rotation-y={Math.PI / 2.2} color="yellow" fontSize={10}>
             Trofeos
           </Text>
-          <Text position={[-140, 1, 0]} rotation-y={Math.PI / 3} color="yellow" fontSize={5}>
-            Responde correctamente
+          <Text position={[-140, 1, 0]} rotation-y={Math.PI / 2.2} color="yellow" fontSize={5}>
+            Gana trofeos por demostrar tu conocimiento
           </Text>
           <Text position={[-125, -80, 75]} rotation-y={Math.PI / 2} color="white" fontSize={6}>
             Mejor puntaje: {questionsSection.bestUserScore.reduce((accumulator, currentValue) => accumulator + currentValue, 0)}

@@ -58,6 +58,7 @@ const Questions = () => {
         setQuestionsSection({
           bestUserScore : questionsSection.userScore
         });
+
         await setDoc(userRef, {
           userScore: questionsSection.userScore,
           userAnswered: questionsSection.userAnswered,
